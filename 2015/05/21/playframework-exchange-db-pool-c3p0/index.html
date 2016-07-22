@@ -1,0 +1,329 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>playframework切换连接池c3p0（转载并整理） | 程序员皮皮</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="众所周知，playframework使用的连接池是boneCP，但是确实十分坑爹，因为连接池中对象不能正常释放，导致连接池疯狂向数据库创建连接，最后导致应用获取不到可用连接而报错。当然不是我一个人遇到这个问题，stackoverflow的老外也被坑了一大片。
+那么优秀程序员的品质得到体现，github上的hadashi写了一个插件解决了我们的问题。1.  &amp;lt;span class=&amp;quot;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="playframework切换连接池c3p0（转载并整理）">
+<meta property="og:url" content="http://localhost:4000/2015/05/21/playframework-exchange-db-pool-c3p0/index.html">
+<meta property="og:site_name" content="程序员皮皮">
+<meta property="og:description" content="众所周知，playframework使用的连接池是boneCP，但是确实十分坑爹，因为连接池中对象不能正常释放，导致连接池疯狂向数据库创建连接，最后导致应用获取不到可用连接而报错。当然不是我一个人遇到这个问题，stackoverflow的老外也被坑了一大片。
+那么优秀程序员的品质得到体现，github上的hadashi写了一个插件解决了我们的问题。1.  &amp;lt;span class=&amp;quot;">
+<meta property="og:updated_time" content="2016-07-20T14:52:04.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="playframework切换连接池c3p0（转载并整理）">
+<meta name="twitter:description" content="众所周知，playframework使用的连接池是boneCP，但是确实十分坑爹，因为连接池中对象不能正常释放，导致连接池疯狂向数据库创建连接，最后导致应用获取不到可用连接而报错。当然不是我一个人遇到这个问题，stackoverflow的老外也被坑了一大片。
+那么优秀程序员的品质得到体现，github上的hadashi写了一个插件解决了我们的问题。1.  &amp;lt;span class=&amp;quot;">
+  
+    <link rel="alternative" href="/atom.xml" title="程序员皮皮" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+<div id="container">
+  <div id="wrap">
+    <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">程序员皮皮</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">打造高可用架构</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+          <input type="submit" value="" class="search-form-submit">
+          <input name=tn type=hidden value="bds">
+          <input name=cl type=hidden value="3">
+          <input name=ct type=hidden value="2097152">
+          <input type="hidden" name="si" value="localhost:4000">
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+    <div class="outer">
+      <section id="main"><article id="post-playframework-exchange-db-pool-c3p0" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/05/21/playframework-exchange-db-pool-c3p0/" class="article-date">
+  <time datetime="2015-05-21T05:33:52.000Z" itemprop="datePublished">2015-05-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/工作记录/">工作记录</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      playframework切换连接池c3p0（转载并整理）
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>众所周知，playframework使用的连接池是boneCP，但是确实十分坑爹，因为连接池中对象不能正常释放，导致连接池疯狂向数据库创建连接，最后导致应用获取不到可用连接而报错。当然不是我一个人遇到这个问题，stackoverflow的老外也被坑了一大片。</p>
+<div>那么优秀程序员的品质得到体现，github上的hadashi写了一个插件解决了我们的问题。</div><br><div><br><div><br><br>1.  <code>&lt;span class=&quot;typ&quot;&gt;This&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt; plugin provides an alternative to &lt;/span&gt;&lt;span class=&quot;typ&quot;&gt;BoneCP&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt; as the connection pool manager &lt;/span&gt;&lt;span class=&quot;kwd&quot;&gt;in&lt;/span&gt;&lt;span class=&quot;typ&quot;&gt;Play&lt;/span&gt;&lt;span class=&quot;lit&quot;&gt;2.1&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;typ&quot;&gt;The&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt; main reason &lt;/span&gt;&lt;span class=&quot;kwd&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt; doing this is that I have seen issues with connections not being released properly by &lt;/span&gt;&lt;span class=&quot;typ&quot;&gt;BoneCP&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt; when there are low max connections available&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;</code><br></div><br><div></div><br><div>地址：<a href="https://github.com/hadashi/play2-c3p0-plugin" target="_blank" rel="external">https://github.com/hadashi/play2-c3p0-plugin</a></div><br></div><br><div>当然貌似有人盗版，不知道是谁抄谁，无所谓嘛，不要在乎那些细节，我参考的是如下地址：</div><br><div><a href="https://github.com/Furyu/play-c3p0-plugin" target="_blank" rel="external">https://github.com/Furyu/play-c3p0-plugin</a></div><br><div>其实按照他的步骤一步步执行就好了。</div><br><div>第一、在<span style="background-color: rgba(0, 0, 0, 0.0392157); color: #333333; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6000003814697px; line-height: 21.7600002288818px; widows: 1;">build.sbt里面引用插件源</span></div><br><div><br><div><br><br>1.  <code>&lt;span class=&quot;pln&quot;&gt;libraryDependencies &lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;++=&lt;/span&gt;&lt;span class=&quot;typ&quot;&gt;Seq&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;(&lt;/span&gt;</code><br>2.  <code>&lt;span class=&quot;str&quot;&gt;&quot;jp.furyu&quot;&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;%%&lt;/span&gt;&lt;span class=&quot;str&quot;&gt;&quot;play-c3p0-plugin&quot;&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;str&quot;&gt;&quot;0.2.1&quot;&lt;/span&gt;</code><br>3.  <code>&lt;span class=&quot;pun&quot;&gt;)&lt;/span&gt;</code><br></div><br><div>第二、创建<span style="background-color: rgba(0, 0, 0, 0.0392157); color: #333333; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6000003814697px; line-height: 21.7600002288818px; widows: 1;">conf/play.plugins文件，录入如下内容</span></div><br></div><br><div><br><div><br><br>1.  <code>&lt;span class=&quot;lit&quot;&gt;5000&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;jp&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;furyu&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;play&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;c3p0&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;C3p0Plugin&lt;/span&gt;</code><br></div><br><div>第三、让原有的db插件失效，修改application.conf</div><br></div><br><div><br><div><br><br>1.  <code>&lt;span class=&quot;pln&quot;&gt;dbplugin&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;disabled&lt;/span&gt;</code><br></div><br><div></div><br></div><br><div>第四、配置数据源</div><br><div><br><div><br><br>1.  <code>&lt;span class=&quot;pln&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;pointshub&lt;/span&gt;</code><br>2.  <code>&lt;span class=&quot;pln&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;pointshub&lt;/span&gt;</code><br>3.  <code>&lt;span class=&quot;pln&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;str&quot;&gt;&quot;postgres://pointshub:pointshub@10.20.0.156:5432/pointshub&quot;&lt;/span&gt;</code><br>4.  <code>&lt;span class=&quot;pln&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;driver&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;org&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;postgresql&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;typ&quot;&gt;Driver&lt;/span&gt;</code><br>5.  <code>&lt;span class=&quot;pln&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;maxPoolSize&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;lit&quot;&gt;200&lt;/span&gt;</code><br>6.  <code>&lt;span class=&quot;pln&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;minPoolSize&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;lit&quot;&gt;20&lt;/span&gt;</code><br>7.  <code>&lt;span class=&quot;pln&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;initialPoolSize&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;lit&quot;&gt;40&lt;/span&gt;</code><br>8.  <code>&lt;span class=&quot;pln&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;acquireIncrement&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;lit&quot;&gt;5&lt;/span&gt;</code><br>9.  <code>&lt;span class=&quot;pln&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;maxIdleTime&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;lit&quot;&gt;10m&lt;/span&gt;</code><br>10.  <code>&lt;span class=&quot;pln&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;maxConnectionAge&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;lit&quot;&gt;1h&lt;/span&gt;</code><br>11.  <code>&lt;span class=&quot;pln&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;idleConnectionTestPeriod&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;lit&quot;&gt;10m&lt;/span&gt;</code><br>12.  <code>&lt;span class=&quot;pln&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;preferredTestQuery&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;str&quot;&gt;&quot;select 1;&quot;&lt;/span&gt;</code><br>13.  <code>&lt;span class=&quot;pln&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;checkoutTimeout&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;lit&quot;&gt;3s&lt;/span&gt;</code><br></div><br><div>以上为转载整理，请参阅。</div><br></div><br><div>PS:之前写东西上来就“废话不说，直接上码”，今天废话几句就是想弘扬一下像<a href="https://github.com/hadashi/play2-c3p0-plugin" target="_blank" rel="external">hadashi</a>这样的<span style="font-size: 10.5pt; line-height: 1.5;">优秀程序员的品质。</span></div><br><div><a href="http://www.wiz.cn/i/f9706a63" title="来自为知笔记(Wiz)" target="_blank" rel="external">来自为知笔记(Wiz)</a></div>
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://localhost:4000/2015/05/21/playframework-exchange-db-pool-c3p0/" data-id="ciqxk5qhb001h55wu2qp2tmor" class="article-share-link" data-share="baidu" data-title="playframework切换连接池c3p0（转载并整理）">分享到</a>
+      
+
+      
+        <section id="comments">
+          <!-- 多说评论框 start -->
+          <div class="ds-thread" data-thread-key="post-playframework-exchange-db-pool-c3p0" data-title="playframework切换连接池c3p0（转载并整理）" data-url="http://localhost:4000/2015/05/21/playframework-exchange-db-pool-c3p0/"></div>
+          <!-- 多说评论框 end -->
+          <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+          <script type="text/javascript">
+          var duoshuoQuery = {short_name:'heartarea'};
+            (function() {
+              var ds = document.createElement('script');
+              ds.type = 'text/javascript';ds.async = true;
+              ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+              ds.charset = 'UTF-8';
+              (document.getElementsByTagName('head')[0] 
+               || document.getElementsByTagName('body')[0]).appendChild(ds);
+            })();
+            </script>
+          <!-- 多说公共JS代码 end -->
+        </section>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c3po/">c3po</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dbcp/">dbcp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/playframework/">playframework</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/连接池/">连接池</a></li></ul>
+
+    </footer>
+  </div>
+
+
+
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/05/22/e4-b8-baplay-e5-b7-a5-e7-a8-8b-e5-86-99-e4-b8-80-e4-b8-aa-e7-8a-b6-e6-80-81-e7-ae-a1-e7-90-86-e7-9a-84-e8-84-9a-e6-9c-ac-e5-b9-b6-e4-b8-94-e9-9a-8f-e6-9c-ba-e5-90-af-e5-8a-a8-2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">
+        
+          为play工程写一个状态管理的脚本并且随机启动
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/05/21/apache2-linux-e5-ae-89-e8-a3-85-e9-85-8d-e7-bd-ae/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">apache2 linux安装 配置</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+      
+      <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/工作记录/">工作记录</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分类/">未分类</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活点滴/">生活点滴</a><span class="category-list-count">3</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Extjs/">Extjs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mybatis/">Mybatis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pool/">Pool</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RESTful/">RESTful</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/analyzing/">analyzing</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apache/">apache</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bamboo/">bamboo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c3po/">c3po</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dbcp/">dbcp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debian/">debian</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/enter/">enter</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gitlab/">gitlab</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/h5plus/">h5plus</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5/">html5</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ioc/">ioc</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jconsole/">jconsole</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jmx/">jmx</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kafka/">kafka</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven/">maven</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/openstack/">openstack</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/playframework/">playframework</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/playframwork/">playframwork</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sonar/">sonar</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/">spring</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/upload/">upload</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图片缓存/">图片缓存</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/大小控制/">大小控制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日构建/">日构建</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/格式限制/">格式限制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/连接池/">连接池</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">十一月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">八月 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">七月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">六月 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">五月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">四月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">三月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/02/">二月 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01/">一月 2013</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">近期文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/07/19/linux-timezone-time-update/">linux 修改时区并更新时间</a>
+          </li>
+        
+          <li>
+            <a href="/2016/03/17/maven-sonar-analyzing/">maven集成sonar代码分析</a>
+          </li>
+        
+          <li>
+            <a href="/2015/11/19/extjs-e6-96-87-e4-bb-b6-e4-b8-8a-e4-bc-a0-e6-a0-bc-e5-bc-8f-e5-a4-a7-e5-b0-8f-e9-99-90-e5-88-b6-2/">Extjs文件上传格式大小限制</a>
+          </li>
+        
+          <li>
+            <a href="/2015/11/19/docker-enter-backend-container/">docker-enter进入后台容器</a>
+          </li>
+        
+          <li>
+            <a href="/2015/11/19/e4-bd-bf-e7-94-a8-e8-b7-a8-e5-b9-b3-e5-8f-b0-e6-8a-80-e6-9c-afh5-e5-ae-9e-e7-8e-b0-e5-ba-94-e7-94-a8-e5-9b-be-e7-89-87-e6-9c-ac-e5-9c-b0-e7-bc-93-e5-ad-98/">使用跨平台技术h5+实现应用图片本地缓存</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">友情链接</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http:/www.google.com" target="_blank">谷歌</a>
+          </li>
+        
+          <li>
+            <a href="http://www.neunn.com" target="_blank">东网</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      
+    </div>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Frank Ting<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      .
+      Theme by <a href="https://github.com/xiangming/landscape-plus" target="_blank">Landscape-plus</a>
+    </div>
+  </div>
+</footer>
+  </div>
+  <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+  <!-- totop start -->
+<div id="totop">
+<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+</div>
+
+<!-- totop end -->
+
+<!-- 多说公共js代码 start -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"heartarea"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- 多说公共js代码 end -->
+
+
+<!-- 百度分享 start -->
+
+<div id="article-share-box" class="article-share-box">
+  <div id="bdshare" class="bdsharebuttonbox article-share-links">
+    <a class="article-share-weibo" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a class="article-share-weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a class="article-share-qq" data-cmd="sqq" title="分享到QQ"></a>
+    <a class="article-share-renren" data-cmd="renren" title="分享到人人网"></a>
+    <a class="article-share-more" data-cmd="more" title="更多"></a>
+  </div>
+</div>
+<script>
+  function SetShareData(cmd, config) {
+    if (shareDataTitle && shareDataUrl) {
+      config.bdText = shareDataTitle;
+      config.bdUrl = shareDataUrl;
+    }
+    return config;
+  }
+  window._bd_share_config={
+    "common":{onBeforeClick: SetShareData},
+    "share":{"bdCustomStyle":"/css/bdshare.css"}
+  };
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+<!-- 百度分享 end -->
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+</div>
+</body>
+</html>

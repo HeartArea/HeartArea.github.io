@@ -1,0 +1,885 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>程序员皮皮</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="程序员皮皮">
+<meta property="og:url" content="http://localhost:4000/page/2/index.html">
+<meta property="og:site_name" content="程序员皮皮">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="程序员皮皮">
+  
+    <link rel="alternative" href="/atom.xml" title="程序员皮皮" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+<div id="container">
+  <div id="wrap">
+    <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">程序员皮皮</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">打造高可用架构</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+          <input type="submit" value="" class="search-form-submit">
+          <input name=tn type=hidden value="bds">
+          <input name=cl type=hidden value="3">
+          <input name=ct type=hidden value="2097152">
+          <input type="hidden" name="si" value="localhost:4000">
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+    <div class="outer">
+      <section id="main">
+  
+    <article id="post-openstack-e7-8e-af-e5-a2-83-e4-b8-8a-e5-ae-89-e8-a3-85kafka" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/05/20/openstack-e7-8e-af-e5-a2-83-e4-b8-8a-e5-ae-89-e8-a3-85kafka/" class="article-date">
+  <time datetime="2015-05-20T09:46:11.000Z" itemprop="datePublished">2015-05-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/工作记录/">工作记录</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/05/20/openstack-e7-8e-af-e5-a2-83-e4-b8-8a-e5-ae-89-e8-a3-85kafka/">openstack环境上安装kafka</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>openstack环境上安装kafka<div><br></div><div><div>1.按照官网下载解压</div><div><a href="http://kafka.apache.org/downloads.html" target="_blank" rel="external">http://kafka.apache.org/downloads.html</a></div><div> 选择你喜欢的版本，拷贝链接，然后cd到你喜欢的目录下。执行如下命令</div><div><div><pre class="prettyprint linenums prettyprinted"></pre></div></div></div></p>
+<ol>
+<li><code>&lt;span class=&quot;pln&quot;&gt;wget  http&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;://&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;mirrors&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;cnnic&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;cn&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;apache&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;kafka&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;lit&quot;&gt;0.8&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;lit&quot;&gt;2.1&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;kafka&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;lit&quot;&gt;0.8&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;lit&quot;&gt;2.1&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;tgz&lt;/span&gt;</code></li>
+<li><p><code>&lt;span class=&quot;pln&quot;&gt;tar &lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;xzf &lt;/span&gt;</code><span class="pln">kafka</span><span class="pun">-</span><span class="lit">0.8</span><span class="pun">.</span><span class="lit">2.1</span><span class="pun">-</span><span class="pln">src</span><span class="pun">.</span><span class="pln">tgz</span><div>2.编辑conf/server.properties文件</div><div><div><pre class="prettyprint linenums prettyprinted"></pre></div></div></p>
+</li>
+<li><p><code>&lt;span class=&quot;pln&quot;&gt;advertised.host.name=59.46.101.43   外网访问地址&lt;/span&gt;</code><div><br></div><div>3.按照官方文档启动zookeeper、kafka，创建topic</div><div><div><pre class="prettyprint linenums prettyprinted"></pre></div></div></p>
+</li>
+<li><p><code>&lt;span class=&quot;pln&quot;&gt;bin&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;zookeeper&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;server&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;sh config&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;zookeeper&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;properties&lt;/span&gt;</code></p>
+</li>
+<li><code>&lt;span class=&quot;pln&quot;&gt;bin&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;kafka&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;server&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;sh config&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;server&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;properties&lt;/span&gt;</code></li>
+<li><p><code>&lt;span class=&quot;pln&quot;&gt;bin&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;kafka&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;topics&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;sh &lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;create &lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;zookeeper localhost&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;lit&quot;&gt;2181&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt; &lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;replication&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;factor &lt;/span&gt;&lt;span class=&quot;lit&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt; &lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;partitions &lt;/span&gt;&lt;span class=&quot;lit&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt; &lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;topic test&lt;/span&gt;</code><div>以上就完成了安装。</div><div>4.完成两个端口的外网映射，2181和9092保证外网可以telnet可达</div><div>5.完成回路配置，保证内网虚机上ping外网地址59.46.101.43可达</div><div>6.然后就可以使用了，按照官网的生产和消费命令试一下吧</div><div><div><pre class="prettyprint linenums prettyprinted"></pre></div></div></p>
+</li>
+<li><p><code>&lt;span class=&quot;pln&quot;&gt;bin&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;kafka&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;producer&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;sh &lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;broker&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;list localhost&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;lit&quot;&gt;9092&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt; &lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;topic test &lt;/span&gt;</code></p>
+</li>
+<li><code>&lt;span class=&quot;pln&quot;&gt;bin&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;kafka&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;consumer&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;sh &lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;zookeeper localhost&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;lit&quot;&gt;2181&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt; &lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;topic test &lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;from&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;beginning&lt;/span&gt;</code><div><br></div><div><br></div><div><br></div><div><br></div></li>
+</ol>
+<div><a href="http://www.wiz.cn/i/f9706a63" title="来自为知笔记(Wiz)" target="_blank" rel="external">来自为知笔记(Wiz)</a></div>
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://localhost:4000/2015/05/20/openstack-e7-8e-af-e5-a2-83-e4-b8-8a-e5-ae-89-e8-a3-85kafka/" data-id="ciqxk5qh4001c55wus0s55txv" class="article-share-link" data-share="baidu" data-title="openstack环境上安装kafka">分享到</a>
+      
+
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/kafka/">kafka</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/openstack/">openstack</a></li></ul>
+
+    </footer>
+  </div>
+
+
+
+  
+</article>
+
+
+
+  
+    <article id="post-e6-9c-ac-e5-9c-b0-e4-bb-a3-e7-a0-81-e6-8e-a8-e9-80-81-e5-88-b0gitlab-e4-b8-8a" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/04/23/e6-9c-ac-e5-9c-b0-e4-bb-a3-e7-a0-81-e6-8e-a8-e9-80-81-e5-88-b0gitlab-e4-b8-8a/" class="article-date">
+  <time datetime="2015-04-23T07:07:01.000Z" itemprop="datePublished">2015-04-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/工作记录/">工作记录</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/04/23/e6-9c-ac-e5-9c-b0-e4-bb-a3-e7-a0-81-e6-8e-a8-e9-80-81-e5-88-b0gitlab-e4-b8-8a/">本地代码推送到gitlab上</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>曾几何时，要将本地代码推到gitlab上，需要把整个文件夹拷贝来拷贝去，现在看来这是多么傻的举动啊，下面就叫大家涨姿势！</p>
+<div>前提：本地工作空间有个project，里面的代码已经写了不老少，但是从来没有往gitlab上推过。</div><br><div>因为大部分童鞋用的git客户端是sourceTree，那么git bash我就不说了，偷偷告诉你其实命令行更简单。</div><br><div>第一步、</div><br><div><a href="http://www.heartarea.net/wp-content/uploads/2015/04/62918648-d18c-481b-bac0-3f9a3d96fe3f.png" target="_blank" rel="external"><img src="http://www.heartarea.net/wp-content/uploads/2015/04/62918648-d18c-481b-bac0-3f9a3d96fe3f-300x106.png" alt="62918648-d18c-481b-bac0-3f9a3d96fe3f"></a></div><br><div><img src="file:///C:/Users/Administrator/Desktop/%E6%9C%AC%E5%9C%B0%E4%BB%A3%E7%A0%81%E6%8E%A8%E9%80%81%E5%88%B0gitlab%E4%B8%8A/index_files/62918648-d18c-481b-bac0-3f9a3d96fe3f.png" alt=""><br><div><img src="file:///C:/Users/Administrator/Desktop/%E6%9C%AC%E5%9C%B0%E4%BB%A3%E7%A0%81%E6%8E%A8%E9%80%81%E5%88%B0gitlab%E4%B8%8A/index_files/62918648-d18c-481b-bac0-3f9a3d96fe3f.png" alt="">选择第三个选项卡，然后目标路径选择你的project文件夹，点击确认。</div><br><div></div><br><div>第二步、</div><br><div><a href="http://www.heartarea.net/wp-content/uploads/2015/04/86986f92-680b-4478-8ef9-58ff907867c2.png" target="_blank" rel="external"><img src="http://www.heartarea.net/wp-content/uploads/2015/04/86986f92-680b-4478-8ef9-58ff907867c2-300x252.png" alt="86986f92-680b-4478-8ef9-58ff907867c2"></a></div><br><div><img src="file:///C:/Users/Administrator/Desktop/%E6%9C%AC%E5%9C%B0%E4%BB%A3%E7%A0%81%E6%8E%A8%E9%80%81%E5%88%B0gitlab%E4%B8%8A/index_files/86986f92-680b-4478-8ef9-58ff907867c2.png" alt=""></div><br><div>右键“远程”选择“新的远程仓库”</div><br><div><a href="http://www.heartarea.net/wp-content/uploads/2015/04/db9356e9-11ce-4dbb-8e40-ec0ee32cc6d8.png" target="_blank" rel="external"><img src="http://www.heartarea.net/wp-content/uploads/2015/04/db9356e9-11ce-4dbb-8e40-ec0ee32cc6d8-300x173.png" alt="db9356e9-11ce-4dbb-8e40-ec0ee32cc6d8"></a></div><br><div><img src="file:///C:/Users/Administrator/Desktop/%E6%9C%AC%E5%9C%B0%E4%BB%A3%E7%A0%81%E6%8E%A8%E9%80%81%E5%88%B0gitlab%E4%B8%8A/index_files/db9356e9-11ce-4dbb-8e40-ec0ee32cc6d8.png" alt=""></div><br><div>选择“添加”按钮</div><br><div><a href="http://www.heartarea.net/wp-content/uploads/2015/04/11252cf1-9fd7-403d-bd19-09c249c66cac.png" target="_blank" rel="external"><img src="http://www.heartarea.net/wp-content/uploads/2015/04/11252cf1-9fd7-403d-bd19-09c249c66cac-300x164.png" alt="11252cf1-9fd7-403d-bd19-09c249c66cac"></a></div><br><div><img src="file:///C:/Users/Administrator/Desktop/%E6%9C%AC%E5%9C%B0%E4%BB%A3%E7%A0%81%E6%8E%A8%E9%80%81%E5%88%B0gitlab%E4%B8%8A/index_files/11252cf1-9fd7-403d-bd19-09c249c66cac.png" alt=""></div><br><div>好了好了，请注意！！此处右上角请勾选“默认远端”，URL/路径写啥捏，别着急！</div><br><div>第三步、</div><br><div>浏览器登录gitlab服务器</div><br><div><a href="http://www.heartarea.net/wp-content/uploads/2015/04/8ba78c58-1d24-4dcd-bf49-03c3a8bcce89.png" target="_blank" rel="external"><img src="http://www.heartarea.net/wp-content/uploads/2015/04/8ba78c58-1d24-4dcd-bf49-03c3a8bcce89-300x280.png" alt="8ba78c58-1d24-4dcd-bf49-03c3a8bcce89"></a></div><br><div><img src="file:///C:/Users/Administrator/Desktop/%E6%9C%AC%E5%9C%B0%E4%BB%A3%E7%A0%81%E6%8E%A8%E9%80%81%E5%88%B0gitlab%E4%B8%8A/index_files/8ba78c58-1d24-4dcd-bf49-03c3a8bcce89.png" alt=""></div><br><div>创建一个repository</div><br><div><a href="http://www.heartarea.net/wp-content/uploads/2015/04/523353e8-5342-43b7-bc77-2bc5cdd9d821.png" target="_blank" rel="external"><img src="http://www.heartarea.net/wp-content/uploads/2015/04/523353e8-5342-43b7-bc77-2bc5cdd9d821-300x43.png" alt="523353e8-5342-43b7-bc77-2bc5cdd9d821"></a></div><br><div><img src="file:///C:/Users/Administrator/Desktop/%E6%9C%AC%E5%9C%B0%E4%BB%A3%E7%A0%81%E6%8E%A8%E9%80%81%E5%88%B0gitlab%E4%B8%8A/index_files/523353e8-5342-43b7-bc77-2bc5cdd9d821.png" alt=""></div><br><div>hey man, look at here! 拷贝那个框框里面的地址，请注意选择http，咱们的gitlab选择ssh目前不好使。</div><br><div>第四步、</div><br><div>粘贴地址到第二步弹出的框里面，最后一路确定回去。</div><br><div><a href="http://www.heartarea.net/wp-content/uploads/2015/04/0d5b6385-b65b-4bab-8908-e9180348cda4.png" target="_blank" rel="external"><img src="http://www.heartarea.net/wp-content/uploads/2015/04/0d5b6385-b65b-4bab-8908-e9180348cda4-300x165.png" alt="0d5b6385-b65b-4bab-8908-e9180348cda4"></a></div><br><div></div><br><div><a href="http://www.heartarea.net/wp-content/uploads/2015/04/5e00da57-1a30-4543-9ec3-2e5d992455e5.png" target="_blank" rel="external"><img src="http://www.heartarea.net/wp-content/uploads/2015/04/5e00da57-1a30-4543-9ec3-2e5d992455e5-273x300.png" alt="5e00da57-1a30-4543-9ec3-2e5d992455e5"></a></div><br><div><img src="file:///C:/Users/Administrator/Desktop/%E6%9C%AC%E5%9C%B0%E4%BB%A3%E7%A0%81%E6%8E%A8%E9%80%81%E5%88%B0gitlab%E4%B8%8A/index_files/0d5b6385-b65b-4bab-8908-e9180348cda4.png" alt=""></div><br><div><img src="file:///C:/Users/Administrator/Desktop/%E6%9C%AC%E5%9C%B0%E4%BB%A3%E7%A0%81%E6%8E%A8%E9%80%81%E5%88%B0gitlab%E4%B8%8A/index_files/5e00da57-1a30-4543-9ec3-2e5d992455e5.png" alt=""></div><br><div>然后你就可以添加文件、提交和推送啦！！</div><br></div>
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://localhost:4000/2015/04/23/e6-9c-ac-e5-9c-b0-e4-bb-a3-e7-a0-81-e6-8e-a8-e9-80-81-e5-88-b0gitlab-e4-b8-8a/" data-id="ciqxk5qgm000t55wuskzpoaor" class="article-share-link" data-share="baidu" data-title="本地代码推送到gitlab上">分享到</a>
+      
+
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gitlab/">gitlab</a></li></ul>
+
+    </footer>
+  </div>
+
+
+
+  
+</article>
+
+
+
+  
+    <article id="post-java-lang-verifyerror-e8-a7-a3-e5-86-b3-e5-8a-9e-e6-b3-95" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/11/19/java-lang-verifyerror-e8-a7-a3-e5-86-b3-e5-8a-9e-e6-b3-95/" class="article-date">
+  <time datetime="2014-11-18T20:27:49.000Z" itemprop="datePublished">2014-11-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/工作记录/">工作记录</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/11/19/java-lang-verifyerror-e8-a7-a3-e5-86-b3-e5-8a-9e-e6-b3-95/">java.lang.VerifyError解决办法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <div>直接上正文</div>java -XX:-UseSplitVerifier -XX:+FailOverToOldVerifier<div><br></div><div><br></div><div>java.lang.VerifyError: Stack map does not match the one at exception handler&nbsp;&nbsp;<div><br></div><div><br></div><div><span style="color: rgb(68, 68, 68); font-family: 'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53; font-size: 16px; line-height: 28px; background-color: rgb(255, 255, 255);">-XX:-UseSplitVerifier &nbsp;关闭StackMapTable优化</span><div style="line-height: 28px; color: rgb(68, 68, 68); font-family: 'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53; font-size: 16px; background-color: rgb(255, 255, 255);"><br><div style="line-height: 28px;">-XX:+FailOverToOldVerifier &nbsp;类型校验失败的时候退回到旧的类型推到方式 (jdk1.7之后主版本大于50的class文件，使用类型检查来完成数据流分析校验则是唯一的选择，不允许退回到类型推导的校验方式)</div></div></div></div>
+
+<div><a href="http://www.wiz.cn/i/f9706a63" title="来自为知笔记(Wiz)" target="_blank" rel="external">来自为知笔记(Wiz)</a></div>
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://localhost:4000/2014/11/19/java-lang-verifyerror-e8-a7-a3-e5-86-b3-e5-8a-9e-e6-b3-95/" data-id="ciqxk5qgq001055wuqezss9td" class="article-share-link" data-share="baidu" data-title="java.lang.VerifyError解决办法">分享到</a>
+      
+
+      
+
+      
+    </footer>
+  </div>
+
+
+
+  
+</article>
+
+
+
+  
+    <article id="post-e8-ae-b0-e4-b8-80-e6-ac-a1-e9-a1-b9-e7-9b-ae-e7-ae-a1-e7-90-86-e5-9f-b9-e8-ae-ad" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/08/22/e8-ae-b0-e4-b8-80-e6-ac-a1-e9-a1-b9-e7-9b-ae-e7-ae-a1-e7-90-86-e5-9f-b9-e8-ae-ad/" class="article-date">
+  <time datetime="2014-08-22T00:40:56.000Z" itemprop="datePublished">2014-08-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/工作记录/">工作记录</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/08/22/e8-ae-b0-e4-b8-80-e6-ac-a1-e9-a1-b9-e7-9b-ae-e7-ae-a1-e7-90-86-e5-9f-b9-e8-ae-ad/">记一次项目管理培训</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>作为一个程序员，我不本分，从去年秋天起陆续干了一些项目管理的活。在新奇过后我曾经一度感到恐慌，是要抛弃我热爱的技术去和人类打交道了吗？最近和几位前（ling）辈(dao)聊天渐渐觉得茅塞顿开。技术和管理这两样技能我都要掌握，谁都不抛弃，相辅相成，但是想到自己处于并将长期项目管理初级阶段的时候，我又黯然神伤了。</p>
+<p>周五正好有一场公开性的项目管理知识讲座，我有幸参加。刚开始以为肯定又是培训公司做广告，没有什么实质性的内容，但是结果我还是学到了一些东西，当然广告必打无疑，只是没有那么浓烈。</p>
+<p>因为讲课老师讲解的速度较快，所以很多内容我也只是记了提纲，回来以后自己整理如下：<br>一、关键路径<br>二、三是估计法<br>1、最乐观时间，也就是工作顺利情况下的时间为 a；<br>2、最可能的时间，就是完成某道工序的最大可能时间 m；<br>3、最悲观的时间，就是工作进行不利的情况下所用的时间 b。<br><span style="font-size: 1rem; line-height: 1;">    那么由此根据三时估计法的计算公式确定这项工作的持续时间，即持续时间=(a + 4×m + b)/6。<br></span>三、项目管理模块及方法<br>1.范围管理              WBS（Work Breakdown Structure）<br>2.时间管理              PERT(Program/Project Evaluation and Review Technique)<br>3.成本管理              EVMS(Earned Value Manage-ment System)<br>4.质量管理             帕累托图<br>5.人力资源、沟通、风险和采购管理（软管理）<br>四、实践操作<br>4.1.项目使用场景<br>a.项目周期长<br>b.交付不及时<br>c.研发成不不可控<br>d.组织过程资产流失<br>e.质量控制不好<br>4.2推行办法<br>a.高层重视<br>b.PMO以支持式入手<br>c.合适的主管<br>4.3启动过程<br>a.立项报告<br>b.团队组建<br>4.4计划过程<br>a.工期实施计划<br>b.project 甘特图<br>c.风险控制——头脑风暴<br>d.精简制度（降低培训成本）<br>五、沟通策略<br>1.要什么（范围）——&gt; 2.什么样（质量）——&gt;3.何时要（时间）——&gt;4.那什么做（资源）——&gt;如何协调——&gt;注意什么（风险）</p>
+<p>总结：保持空杯心态，任务地方你都或多或少能学到知识，收获见识。</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://localhost:4000/2014/08/22/e8-ae-b0-e4-b8-80-e6-ac-a1-e9-a1-b9-e7-9b-ae-e7-ae-a1-e7-90-86-e5-9f-b9-e8-ae-ad/" data-id="ciqxk5qgf000n55wunv8swqvr" class="article-share-link" data-share="baidu" data-title="记一次项目管理培训">分享到</a>
+      
+
+      
+
+      
+    </footer>
+  </div>
+
+
+
+  
+</article>
+
+
+
+  
+    <article id="post-vsftpd-e7-9a-84-e5-ae-89-e8-a3-85-e5-92-8c-e9-85-8d-e7-bd-ae" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/08/14/vsftpd-e7-9a-84-e5-ae-89-e8-a3-85-e5-92-8c-e9-85-8d-e7-bd-ae/" class="article-date">
+  <time datetime="2014-08-14T07:07:00.000Z" itemprop="datePublished">2014-08-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/工作记录/">工作记录</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/08/14/vsftpd-e7-9a-84-e5-ae-89-e8-a3-85-e5-92-8c-e9-85-8d-e7-bd-ae/">vsftpd的安装和配置</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>apt-get install  vsftpd</p>
+<div></div><br><div>配置文件在  /etc/vsftpd.conf</div><br><div>默认是只开启匿名用户的，只能读不能写。</div><br><div>放开 它   local_enable=YES</div><br><div></div><br><div>cd /home</div><br><div>mkdir ftp</div><br><div>useradd -d /home/ftp ftpuser</div><br><div>passwd ftpuser  设置上密码</div><br><div>chown ftpuser:ftpuser ftp</div><br><div>chmod 755 ftp</div><br><div></div><br><div>如果是debian，如上应该可以了。</div><br><div>使用cmd  ftp 192.168.1.X</div><br><div>输入用户名密码</div><br><div>put someth.txt</div><br><div></div><br><div>如果是ubuntu的话</div><br><div></div><br><div>cd /etc</div><br><div>echo “ftpuser”  &gt;&gt; vsftpd.chroot_list</div><br><div></div><br><div><br><div>设置匿名账户的访问目录</div><br><div>anon_root=/home/ftp</div><br></div><br><div>然后/et<span style="font-family: 'Microsoft YaHei UI';">c/init.d/vsftpd restart</span></div>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://localhost:4000/2014/08/14/vsftpd-e7-9a-84-e5-ae-89-e8-a3-85-e5-92-8c-e9-85-8d-e7-bd-ae/" data-id="ciqxk5qic003555wuubpi67j6" class="article-share-link" data-share="baidu" data-title="vsftpd的安装和配置">分享到</a>
+      
+
+      
+
+      
+    </footer>
+  </div>
+
+
+
+  
+</article>
+
+
+
+  
+    <article id="post-jconsole-e8-bf-9c-e7-a8-8b-e8-bf-9e-e6-8e-a5-e8-bf-90-e8-a1-8c-e5-9c-a8linux-e4-b8-8a-e7-9a-84jmx-e6-9c-8d-e5-8a-a1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/07/02/jconsole-e8-bf-9c-e7-a8-8b-e8-bf-9e-e6-8e-a5-e8-bf-90-e8-a1-8c-e5-9c-a8linux-e4-b8-8a-e7-9a-84jmx-e6-9c-8d-e5-8a-a1/" class="article-date">
+  <time datetime="2014-07-02T15:36:27.000Z" itemprop="datePublished">2014-07-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/工作记录/">工作记录</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/07/02/jconsole-e8-bf-9c-e7-a8-8b-e8-bf-9e-e6-8e-a5-e8-bf-90-e8-a1-8c-e5-9c-a8linux-e4-b8-8a-e7-9a-84jmx-e6-9c-8d-e5-8a-a1/">Jconsole远程连接运行在linux上的JMX服务</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>JMX的bug尼玛 坑死我了<div>linux下 命令hostname -i查看获取当前服务器在网络上的标识。</div><div><br></div><div>vi /etc/hosts&nbsp;</div><div>192.168.1.4 &nbsp; localhost</div><div>127.0.0.1 &nbsp; &nbsp; &nbsp; localhost</div><div>真实IP一定要卸载前面</div><div><br></div><div><br></div><div></div></p>
+<div><!--WizRtf2Html Charset=0  --><span style="font-size:14pt;color:WindowText;font-family:'Consolas';">MBeanServer&nbsp;mBeanServer&nbsp;=&nbsp;ManagementFactory.<span style="font-style:italic;">getPlatformMBeanServer</span>();</span></div><br><div><span style="font-size:14pt;color:WindowText;font-family:'Consolas';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#3f7f5f;">//&nbsp;包名加&nbsp;类名&nbsp;创建一个ObjectName</span></span></div><br><div><span style="font-size:14pt;color:WindowText;font-family:'Consolas';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ObjectName&nbsp;engineName&nbsp;=&nbsp;<span style="font-weight:bold;color:#7f0055;">new</span>&nbsp;ObjectName(<span style="color:#2a00ff;">“cn.com.eightspace.mbp.jmx:type=DeviceIO”</span>);</span></div><br><div><span style="font-size:14pt;color:WindowText;font-family:'Consolas';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#3f7f5f;">//&nbsp;创建一个Engine实例</span></span></div><br><div><span style="font-size:14pt;color:WindowText;font-family:'Consolas';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DeviceIO&nbsp;engineMbean&nbsp;=&nbsp;<span style="font-weight:bold;color:#7f0055;">new</span>&nbsp;DeviceIO();</span></div><br><div><span style="font-size:14pt;color:WindowText;font-family:'Consolas';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.<span style="font-style:italic;color:#0000c0;">out</span>.println(<span style="color:#2a00ff;">“注册对象：”</span>&nbsp;+&nbsp;engineMbean);</span></div><br><div><span style="font-size:14pt;color:WindowText;font-family:'Consolas';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#3f7f5f;">//&nbsp;在MBean&nbsp;server上注册MBean</span></span></div><br><div><span style="font-size:14pt;color:WindowText;font-family:'Consolas';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mBeanServer.registerMBean(engineMbean,&nbsp;engineName);</span></div><br><div></div><br><div><span style="font-size:14pt;color:WindowText;font-family:'Consolas';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ObjectName&nbsp;adaptorName&nbsp;=&nbsp;<span style="font-weight:bold;color:#7f0055;">new</span>&nbsp;ObjectName(<span style="font-style:italic;color:#0000c0;">htmlname</span>);</span></div><br><div></div><br><div><span style="font-size:14pt;color:WindowText;font-family:'Consolas';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#3f7f5f;">//&nbsp;使用<span style="text-decoration:underline;">html</span>适配器，支持网页访问</span></span></div><br><div><span style="font-size:14pt;color:WindowText;font-family:'Consolas';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HtmlAdaptorServer&nbsp;adaptor&nbsp;=&nbsp;<span style="font-weight:bold;color:#7f0055;">new</span>&nbsp;HtmlAdaptorServer();</span></div><br><div><span style="font-size:14pt;color:WindowText;font-family:'Consolas';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mBeanServer.registerMBean(adaptor,&nbsp;adaptorName);</span></div><br><div><span style="font-size:14pt;color:WindowText;font-family:'Consolas';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;adaptor.setPort(<span style="font-style:italic;color:#0000c0;">port</span>);</span></div><br><span style="font-size:14pt;color:WindowText;font-family:'Consolas';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;adaptor.start();</span>&nbsp;<div><br></div><div><br></div><div><br></div><div><br></div><div>参数设置： &nbsp; -Dcom.sun.management.jmxremote.port=8888 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false&nbsp;<br></div>
+
+<div><a href="http://www.wiz.cn/i/f9706a63" title="来自为知笔记(Wiz)" target="_blank" rel="external">来自为知笔记(Wiz)</a></div>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://localhost:4000/2014/07/02/jconsole-e8-bf-9c-e7-a8-8b-e8-bf-9e-e6-8e-a5-e8-bf-90-e8-a1-8c-e5-9c-a8linux-e4-b8-8a-e7-9a-84jmx-e6-9c-8d-e5-8a-a1/" data-id="ciqxk5qgn000x55wu8t896exw" class="article-share-link" data-share="baidu" data-title="Jconsole远程连接运行在linux上的JMX服务">分享到</a>
+      
+
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jconsole/">jconsole</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jmx/">jmx</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+
+    </footer>
+  </div>
+
+
+
+  
+</article>
+
+
+
+  
+    <article id="post-e7-a7-a6-e5-b2-ad-e6-97-a0-e9-a2-86-e5-a4-84" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/06/19/e7-a7-a6-e5-b2-ad-e6-97-a0-e9-a2-86-e5-a4-84/" class="article-date">
+  <time datetime="2014-06-19T09:14:58.000Z" itemprop="datePublished">2014-06-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/生活点滴/">生活点滴</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/06/19/e7-a7-a6-e5-b2-ad-e6-97-a0-e9-a2-86-e5-a4-84/">秦岭无岭处</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>如果你是秦岭之巅的一滴雨，落到北边，就会流入黄河，经由东营入渤海；落到南边，就会流入长江，经由上海入东海。</p>
+<p>此次出差，从徽县出发，达到仇池古国——西和县，再辗转天水，最后回到徽县。沿途在秦岭西端山区穿梭，虽然没有巍峨的大山，但是区区几十公里的行程让你分分钟感觉南方和北方的差异，黄河流域和长江流域的不同。</p>
+<p>尤其是从天水回徽县的路上，八盘山隧道的北边，车子逆着水流方向行驶，从渭河到不知名的小溪，两边的小秃山明显的黄土地貌，让我不禁想起老家的千沟万壑。过了八盘山隧道，公路沿河而下，山上绿到发黑的的树林把地表裹得严严实实，偶尔有滑坡形成的流沙像一道道伤口。</p>
+<p>如果你是秦岭之巅的一滴雨，落到北边，就会流入黄河，经由东营入渤海；落到南边，就会流入长江，经由上海入东海。不同的命运，决定不同的生命历程。汇入黄河将见证北方的干旱，贫瘠；汇如长江将见证富饶、湿润。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://localhost:4000/2014/06/19/e7-a7-a6-e5-b2-ad-e6-97-a0-e9-a2-86-e5-a4-84/" data-id="ciqxk5qgj000r55wudf9830ne" class="article-share-link" data-share="baidu" data-title="秦岭无岭处">分享到</a>
+      
+
+      
+
+      
+    </footer>
+  </div>
+
+
+
+  
+</article>
+
+
+
+  
+    <article id="post-e6-88-91-e4-bc-9a-e9-87-87-e6-9b-b4-e5-a4-9a-e7-9a-84-e9-9b-8f-e8-8f-8a" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/06/16/e6-88-91-e4-bc-9a-e9-87-87-e6-9b-b4-e5-a4-9a-e7-9a-84-e9-9b-8f-e8-8f-8a/" class="article-date">
+  <time datetime="2014-06-16T08:58:29.000Z" itemprop="datePublished">2014-06-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/生活点滴/">生活点滴</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/06/16/e6-88-91-e4-bc-9a-e9-87-87-e6-9b-b4-e5-a4-9a-e7-9a-84-e9-9b-8f-e8-8f-8a/">我会采更多的雏菊（转）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>如果我能够从头活过，</p>
+<p>我会试着犯更多的错。</p>
+<p>我会放松一点，</p>
+<p>我会灵活一点。</p>
+<p>我会比这一趟过得傻。</p>
+<p>很少有什么事能让我当真。</p>
+<p>我会疯狂一点。</p>
+<p>我会很少讲究卫生，</p>
+<p>我会冒更多的险。</p>
+<p>我会更经常地旅游，</p>
+<p>我会爬更多的山，</p>
+<p>游更多的河，</p>
+<p>看更多的日落。</p>
+<p>我会吃更多冰淇淋，少吃豆子。</p>
+<p>我会惹更多麻烦，</p>
+<p>可是不在想象中担忧。</p>
+<p>你看，我小心翼翼地稳健地理智地活着，</p>
+<p>一个又一个小时，一天又一天。</p>
+<p>噢，我有过难忘的时刻，</p>
+<p>如果我能够重来一次，</p>
+<p>我会要更多这样的时刻。</p>
+<p>事实上，我不需要别的什么。</p>
+<p>仅仅是时刻，一个接着一个，</p>
+<p>而不是每天都操心着往后的漫长日子。</p>
+<p>我曾经不论到哪里去都不会忘记带上</p>
+<p>温度计、热水壶、漱口杯，雨衣和降落伞。</p>
+<p>如果我能够重来一次，</p>
+<p>我会到处走走，</p>
+<p>什么都试试，并且轻装上路。</p>
+<p>如果我能够从头活过，</p>
+<p>我会延长打赤脚的时光，</p>
+<p>从尽早的春天到尽晚的秋天。</p>
+<p>我会更经常地逃学，</p>
+<p>我不会考那么高的分数，</p>
+<p>除非是一不小心。</p>
+<p>我会多骑些旋转木马。</p>
+<p>我会采更多的雏菊。</p>
+<p>——纳丁·斯待尔，时年87岁</p>
+<p>最近再看《你的生命有什么可能》，中间关于生活、兴趣和价值观谈的非常有见地，特摘抄附诗以记之。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://localhost:4000/2014/06/16/e6-88-91-e4-bc-9a-e9-87-87-e6-9b-b4-e5-a4-9a-e7-9a-84-e9-9b-8f-e8-8f-8a/" data-id="ciqxk5qgc000k55wuxq1ulfbz" class="article-share-link" data-share="baidu" data-title="我会采更多的雏菊（转）">分享到</a>
+      
+
+      
+
+      
+    </footer>
+  </div>
+
+
+
+  
+</article>
+
+
+
+  
+    <article id="post-spring-e5-92-8cplay-framework-e6-95-b4-e5-90-88" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/05/14/spring-e5-92-8cplay-framework-e6-95-b4-e5-90-88/" class="article-date">
+  <time datetime="2014-05-14T13:50:58.000Z" itemprop="datePublished">2014-05-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/工作记录/">工作记录</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/05/14/spring-e5-92-8cplay-framework-e6-95-b4-e5-90-88/">Spring和play framework整合</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>play framework打破了web开发中容器的概念，默认支持RESTful，快速开发、部署，感觉不错。缺憾的是IOC得依靠其他框架支持，spring当之无愧啊，废话不说，上手操作。</p>
+<p>背景介绍：window平台，play2.2.3，Spring3.1，java语言</p>
+<p><strong>一、引入Spring容器</strong></p>
+<p>play快速入门请移步<a href="http://www.playframework.com/documentation/2.3.x/JavaTodoList" target="_blank" rel="external">http://www.playframework.com/documentation/2.3.x/JavaTodoList</a></p>
+<p>原始的play项目结构如下：</p>
+<p><div><img src="file:///C:\Users\Frank\AppData\Roaming\Tencent\Users\986737506\QQ\WinTemp\RichOle\%OH@{SGAT8DJ`FCU[SNPHBL.jpg" alt=""></div></p>
+<p><div><img src="file:///C:\Users\Frank\AppData\Roaming\Tencent\Users\986737506\QQ\WinTemp\RichOle\%OH@{SGAT8DJ`FCU[SNPHBL.jpg" alt=""></div></p>
+<p><div><img src="file:///C:\Users\Frank\AppData\Roaming\Tencent\Users\986737506\QQ\WinTemp\RichOle\%OH@{SGAT8DJ`FCU[SNPHBL.jpg" alt=""><a href="http://www.heartarea.net/wp-content/uploads/2014/05/QQ图片20140514205658.jpg" target="_blank" rel="external"><img src="http://www.heartarea.net/wp-content/uploads/2014/05/QQ图片20140514205658-262x300.jpg" alt="QQ图片20140514205658"></a></div></p>
+<p><div></div><br><br><br>创建Global类作为Spring容器的bootstrap，</p>
+<p>PS：类型必须是Global，且只能放到default package下，攻破技能尚未修炼。</p>
+<p>代码如下：</p>
+<p>import org.springframework.context.ApplicationContext;<br>import org.springframework.context.support.ClassPathXmlApplicationContext;</p>
+<p>import play.Application;<br>import play.GlobalSettings;</p>
+<p>public class Global extends GlobalSettings {<br>/**</p>
+<ul>
+<li>Spring容器<br>*/<br>private ApplicationContext context;</li>
+</ul>
+<p>@Override<br>public void onStart(Application arg0) {<br>//初始化Spring容器<br>context = new ClassPathXmlApplicationContext(“applicationContext.xml”);<br>}</p>
+<p>@Override<br>public &lt;A&gt; A getControllerInstance(Class&lt;A&gt; clazz) throws Exception {<br>//根据类型获取控制器<br>return context.getBean(clazz);<br>}</p>
+<p>}</p>
+<p><strong>二、Spring容器配置</strong></p>
+<p>我用的是注解配置，简单不述，代码如下：</p>
+<p><strong><em>Controller层：</em></strong></p>
+<p>package controllers.user;</p>
+<p>import javax.annotation.Resource;</p>
+<p>import play.Logger;<br>import play.data.DynamicForm;<br>import play.data.Form;<br>import play.libs.Json;<br>import play.mvc.Controller;<br>import play.mvc.Result;<br>import services.user.UserService;</p>
+<p>import com.fasterxml.jackson.databind.node.ObjectNode;</p>
+<p>@org.springframework.stereotype.Controller<br>public class UserController extends Controller {<br>@Resource(name = “userServiceImpl”)<br>private UserService userService;</p>
+<p>/**</p>
+<ul>
+<li>登陆&lt;p&gt;</li>
+<li>用户名和密码正确则跳转到index.html，否则返回给客户端json形式的结果。</li>
+<li>@return<br>*/<br>public Result login() {<br>try {<br>DynamicForm requestData = Form.form().bindFromRequest();<br>String username = requestData.get(“username”);<br>String password = requestData.get(“password”);<br>if (userService.check(username, password)) {<br>return redirect(“/index.html”);<br>} else {<br>ObjectNode result = Json.newObject();<br>result.put(“status”, “KO”);<br>result.put(“message”, “用户名或者密码错误”);<br>return ok(result);<br>}<br>} catch (Exception e) {<br>Logger.error(“登录失败”, e);<br>return badRequest();<br>}<br>}<br>}</li>
+</ul>
+<p><em><strong>Service层：</strong></em></p>
+<p>package services.user.impl;</p>
+<p>import org.springframework.stereotype.Service;</p>
+<p>import services.user.UserService;</p>
+<p>@Service(“userServiceImpl”)<br>public class UserServiceImpl implements UserService {<br>@Override<br>public boolean check(String username, String password) throws Exception {<br>return “admin”.equals(username) &amp;&amp; “111111”.equals(password);<br>}<br>}</p>
+<p><em><strong>routes配置：</strong></em></p>
+<h1 id="Home-page"><a href="#Home-page" class="headerlink" title="Home page"></a>Home page</h1><p>GET              /                                      @controllers.Application.index<br>POST           /user/login                       @controllers.user.UserController.login</p>
+<h1 id="Map-static-resources-from-the-public-folder-to-the-assets-URL-path"><a href="#Map-static-resources-from-the-public-folder-to-the-assets-URL-path" class="headerlink" title="Map static resources from the /public folder to the /assets URL path"></a>Map static resources from the /public folder to the /assets URL path</h1><p>GET             /*file                                 controllers.Assets.at(path=”/public”, file)</p>
+<p>三、访问请求</p>
+<p>登陆页面：</p>
+<p>&lt;html&gt;<br>&lt;head&gt;<br>&lt;meta http-equiv=”Content-Type” content=”text/html; charset=UTF-8”&gt;<br>&lt;title&gt;登陆页面&lt;/title&gt;<br>&lt;/head&gt;<br>&lt;body&gt;<br>&lt;div&gt;<br>&lt;form action=”/user/login” method=”post”&gt;<br>用户名：&lt;input type=”text” name=”username” /&gt;&lt;br/&gt;<br>密 码：&lt;input type=”password” name=”password” /&gt;&lt;br/&gt;<br>&lt;input type=”submit” name=”登录” /&gt;<br>&lt;/form&gt;<br>&lt;/div&gt;<br>&lt;/body&gt;<br>&lt;/html&gt;</p>
+<p>最后看下目录结构吧</p>
+<p><a href="http://www.heartarea.net/wp-content/uploads/2014/05/1.jpg" target="_blank" rel="external"><img src="http://www.heartarea.net/wp-content/uploads/2014/05/1-156x300.jpg" alt="1"></a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://localhost:4000/2014/05/14/spring-e5-92-8cplay-framework-e6-95-b4-e5-90-88/" data-id="ciqxk5qi6003355wusoc78ozo" class="article-share-link" data-share="baidu" data-title="Spring和play framework整合">分享到</a>
+      
+
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RESTful/">RESTful</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ioc/">ioc</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/playframework/">playframework</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spring/">spring</a></li></ul>
+
+    </footer>
+  </div>
+
+
+
+  
+</article>
+
+
+
+  
+    <article id="post-e4-bd-bf-e7-94-a8ant-e6-89-93-e5-8c-85-e5-ae-9e-e7-8e-b0-e7-89-88-e6-9c-ac-e6-8c-81-e7-bb-ad-e6-9b-b4-e6-96-b0" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/04/04/e4-bd-bf-e7-94-a8ant-e6-89-93-e5-8c-85-e5-ae-9e-e7-8e-b0-e7-89-88-e6-9c-ac-e6-8c-81-e7-bb-ad-e6-9b-b4-e6-96-b0/" class="article-date">
+  <time datetime="2014-04-04T08:48:35.000Z" itemprop="datePublished">2014-04-04</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/工作记录/">工作记录</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/04/04/e4-bd-bf-e7-94-a8ant-e6-89-93-e5-8c-85-e5-ae-9e-e7-8e-b0-e7-89-88-e6-9c-ac-e6-8c-81-e7-bb-ad-e6-9b-b4-e6-96-b0/">使用ant打包实现版本持续更新</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>背景介绍：代码仓库是小乌龟mercurial，因为目前开发的项目迭代频率要求较高，因此需要定时自动打包发布程序。</p>
+<p>一、在dynamic web project中添加ant build.xml，内容如下：</p>
+<p>&lt;?xml version=”1.0”?&gt;<br>&lt;project name=”round_server” default=”war” basedir=”.”&gt;<br>&lt;!– 申明常用变量 –&gt;<br>&lt;property name=”classes” value=”build/classes”/&gt;<br>&lt;property name=”build” value=”build”/&gt;<br>&lt;property name=”lib” value=”WebContent/WEB-INF/lib/“/&gt;<br>&lt;!– 定义编译时依赖包搜索路径 –&gt;<br>&lt;path id=”rlib”&gt;<br>&lt;fileset dir=”${lib}”&gt;<br>&lt;include name=”*.jar”/&gt;<br>&lt;/fileset&gt;<br>&lt;/path&gt;<br>&lt;!– 删除build路径–&gt;<br>&lt;target name=”clean”&gt;<br>&lt;delete dir=”build”/&gt;<br>&lt;/target&gt;</p>
+<p>&lt;!– 建立build/classes目录，并将java文件到build/classes路径下，注意指定编码格式，否则编译信息会乱码–&gt;<br>&lt;target name=”compile” depends=”clean”&gt;<br>&lt;mkdir dir=”${classes}”/&gt;<br>&lt;javac srcdir=”src” destdir=”${classes}” encoding=”UTF-8”&gt;<br>&lt;classpath refid=”rlib”&gt;&lt;/classpath&gt;<br>&lt;/javac&gt;<br>&lt;/target&gt;</p>
+<p>&lt;!– 拷贝配置文件，如log4j.properties,config.properties和db.properties等 –&gt;<br>&lt;target name=”copy” depends=”compile”&gt;<br>&lt;copy todir=”${classes}”&gt;<br>&lt;fileset dir=”resource”/&gt;<br>&lt;/copy&gt;<br>&lt;/target&gt;</p>
+<p>&lt;!– 打成war包–&gt;<br>&lt;target name=”war” depends=”copy”&gt;<br>&lt;war destfile=”${build}/round_server.war” webxml=”WebContent/WEB-INF/web.xml”&gt;<br>&lt;!– 拷贝WebContent下除了WEB-INF和META-INF的两个文件夹–&gt;<br>&lt;fileset dir=”WebContent” includes=”<em>*/</em>.jsp”/&gt;<br>&lt;!– 拷贝lib目录下的jar包–&gt;<br>&lt;lib dir=”${lib}”/&gt;<br>&lt;!– 拷贝build/classes下的class文件–&gt;<br>&lt;classes dir=”${classes}”/&gt;<br>&lt;/war&gt;<br>&lt;/target&gt;<br>&lt;/project&gt;</p>
+<p>备注：将所有第三方的jar统统放到WebConten/WEB_INFO/lib文件下，包括servlet-apI.jar</p>
+<p>二、下载并安装ant和hg</p>
+<p>服务器为debian，安装操作如下：</p>
+<p>安装ant</p>
+<p>apt-get install ant</p>
+<p>安装hg</p>
+<p>apt-get install mercurial</p>
+<p>三、克隆代码并使用ant编译打包</p>
+<p>cd /home/hg/repos</p>
+<p>hg clone <a href="http://ip:port//repos/round_server" target="_blank" rel="external">http://ip:port//repos/round_server</a></p>
+<p>cd round_server</p>
+<p>ant -f build.xml</p>
+<p>至此文件打包完成，根据第一步骤的配置，war文件被生成到build目录下，接下来将文件拷贝到tomcat下，重启服务器，一次打包成功完成。</p>
+<p>四、定时任务配置</p>
+<p>将上述命令变成脚本：</p>
+<p>vi deploy-round.sh</p>
+<p>cd /home/hg/repos/round_server</p>
+<p>hg update</p>
+<p>ant -f build.xml</p>
+<p>cp build/round_server.war /var/lib/tomcat/webapps/</p>
+<p>/etc/init.d/tomcat restart</p>
+<p>完成编辑，将文件编辑成可执行文件</p>
+<p>chmod 755 deploy-round.sh</p>
+<p>加入linux定时计划</p>
+<p>crontab -e</p>
+<p>键入 0 1 <em> </em> <em> </em> ?  /home/deploy-round.sh &gt; /dev/null</p>
+<p>保存退出</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://localhost:4000/2014/04/04/e4-bd-bf-e7-94-a8ant-e6-89-93-e5-8c-85-e5-ae-9e-e7-8e-b0-e7-89-88-e6-9c-ac-e6-8c-81-e7-bb-ad-e6-9b-b4-e6-96-b0/" data-id="ciqxk5qg7000f55wu9ynllri4" class="article-share-link" data-share="baidu" data-title="使用ant打包实现版本持续更新">分享到</a>
+      
+
+      
+
+      
+    </footer>
+  </div>
+
+
+
+  
+</article>
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+    </nav>
+  
+</section>
+      
+      <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/工作记录/">工作记录</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分类/">未分类</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活点滴/">生活点滴</a><span class="category-list-count">3</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Extjs/">Extjs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mybatis/">Mybatis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pool/">Pool</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RESTful/">RESTful</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/analyzing/">analyzing</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apache/">apache</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bamboo/">bamboo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c3po/">c3po</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dbcp/">dbcp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debian/">debian</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/enter/">enter</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gitlab/">gitlab</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/h5plus/">h5plus</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5/">html5</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ioc/">ioc</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jconsole/">jconsole</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jmx/">jmx</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kafka/">kafka</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven/">maven</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/openstack/">openstack</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/playframework/">playframework</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/playframwork/">playframwork</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sonar/">sonar</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/">spring</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/upload/">upload</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图片缓存/">图片缓存</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/大小控制/">大小控制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日构建/">日构建</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/格式限制/">格式限制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/连接池/">连接池</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">十一月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">八月 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">七月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">六月 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">五月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">四月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">三月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/02/">二月 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01/">一月 2013</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">近期文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/07/19/linux-timezone-time-update/">linux 修改时区并更新时间</a>
+          </li>
+        
+          <li>
+            <a href="/2016/03/17/maven-sonar-analyzing/">maven集成sonar代码分析</a>
+          </li>
+        
+          <li>
+            <a href="/2015/11/19/extjs-e6-96-87-e4-bb-b6-e4-b8-8a-e4-bc-a0-e6-a0-bc-e5-bc-8f-e5-a4-a7-e5-b0-8f-e9-99-90-e5-88-b6-2/">Extjs文件上传格式大小限制</a>
+          </li>
+        
+          <li>
+            <a href="/2015/11/19/docker-enter-backend-container/">docker-enter进入后台容器</a>
+          </li>
+        
+          <li>
+            <a href="/2015/11/19/e4-bd-bf-e7-94-a8-e8-b7-a8-e5-b9-b3-e5-8f-b0-e6-8a-80-e6-9c-afh5-e5-ae-9e-e7-8e-b0-e5-ba-94-e7-94-a8-e5-9b-be-e7-89-87-e6-9c-ac-e5-9c-b0-e7-bc-93-e5-ad-98/">使用跨平台技术h5+实现应用图片本地缓存</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">友情链接</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http:/www.google.com" target="_blank">谷歌</a>
+          </li>
+        
+          <li>
+            <a href="http://www.neunn.com" target="_blank">东网</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      
+    </div>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Frank Ting<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      .
+      Theme by <a href="https://github.com/xiangming/landscape-plus" target="_blank">Landscape-plus</a>
+    </div>
+  </div>
+</footer>
+  </div>
+  <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+  <!-- totop start -->
+<div id="totop">
+<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+</div>
+
+<!-- totop end -->
+
+<!-- 多说公共js代码 start -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"heartarea"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- 多说公共js代码 end -->
+
+
+<!-- 百度分享 start -->
+
+<div id="article-share-box" class="article-share-box">
+  <div id="bdshare" class="bdsharebuttonbox article-share-links">
+    <a class="article-share-weibo" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a class="article-share-weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a class="article-share-qq" data-cmd="sqq" title="分享到QQ"></a>
+    <a class="article-share-renren" data-cmd="renren" title="分享到人人网"></a>
+    <a class="article-share-more" data-cmd="more" title="更多"></a>
+  </div>
+</div>
+<script>
+  function SetShareData(cmd, config) {
+    if (shareDataTitle && shareDataUrl) {
+      config.bdText = shareDataTitle;
+      config.bdUrl = shareDataUrl;
+    }
+    return config;
+  }
+  window._bd_share_config={
+    "common":{onBeforeClick: SetShareData},
+    "share":{"bdCustomStyle":"/css/bdshare.css"}
+  };
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+<!-- 百度分享 end -->
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+</div>
+</body>
+</html>

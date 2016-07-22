@@ -1,0 +1,390 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Spring和play framework整合 | 程序员皮皮</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="play framework打破了web开发中容器的概念，默认支持RESTful，快速开发、部署，感觉不错。缺憾的是IOC得依靠其他框架支持，spring当之无愧啊，废话不说，上手操作。
+背景介绍：window平台，play2.2.3，Spring3.1，java语言
+一、引入Spring容器
+play快速入门请移步http://www.playframework.com/documentatio">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring和play framework整合">
+<meta property="og:url" content="http://localhost:4000/2014/05/14/spring-e5-92-8cplay-framework-e6-95-b4-e5-90-88/index.html">
+<meta property="og:site_name" content="程序员皮皮">
+<meta property="og:description" content="play framework打破了web开发中容器的概念，默认支持RESTful，快速开发、部署，感觉不错。缺憾的是IOC得依靠其他框架支持，spring当之无愧啊，废话不说，上手操作。
+背景介绍：window平台，play2.2.3，Spring3.1，java语言
+一、引入Spring容器
+play快速入门请移步http://www.playframework.com/documentatio">
+<meta property="og:image" content="http://localhost:4000/file:///C:\Users\Frank\AppData\Roaming\Tencent\Users\986737506\QQ\WinTemp\RichOle\%OH@{SGAT8DJ`FCU[SNPHBL.jpg">
+<meta property="og:image" content="http://localhost:4000/file:///C:\Users\Frank\AppData\Roaming\Tencent\Users\986737506\QQ\WinTemp\RichOle\%OH@{SGAT8DJ`FCU[SNPHBL.jpg">
+<meta property="og:image" content="http://localhost:4000/file:///C:\Users\Frank\AppData\Roaming\Tencent\Users\986737506\QQ\WinTemp\RichOle\%OH@{SGAT8DJ`FCU[SNPHBL.jpg">
+<meta property="og:image" content="http://www.heartarea.net/wp-content/uploads/2014/05/QQ图片20140514205658-262x300.jpg">
+<meta property="og:image" content="http://www.heartarea.net/wp-content/uploads/2014/05/1-156x300.jpg">
+<meta property="og:updated_time" content="2016-07-20T14:52:04.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Spring和play framework整合">
+<meta name="twitter:description" content="play framework打破了web开发中容器的概念，默认支持RESTful，快速开发、部署，感觉不错。缺憾的是IOC得依靠其他框架支持，spring当之无愧啊，废话不说，上手操作。
+背景介绍：window平台，play2.2.3，Spring3.1，java语言
+一、引入Spring容器
+play快速入门请移步http://www.playframework.com/documentatio">
+<meta name="twitter:image" content="http://localhost:4000/file:///C:\Users\Frank\AppData\Roaming\Tencent\Users\986737506\QQ\WinTemp\RichOle\%OH@{SGAT8DJ`FCU[SNPHBL.jpg">
+  
+    <link rel="alternative" href="/atom.xml" title="程序员皮皮" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+<div id="container">
+  <div id="wrap">
+    <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">程序员皮皮</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">打造高可用架构</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+          <input type="submit" value="" class="search-form-submit">
+          <input name=tn type=hidden value="bds">
+          <input name=cl type=hidden value="3">
+          <input name=ct type=hidden value="2097152">
+          <input type="hidden" name="si" value="localhost:4000">
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+    <div class="outer">
+      <section id="main"><article id="post-spring-e5-92-8cplay-framework-e6-95-b4-e5-90-88" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/05/14/spring-e5-92-8cplay-framework-e6-95-b4-e5-90-88/" class="article-date">
+  <time datetime="2014-05-14T13:50:58.000Z" itemprop="datePublished">2014-05-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/工作记录/">工作记录</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Spring和play framework整合
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>play framework打破了web开发中容器的概念，默认支持RESTful，快速开发、部署，感觉不错。缺憾的是IOC得依靠其他框架支持，spring当之无愧啊，废话不说，上手操作。</p>
+<p>背景介绍：window平台，play2.2.3，Spring3.1，java语言</p>
+<p><strong>一、引入Spring容器</strong></p>
+<p>play快速入门请移步<a href="http://www.playframework.com/documentation/2.3.x/JavaTodoList" target="_blank" rel="external">http://www.playframework.com/documentation/2.3.x/JavaTodoList</a></p>
+<p>原始的play项目结构如下：</p>
+<p><div><img src="file:///C:\Users\Frank\AppData\Roaming\Tencent\Users\986737506\QQ\WinTemp\RichOle\%OH@{SGAT8DJ`FCU[SNPHBL.jpg" alt=""></div></p>
+<p><div><img src="file:///C:\Users\Frank\AppData\Roaming\Tencent\Users\986737506\QQ\WinTemp\RichOle\%OH@{SGAT8DJ`FCU[SNPHBL.jpg" alt=""></div></p>
+<p><div><img src="file:///C:\Users\Frank\AppData\Roaming\Tencent\Users\986737506\QQ\WinTemp\RichOle\%OH@{SGAT8DJ`FCU[SNPHBL.jpg" alt=""><a href="http://www.heartarea.net/wp-content/uploads/2014/05/QQ图片20140514205658.jpg" target="_blank" rel="external"><img src="http://www.heartarea.net/wp-content/uploads/2014/05/QQ图片20140514205658-262x300.jpg" alt="QQ图片20140514205658"></a></div></p>
+<p><div></div><br><br><br>创建Global类作为Spring容器的bootstrap，</p>
+<p>PS：类型必须是Global，且只能放到default package下，攻破技能尚未修炼。</p>
+<p>代码如下：</p>
+<p>import org.springframework.context.ApplicationContext;<br>import org.springframework.context.support.ClassPathXmlApplicationContext;</p>
+<p>import play.Application;<br>import play.GlobalSettings;</p>
+<p>public class Global extends GlobalSettings {<br>/**</p>
+<ul>
+<li>Spring容器<br>*/<br>private ApplicationContext context;</li>
+</ul>
+<p>@Override<br>public void onStart(Application arg0) {<br>//初始化Spring容器<br>context = new ClassPathXmlApplicationContext(“applicationContext.xml”);<br>}</p>
+<p>@Override<br>public &lt;A&gt; A getControllerInstance(Class&lt;A&gt; clazz) throws Exception {<br>//根据类型获取控制器<br>return context.getBean(clazz);<br>}</p>
+<p>}</p>
+<p><strong>二、Spring容器配置</strong></p>
+<p>我用的是注解配置，简单不述，代码如下：</p>
+<p><strong><em>Controller层：</em></strong></p>
+<p>package controllers.user;</p>
+<p>import javax.annotation.Resource;</p>
+<p>import play.Logger;<br>import play.data.DynamicForm;<br>import play.data.Form;<br>import play.libs.Json;<br>import play.mvc.Controller;<br>import play.mvc.Result;<br>import services.user.UserService;</p>
+<p>import com.fasterxml.jackson.databind.node.ObjectNode;</p>
+<p>@org.springframework.stereotype.Controller<br>public class UserController extends Controller {<br>@Resource(name = “userServiceImpl”)<br>private UserService userService;</p>
+<p>/**</p>
+<ul>
+<li>登陆&lt;p&gt;</li>
+<li>用户名和密码正确则跳转到index.html，否则返回给客户端json形式的结果。</li>
+<li>@return<br>*/<br>public Result login() {<br>try {<br>DynamicForm requestData = Form.form().bindFromRequest();<br>String username = requestData.get(“username”);<br>String password = requestData.get(“password”);<br>if (userService.check(username, password)) {<br>return redirect(“/index.html”);<br>} else {<br>ObjectNode result = Json.newObject();<br>result.put(“status”, “KO”);<br>result.put(“message”, “用户名或者密码错误”);<br>return ok(result);<br>}<br>} catch (Exception e) {<br>Logger.error(“登录失败”, e);<br>return badRequest();<br>}<br>}<br>}</li>
+</ul>
+<p><em><strong>Service层：</strong></em></p>
+<p>package services.user.impl;</p>
+<p>import org.springframework.stereotype.Service;</p>
+<p>import services.user.UserService;</p>
+<p>@Service(“userServiceImpl”)<br>public class UserServiceImpl implements UserService {<br>@Override<br>public boolean check(String username, String password) throws Exception {<br>return “admin”.equals(username) &amp;&amp; “111111”.equals(password);<br>}<br>}</p>
+<p><em><strong>routes配置：</strong></em></p>
+<h1 id="Home-page"><a href="#Home-page" class="headerlink" title="Home page"></a>Home page</h1><p>GET              /                                      @controllers.Application.index<br>POST           /user/login                       @controllers.user.UserController.login</p>
+<h1 id="Map-static-resources-from-the-public-folder-to-the-assets-URL-path"><a href="#Map-static-resources-from-the-public-folder-to-the-assets-URL-path" class="headerlink" title="Map static resources from the /public folder to the /assets URL path"></a>Map static resources from the /public folder to the /assets URL path</h1><p>GET             /*file                                 controllers.Assets.at(path=”/public”, file)</p>
+<p>三、访问请求</p>
+<p>登陆页面：</p>
+<p>&lt;html&gt;<br>&lt;head&gt;<br>&lt;meta http-equiv=”Content-Type” content=”text/html; charset=UTF-8”&gt;<br>&lt;title&gt;登陆页面&lt;/title&gt;<br>&lt;/head&gt;<br>&lt;body&gt;<br>&lt;div&gt;<br>&lt;form action=”/user/login” method=”post”&gt;<br>用户名：&lt;input type=”text” name=”username” /&gt;&lt;br/&gt;<br>密 码：&lt;input type=”password” name=”password” /&gt;&lt;br/&gt;<br>&lt;input type=”submit” name=”登录” /&gt;<br>&lt;/form&gt;<br>&lt;/div&gt;<br>&lt;/body&gt;<br>&lt;/html&gt;</p>
+<p>最后看下目录结构吧</p>
+<p><a href="http://www.heartarea.net/wp-content/uploads/2014/05/1.jpg" target="_blank" rel="external"><img src="http://www.heartarea.net/wp-content/uploads/2014/05/1-156x300.jpg" alt="1"></a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://localhost:4000/2014/05/14/spring-e5-92-8cplay-framework-e6-95-b4-e5-90-88/" data-id="ciqxk5qi6003355wusoc78ozo" class="article-share-link" data-share="baidu" data-title="Spring和play framework整合">分享到</a>
+      
+
+      
+        <section id="comments">
+          <!-- 多说评论框 start -->
+          <div class="ds-thread" data-thread-key="post-spring-e5-92-8cplay-framework-e6-95-b4-e5-90-88" data-title="Spring和play framework整合" data-url="http://localhost:4000/2014/05/14/spring-e5-92-8cplay-framework-e6-95-b4-e5-90-88/"></div>
+          <!-- 多说评论框 end -->
+          <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+          <script type="text/javascript">
+          var duoshuoQuery = {short_name:'heartarea'};
+            (function() {
+              var ds = document.createElement('script');
+              ds.type = 'text/javascript';ds.async = true;
+              ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+              ds.charset = 'UTF-8';
+              (document.getElementsByTagName('head')[0] 
+               || document.getElementsByTagName('body')[0]).appendChild(ds);
+            })();
+            </script>
+          <!-- 多说公共JS代码 end -->
+        </section>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RESTful/">RESTful</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ioc/">ioc</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/playframework/">playframework</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spring/">spring</a></li></ul>
+
+    </footer>
+  </div>
+
+
+
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/06/16/e6-88-91-e4-bc-9a-e9-87-87-e6-9b-b4-e5-a4-9a-e7-9a-84-e9-9b-8f-e8-8f-8a/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">
+        
+          我会采更多的雏菊（转）
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/04/04/e4-bd-bf-e7-94-a8ant-e6-89-93-e5-8c-85-e5-ae-9e-e7-8e-b0-e7-89-88-e6-9c-ac-e6-8c-81-e7-bb-ad-e6-9b-b4-e6-96-b0/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">使用ant打包实现版本持续更新</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+      
+      <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/工作记录/">工作记录</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分类/">未分类</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活点滴/">生活点滴</a><span class="category-list-count">3</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Extjs/">Extjs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mybatis/">Mybatis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pool/">Pool</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RESTful/">RESTful</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/analyzing/">analyzing</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apache/">apache</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bamboo/">bamboo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c3po/">c3po</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dbcp/">dbcp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debian/">debian</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/enter/">enter</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gitlab/">gitlab</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/h5plus/">h5plus</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5/">html5</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ioc/">ioc</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jconsole/">jconsole</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jmx/">jmx</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kafka/">kafka</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven/">maven</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/openstack/">openstack</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/playframework/">playframework</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/playframwork/">playframwork</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sonar/">sonar</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/">spring</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/upload/">upload</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图片缓存/">图片缓存</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/大小控制/">大小控制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日构建/">日构建</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/格式限制/">格式限制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/连接池/">连接池</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">十一月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">八月 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">七月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">六月 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">五月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">四月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">三月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/02/">二月 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01/">一月 2013</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">近期文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/07/19/linux-timezone-time-update/">linux 修改时区并更新时间</a>
+          </li>
+        
+          <li>
+            <a href="/2016/03/17/maven-sonar-analyzing/">maven集成sonar代码分析</a>
+          </li>
+        
+          <li>
+            <a href="/2015/11/19/extjs-e6-96-87-e4-bb-b6-e4-b8-8a-e4-bc-a0-e6-a0-bc-e5-bc-8f-e5-a4-a7-e5-b0-8f-e9-99-90-e5-88-b6-2/">Extjs文件上传格式大小限制</a>
+          </li>
+        
+          <li>
+            <a href="/2015/11/19/docker-enter-backend-container/">docker-enter进入后台容器</a>
+          </li>
+        
+          <li>
+            <a href="/2015/11/19/e4-bd-bf-e7-94-a8-e8-b7-a8-e5-b9-b3-e5-8f-b0-e6-8a-80-e6-9c-afh5-e5-ae-9e-e7-8e-b0-e5-ba-94-e7-94-a8-e5-9b-be-e7-89-87-e6-9c-ac-e5-9c-b0-e7-bc-93-e5-ad-98/">使用跨平台技术h5+实现应用图片本地缓存</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">友情链接</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http:/www.google.com" target="_blank">谷歌</a>
+          </li>
+        
+          <li>
+            <a href="http://www.neunn.com" target="_blank">东网</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      
+    </div>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Frank Ting<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      .
+      Theme by <a href="https://github.com/xiangming/landscape-plus" target="_blank">Landscape-plus</a>
+    </div>
+  </div>
+</footer>
+  </div>
+  <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+  <!-- totop start -->
+<div id="totop">
+<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+</div>
+
+<!-- totop end -->
+
+<!-- 多说公共js代码 start -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"heartarea"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- 多说公共js代码 end -->
+
+
+<!-- 百度分享 start -->
+
+<div id="article-share-box" class="article-share-box">
+  <div id="bdshare" class="bdsharebuttonbox article-share-links">
+    <a class="article-share-weibo" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a class="article-share-weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a class="article-share-qq" data-cmd="sqq" title="分享到QQ"></a>
+    <a class="article-share-renren" data-cmd="renren" title="分享到人人网"></a>
+    <a class="article-share-more" data-cmd="more" title="更多"></a>
+  </div>
+</div>
+<script>
+  function SetShareData(cmd, config) {
+    if (shareDataTitle && shareDataUrl) {
+      config.bdText = shareDataTitle;
+      config.bdUrl = shareDataUrl;
+    }
+    return config;
+  }
+  window._bd_share_config={
+    "common":{onBeforeClick: SetShareData},
+    "share":{"bdCustomStyle":"/css/bdshare.css"}
+  };
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+<!-- 百度分享 end -->
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+</div>
+</body>
+</html>
