@@ -70,6 +70,341 @@
     <div class="outer">
       <section id="main">
   
+    <article id="post-OSX使用XQuartz远程连接Linux主机" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/07/28/OSX使用XQuartz远程连接Linux主机/" class="article-date">
+  <time datetime="2016-07-28T03:00:54.000Z" itemprop="datePublished">2016-07-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/28/OSX使用XQuartz远程连接Linux主机/">OSX使用XQuartz远程连接Linux主机</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p> OSX使用XQuartz远程连接Linux主机</p>
+<h2 id="安装XQuartz"><a href="#安装XQuartz" class="headerlink" title="安装XQuartz"></a>安装XQuartz</h2><ul>
+<li><a href="https://www.xquartz.org" target="_blank" rel="external">XQuartz官网</a>下载XQuartz</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">https://dl.bintray.com/xquartz/downloads/XQuartz-2.7.9.dmg</div></pre></td></tr></table></figure>
+<ul>
+<li>双击运行安装<br>安装完成默认放在工具文件夹里<br><img src="http://ww4.sinaimg.cn/large/68c294e5gw1f69fmlj2b7j20tj0dy413.jpg" alt=""></li>
+</ul>
+<hr>
+<h2 id="打开XQuartz链接服务器"><a href="#打开XQuartz链接服务器" class="headerlink" title="打开XQuartz链接服务器"></a>打开XQuartz链接服务器</h2><ul>
+<li>打开XQuartz终端<br><img src="http://ww3.sinaimg.cn/large/68c294e5gw1f69fpj9khdj209r03dgly.jpg" alt=""></li>
+<li>连接服务器<br><img src="http://ww1.sinaimg.cn/large/68c294e5gw1f69frjr3vjj20cw040weu.jpg" alt=""></li>
+<li>直行命令打开窗口<br><img src="http://ww1.sinaimg.cn/large/68c294e5gw1f69fzfu4u1j20j70hpjts.jpg" alt=""><br>大功告成!!!</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://localhost:4000/2016/07/28/OSX使用XQuartz远程连接Linux主机/" data-id="cir5qosu00000ykwuw31j96my" class="article-share-link" data-share="baidu" data-title="OSX使用XQuartz远程连接Linux主机">分享到</a>
+      
+
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OSX/">OSX</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/XQuartz/">XQuartz</a></li></ul>
+
+    </footer>
+  </div>
+
+
+
+  
+</article>
+
+
+
+  
+    <article id="post-web-develop-architecture" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/07/25/web-develop-architecture/" class="article-date">
+  <time datetime="2016-07-25T07:20:10.000Z" itemprop="datePublished">2016-07-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/25/web-develop-architecture/">web-develop-architecture</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h1><h2 id="前端框架"><a href="#前端框架" class="headerlink" title="前端框架"></a>前端框架</h2><pre><code>- jQuery1.9，因为jQuery2.0起摒弃IE6～8，1.9的版本是稳定版中比较活跃的一个版本。
+</code></pre><h2 id="Spring4-0-0"><a href="#Spring4-0-0" class="headerlink" title="Spring4.0.0"></a>Spring4.0.0</h2><pre><code>- 4.0发布于2013年12月发布，较之Spring3系的版本增强了对RESTful的支持，支持servlet3.0。
+</code></pre><h2 id="Mybatis3-2"><a href="#Mybatis3-2" class="headerlink" title="Mybatis3.2"></a>Mybatis3.2</h2><pre><code>- sql操作松散结合，可操作性强。3.2最大的特点就是各种支持插件，已下载涌现出来诸如mapper、pager等等三方插件，避免重复造轮子。
+</code></pre><h2 id="PostgreSQL9-3"><a href="#PostgreSQL9-3" class="headerlink" title="PostgreSQL9.3"></a>PostgreSQL9.3</h2><pre><code>- 虽然9.4的JSONB很不错，9.5的upset也不错，但是考虑到数据的重要性，数据库暂时采用保守9.3版本。
+</code></pre><h2 id="redis2-8"><a href="#redis2-8" class="headerlink" title="redis2.8"></a>redis2.8</h2><pre><code>- 较之memcached，多数据类型支持很好地解决我们目前的问题，2.8版本相对稳定。
+</code></pre><h2 id="MongoDB-2-6"><a href="#MongoDB-2-6" class="headerlink" title="MongoDB 2.6"></a>MongoDB 2.6</h2><pre><code>- MongoDB 2.6是迄今为止改进最大的版本，优化查询引擎、引入索引交集和安全性增强等。
+</code></pre><h2 id="Tomcat7"><a href="#Tomcat7" class="headerlink" title="Tomcat7"></a>Tomcat7</h2><pre><code>- 支持Servlet 3.0，异步日志。主要还是使用者居多，外加我们对tomcat有相对的丰富的经验。
+</code></pre><h2 id="other"><a href="#other" class="headerlink" title="other"></a>other</h2><pre><code>- jdk1.7，mvn3.5, log4j1.2, google code style(wiki://技术管理/技术类规范/JAVA代码规范),  neunn-template(wiki://技术管理/技术类规范/java-neunn-template)
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://localhost:4000/2016/07/25/web-develop-architecture/" data-id="cir5qoswu0026ykwufh0ium86" class="article-share-link" data-share="baidu" data-title="web-develop-architecture">分享到</a>
+      
+
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/architecture/">architecture</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
+
+    </footer>
+  </div>
+
+
+
+  
+</article>
+
+
+
+  
+    <article id="post-kafka-vs-rabbitmq" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/07/25/kafka-vs-rabbitmq/" class="article-date">
+  <time datetime="2016-07-25T07:18:22.000Z" itemprop="datePublished">2016-07-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/25/kafka-vs-rabbitmq/">kafka-vs-rabbitmq</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <table>
+<thead>
+<tr>
+<th>对比项</th>
+<th>kafka</th>
+<th>rabbitmq</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>架构</td>
+<td>kafka遵从一般的MQ结构，producer，broker，consumer，以consumer为中心，消息的消费信息保存的客户端consumer上，consumer根据消费的点，从broker上批量pull数据；无消息确认机制。</td>
+<td>RabbitMQ遵循AMQP协议，RabbitMQ的broker由Exchange,Binding,queue组成，其中exchange和binding组成了消息的路由键；客户端Producer通过连接channel和server进行通信，Consumer从queue获取消息进行消费（长连接，queue有消息会推送到consumer端，consumer循环从输入流读取数据）。rabbitMQ以broker为中心；有消息的确认机制。</td>
+</tr>
+<tr>
+<td>可靠性</td>
+<td>消息默认磁盘持久化，可以制定多副本，消息消费不会删除</td>
+<td>消息持久化, 消息接收、发送确认, 高可用集群</td>
+</tr>
+<tr>
+<td>吞吐能力</td>
+<td>intel Xeon 2.5 GHz processor with six cores<br>Six 7200 RPM SATA drives<br>32GB of RAM<br>1Gb Ethernet<br>一个消息生产端，无备份，每秒消息数821557条，传输量78m/s。</td>
+<td>单节点传输速度8745msg/s，传输量10m/s</td>
+</tr>
+<tr>
+<td>集群</td>
+<td>kafka采用zookeeper对集群中的broker、consumer进行管理，可以注册topic到zookeeper上；通过zookeeper的协调机制，producer保存对应topic的broker信息，可以随机或者轮询发送到broker上；并且producer可以基于语义指定分片，消息发送到broker的某分片上</td>
+<td>rabbitMQ的负载均衡需要单独的loadbalancer进行支持。</td>
+</tr>
+<tr>
+<td>消息隔离性</td>
+<td>通过acl控制topic访问</td>
+<td>基于vhost做消息隔离，用户对queues,exchanges,channels等权限独立</td>
+</tr>
+<tr>
+<td>监控</td>
+<td>三方kafka-manager提供，详见下方提供的管理页面</td>
+<td>自身集成rabbitmq-management</td>
+</tr>
+</tbody>
+</table>
+<p><a href="http://103.39.107.171:55672" target="_blank" rel="external">rabbitmq管理页面</a><br>username:guest<br>password:guest<br><a href="http://103.39.107.171:9000" target="_blank" rel="external">kafka管理页面</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://localhost:4000/2016/07/25/kafka-vs-rabbitmq/" data-id="cir5qosw4001bykwu8geip83f" class="article-share-link" data-share="baidu" data-title="kafka-vs-rabbitmq">分享到</a>
+      
+
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/kafka/">kafka</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/rabbitmq/">rabbitmq</a></li></ul>
+
+    </footer>
+  </div>
+
+
+
+  
+</article>
+
+
+
+  
+    <article id="post-rabitmq-manual" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/07/25/rabitmq-manual/" class="article-date">
+  <time datetime="2016-07-25T07:11:13.000Z" itemprop="datePublished">2016-07-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/25/rabitmq-manual/">rabitmq-manual</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>一、    概述<br>rabbitmq作为消息队列服务，主要用以消息接受、存储和转发。我们可以简单理解为邮件服务系统，所以涉及到的主要交互终端包括发件人和收件人，在rabbitmq中被称为消息生产者(producer)和消息消费者(consumer)。下文我们主要描述如何使用最简单的Java程序与rabbitmq server进行消息交互。<br>二、    管理页面设置<br>a)    新增vHost</p>
+<p>b)    添加用户</p>
+<p>c)    设置用户vHost权限</p>
+<p>三、    环境准备</p>
+<ol>
+<li>jdk1.6以上</li>
+<li>依赖jar包</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;dependencies&gt;</div><div class="line">        &lt;dependency&gt;</div><div class="line">		  &lt;groupId&gt;com.rabbitmq&lt;/groupId&gt;</div><div class="line">		  &lt;artifactId&gt;amqp-client&lt;/artifactId&gt;</div><div class="line">		  &lt;version&gt;3.6.3&lt;/version&gt;</div><div class="line">	&lt;/dependency&gt; </div><div class="line">&lt;/dependencies&gt;</div></pre></td></tr></table></figure>
+<ol>
+<li>rabbitmq server 2.8以上</li>
+</ol>
+<p>四、    发送端<br>代码中诸如vhost, username, password以及用户和vhost之间的权限关系都是在rabbitmq management 的web页面中设置的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">ConnectionFactory factory = new ConnectionFactory();</div><div class="line">//指定rabbitmq服务器地址，默认端口5672</div><div class="line">factory.setHost(&quot;103.39.107.171&quot;);</div><div class="line">//rabbitmq将队列、交换策略，绑定关系等抽象成Vhost，此处需要指定</div><div class="line">factory.setVirtualHost(&quot;chaoyang&quot;);</div><div class="line">//指定连接使用的用户名</div><div class="line">factory.setUsername(&quot;chaoyanguser&quot;);</div><div class="line">//指定连接使用的密码</div><div class="line">factory.setPassword(&quot;111111&quot;);</div><div class="line">//队列名称，就是要指定消息放到哪个通道里</div><div class="line">String queueName = &quot;chaoyang_queue&quot;;</div><div class="line">//创建tcp连接</div><div class="line">Connection connection = factory.newConnection();</div><div class="line">//打开连接通道</div><div class="line">Channel channel = connection.createChannel();</div><div class="line">//申明一个队列</div><div class="line">channel.queueDeclare(queueName, false, false, false, null);</div><div class="line">String message = &quot;I hate it&quot;;</div><div class="line">//发送消息</div><div class="line">channel.basicPublish(&quot;&quot;, queueName, null, message.getBytes());</div><div class="line">System.out.println(&quot; [x] Sent &apos;&quot; + message + &quot;&apos;&quot;);</div><div class="line">//关闭别忘以上各种对象</div></pre></td></tr></table></figure>
+<p>五、    接受端<br>代码中诸如vhost, username, password以及用户和vhost之间的权限关系都是在rabbitmq management 的web页面中设置的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">ConnectionFactory factory = new ConnectionFactory();</div><div class="line">//指定rabbitmq服务器地址，默认端口5672</div><div class="line">factory.setHost(&quot;103.39.107.171&quot;);</div><div class="line">//rabbitmq将队列、交换策略，绑定关系等抽象成Vhost，此处需要指定</div><div class="line">factory.setVirtualHost(&quot;chaoyang&quot;);</div><div class="line">//指定连接使用的用户名</div><div class="line">factory.setUsername(&quot;chaoyanguser&quot;);</div><div class="line">//指定连接使用的密码</div><div class="line">factory.setPassword(&quot;111111&quot;);</div><div class="line">//队列名称，就是要指定消息放到哪个通道里</div><div class="line">String queueName = &quot;chaoyang_queue&quot;;</div><div class="line">//创建tcp连接</div><div class="line">Connection connection = factory.newConnection();</div><div class="line">//打开连接通道</div><div class="line">Channel channel = connection.createChannel();</div><div class="line">//申明一个队列</div><div class="line">channel.queueDeclare(queueName, false, false, false, null);</div><div class="line">//定义一个消息消费者对象</div><div class="line">QueueingConsumer consumer = new QueueingConsumer(channel);</div><div class="line">//指定要接收消息的通道</div><div class="line">channel.basicConsume(queueName, false, consumer);</div><div class="line">//阻塞式消息收取</div><div class="line">while (true) &#123;</div><div class="line">    QueueingConsumer.Delivery delivery = consumer.nextDelivery();</div><div class="line">    String message = new String(delivery.getBody());</div><div class="line">    channel.basicAck(delivery.getEnvelope().getDeliveryTag(), false);</div><div class="line">    System.out.println(&quot; [x] Received &apos;&quot; + message + &quot;&apos;&quot;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://localhost:4000/2016/07/25/rabitmq-manual/" data-id="cir5qoswp0020ykwu7wxgi2hi" class="article-share-link" data-share="baidu" data-title="rabitmq-manual">分享到</a>
+      
+
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/rabbitmq/">rabbitmq</a></li></ul>
+
+    </footer>
+  </div>
+
+
+
+  
+</article>
+
+
+
+  
+    <article id="post-java-interview" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/07/25/java-interview/" class="article-date">
+  <time datetime="2016-07-25T07:07:10.000Z" itemprop="datePublished">2016-07-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/25/java-interview/">java-interview</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="概括的解释下线程的几种可用状态。"><a href="#概括的解释下线程的几种可用状态。" class="headerlink" title="概括的解释下线程的几种可用状态。"></a>概括的解释下线程的几种可用状态。</h2><p>线程在执行过程中，可以处于下面几种状态：</p>
+<p>就绪(Runnable):线程准备运行，不一定立马就能开始执行。</p>
+<p>运行中(Running)：进程正在执行线程的代码。</p>
+<p>等待中(Waiting):线程处于阻塞的状态，等待外部的处理结束。</p>
+<p>睡眠中(Sleeping)：线程被强制睡眠。</p>
+<p>I/O阻塞(Blocked on I/O)：等待I/O操作完成。</p>
+<p>同步阻塞(Blocked on Synchronization)：等待获取锁。</p>
+<p>死亡(Dead)：线程完成了执行。</p>
+<h2 id="同步方法和同步代码块的区别是什么？"><a href="#同步方法和同步代码块的区别是什么？" class="headerlink" title="同步方法和同步代码块的区别是什么？"></a>同步方法和同步代码块的区别是什么？</h2><p>在Java语言中，每一个对象有一把锁。线程可以使用synchronized关键字来获取对象上的锁。synchronized关键字可应用在方法级别(粗粒度锁)或者是代码块级别(细粒度锁)。</p>
+<p>15.在监视器(Monitor)内部，是如何做线程同步的？程序应该做哪种级别的同步？</p>
+<p>监视器和锁在Java虚拟机中是一块使用的。监视器监视一块同步代码块，确保一次只有一个线程执行同步代码块。每一个监视器都和一个对象引用相关联。线程在获取锁之前不允许执行同步代码。</p>
+<h2 id="Java中的HashMap的工作原理是什么？"><a href="#Java中的HashMap的工作原理是什么？" class="headerlink" title="Java中的HashMap的工作原理是什么？"></a>Java中的HashMap的工作原理是什么？</h2><p>Java中的HashMap是以键值对(key-value)的形式存储元素的。HashMap需要一个hash函数，它使用hashCode()和equals()方法来向集合/从集合添加和检索元素。当调用put()方法的时候，HashMap会计算key的hash值，然后把键值对存储在集合中合适的索引上。如果key已经存在了，value会被更新成新值。HashMap的一些重要的特性是它的容量(capacity)，负载因子(load factor)和扩容极限(threshold resizing)。</p>
+<h2 id="简述JVM内存模型和垃圾回收机制"><a href="#简述JVM内存模型和垃圾回收机制" class="headerlink" title="简述JVM内存模型和垃圾回收机制"></a>简述JVM内存模型和垃圾回收机制</h2><h2 id="java中有几种方法可以实现一个线程？"><a href="#java中有几种方法可以实现一个线程？" class="headerlink" title="java中有几种方法可以实现一个线程？"></a>java中有几种方法可以实现一个线程？</h2><p>可以使用Runnable，Callable，Thread或者线程池</p>
+<h2 id="java如何实现多线程之间的通讯和协作？"><a href="#java如何实现多线程之间的通讯和协作？" class="headerlink" title="java如何实现多线程之间的通讯和协作？"></a>java如何实现多线程之间的通讯和协作？</h2><p>同步和互斥，资源互斥、协调竞争是要解决的因，同步是竞争协调的果。可以使用synchnized/notify/notifyAll以及Lock/Condition, CyclicBarrier/Semaphore/Countdownbatch。线程的join以及Future/FutureTask是为了解决多线程计算后的结果统计</p>
+<h2 id="如何合理的配置java线程池？如CPU密集型的任务，基本线程池应该配置多大？IO密集型的任务，基本线程池应该配置多大？用有界队列好还是无界队列好？任务非常多的时候，使用什么阻塞队列能获取最好的吞吐量？"><a href="#如何合理的配置java线程池？如CPU密集型的任务，基本线程池应该配置多大？IO密集型的任务，基本线程池应该配置多大？用有界队列好还是无界队列好？任务非常多的时候，使用什么阻塞队列能获取最好的吞吐量？" class="headerlink" title="如何合理的配置java线程池？如CPU密集型的任务，基本线程池应该配置多大？IO密集型的任务，基本线程池应该配置多大？用有界队列好还是无界队列好？任务非常多的时候，使用什么阻塞队列能获取最好的吞吐量？"></a>如何合理的配置java线程池？如CPU密集型的任务，基本线程池应该配置多大？IO密集型的任务，基本线程池应该配置多大？用有界队列好还是无界队列好？任务非常多的时候，使用什么阻塞队列能获取最好的吞吐量？</h2><h2 id="浅谈java的io和nio"><a href="#浅谈java的io和nio" class="headerlink" title="浅谈java的io和nio"></a>浅谈java的io和nio</h2><h2 id="解释AOP模块"><a href="#解释AOP模块" class="headerlink" title="解释AOP模块"></a>解释AOP模块</h2><p>AOP模块用于发给我们的Spring应用做面向切面的开发， 很多支持由AOP联盟提供，这样就确保了Spring和其他AOP框架的共通性。这个模块将元数据编程引入Spring。</p>
+<h2 id="关于标准的JDK库中使用的一些设计模式"><a href="#关于标准的JDK库中使用的一些设计模式" class="headerlink" title="关于标准的JDK库中使用的一些设计模式"></a>关于标准的JDK库中使用的一些设计模式</h2><p>Decorator设计模式常被用于各种Java IO类中<br>Singleton模式常被用在运行环节中，Calendar以及各种其他类<br>Factory（工厂）模式常被用于各种不可变类，比如Boolean。Boolean.valueOf<br>Observer模式常被用于Swing和许多事件监听器框架中。</p>
+<h2 id="解释Spring支持的几种bean的作用域。"><a href="#解释Spring支持的几种bean的作用域。" class="headerlink" title="解释Spring支持的几种bean的作用域。"></a>解释Spring支持的几种bean的作用域。</h2><p>Spring框架支持以下五种bean的作用域：</p>
+<p>singleton : bean在每个Spring ioc 容器中只有一个实例。<br>prototype：一个bean的定义可以有多个实例。<br>request：每次http请求都会创建一个bean，该作用域仅在基于web的Spring ApplicationContext情形下有效。<br>session：在一个HTTP Session中，一个bean定义对应一个实例。该作用域仅在基于web的Spring ApplicationContext情形下有效。<br>global-session：在一个全局的HTTP Session中，一个bean定义对应一个实例。该作用域仅在基于web的Spring ApplicationContext情形下有效。<br>缺省的Spring bean 的作用域是Singleton.</p>
+<h2 id="解释Spring框架中bean的生命周期。"><a href="#解释Spring框架中bean的生命周期。" class="headerlink" title="解释Spring框架中bean的生命周期。"></a>解释Spring框架中bean的生命周期。</h2><p>Spring容器 从XML 文件中读取bean的定义，并实例化bean。<br>Spring根据bean的定义填充所有的属性。<br>如果bean实现了BeanNameAware 接口，Spring 传递bean 的ID 到 setBeanName方法。<br>如果Bean 实现了 BeanFactoryAware 接口， Spring传递beanfactory 给setBeanFactory 方法。<br>如果有任何与bean相关联的BeanPostProcessors，Spring会在postProcesserBeforeInitialization()方法内调用它们。<br>如果bean实现IntializingBean了，调用它的afterPropertySet方法，如果bean声明了初始化方法，调用此初始化方法。<br>如果有BeanPostProcessors 和bean 关联，这些bean的postProcessAfterInitialization() 方法将被调用。<br>如果bean实现了 DisposableBean，它将调用destroy()方法。</p>
+<h2 id="有哪些不同类型的IOC（依赖注入）方式？"><a href="#有哪些不同类型的IOC（依赖注入）方式？" class="headerlink" title="有哪些不同类型的IOC（依赖注入）方式？"></a>有哪些不同类型的IOC（依赖注入）方式？</h2><p>构造器依赖注入：构造器依赖注入通过容器触发一个类的构造器来实现的，该类有一系列参数，每个参数代表一个对其他类的依赖。<br>Setter方法注入：Setter方法注入是容器通过调用无参构造器或无参static工厂 方法实例化bean之后，调用该bean的setter方法，即实现了基于setter的依赖注入。</p>
+<h2 id="nosql数据库有哪些类型，举例"><a href="#nosql数据库有哪些类型，举例" class="headerlink" title="nosql数据库有哪些类型，举例"></a>nosql数据库有哪些类型，举例</h2><p>键值 redis memcache<br>列存储 hbase cassandra<br>文档 mongodb</p>
+<h2 id="redis的持久话方式和各自特点"><a href="#redis的持久话方式和各自特点" class="headerlink" title="redis的持久话方式和各自特点"></a>redis的持久话方式和各自特点</h2><p>aof  rdb</p>
+<h2 id="redis集群原理"><a href="#redis集群原理" class="headerlink" title="redis集群原理"></a>redis集群原理</h2><p>Hash分片盒数据交换</p>
+<h2 id="redis的使用场景"><a href="#redis的使用场景" class="headerlink" title="redis的使用场景"></a>redis的使用场景</h2><h2 id="mongo适用场景："><a href="#mongo适用场景：" class="headerlink" title="mongo适用场景："></a>mongo适用场景：</h2><p>网站数据：Mongo非常适合实时的插入，更新与查询，并具备网站实时数据存储所需的复制及高度伸缩性。<br>缓存：由于性能很高，Mongo也适合作为信息基础设施的缓存层。在系统重启之后，由Mongo搭建的持久化缓存层可以避免下层的数据源 过载。<br>大尺寸，低价值的数据：使用传统的关系型数据库存储一些数据时可能会比较昂贵，在此之前，很多时候程序员往往会选择传统的文件进行存储。<br>高伸缩性的场景：Mongo非常适合由数十或数百台服务器组成的数据库。Mongo的路线图中已经包含对MapReduce引擎的内置支持。<br>用于对象及JSON数据的存储：Mongo的BSON数据格式非常适合文档化格式的存储及查询。</p>
+<h2 id="分片-sharding-和复制-replication-是怎样工作的"><a href="#分片-sharding-和复制-replication-是怎样工作的" class="headerlink" title="分片(sharding)和复制(replication)是怎样工作的?"></a>分片(sharding)和复制(replication)是怎样工作的?</h2><p>每一个分片(shard)是一个分区数据的逻辑集合。分片可能由单一服务器或者集群组成，我们推荐为每一个分片(shard)使用集群。</p>
+<h2 id="集群和分布式的区别"><a href="#集群和分布式的区别" class="headerlink" title="集群和分布式的区别"></a>集群和分布式的区别</h2>
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://localhost:4000/2016/07/25/java-interview/" data-id="cir5qosvq0011ykwucol1wltt" class="article-share-link" data-share="baidu" data-title="java-interview">分享到</a>
+      
+
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
+
+    </footer>
+  </div>
+
+
+
+  
+</article>
+
+
+
+  
     <article id="post-linux-timezone-time-update" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/07/19/linux-timezone-time-update/" class="article-date">
@@ -108,7 +443,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://localhost:4000/2016/07/19/linux-timezone-time-update/" data-id="ciqxk5qgu001555wupz87aywm" class="article-share-link" data-share="baidu" data-title="linux 修改时区并更新时间">分享到</a>
+        <a data-url="http://localhost:4000/2016/07/19/linux-timezone-time-update/" data-id="cir5qosw9001hykwuoc2645lf" class="article-share-link" data-share="baidu" data-title="linux 修改时区并更新时间">分享到</a>
       
 
       
@@ -233,7 +568,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://localhost:4000/2016/03/17/maven-sonar-analyzing/" data-id="ciqxk5qh2001955wu07rpsznm" class="article-share-link" data-share="baidu" data-title="maven集成sonar代码分析">分享到</a>
+        <a data-url="http://localhost:4000/2016/03/17/maven-sonar-analyzing/" data-id="cir5qoswm001tykwunz1tq6u7" class="article-share-link" data-share="baidu" data-title="maven集成sonar代码分析">分享到</a>
       
 
       
@@ -285,7 +620,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://localhost:4000/2015/11/19/extjs-e6-96-87-e4-bb-b6-e4-b8-8a-e4-bc-a0-e6-a0-bc-e5-bc-8f-e5-a4-a7-e5-b0-8f-e9-99-90-e5-88-b6-2/" data-id="ciqxk5qgz001755wu41sugo8e" class="article-share-link" data-share="baidu" data-title="Extjs文件上传格式大小限制">分享到</a>
+        <a data-url="http://localhost:4000/2015/11/19/extjs-e6-96-87-e4-bb-b6-e4-b8-8a-e4-bc-a0-e6-a0-bc-e5-bc-8f-e5-a4-a7-e5-b0-8f-e9-99-90-e5-88-b6-2/" data-id="cir5qosvl000yykwugnps1fbk" class="article-share-link" data-share="baidu" data-title="Extjs文件上传格式大小限制">分享到</a>
       
 
       
@@ -339,7 +674,7 @@ $ echo &quot;[ -f ~/.bashrc_docker ] &amp;amp;&amp;amp; . ~/.bashrc_docker&quot;
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://localhost:4000/2015/11/19/docker-enter-backend-container/" data-id="ciqxk5qfq000455wuwv42pb8w" class="article-share-link" data-share="baidu" data-title="docker-enter进入后台容器">分享到</a>
+        <a data-url="http://localhost:4000/2015/11/19/docker-enter-backend-container/" data-id="cir5qosur0008ykwu75kesoij" class="article-share-link" data-share="baidu" data-title="docker-enter进入后台容器">分享到</a>
       
 
       
@@ -390,7 +725,7 @@ $ echo &quot;[ -f ~/.bashrc_docker ] &amp;amp;&amp;amp; . ~/.bashrc_docker&quot;
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://localhost:4000/2015/11/19/e4-bd-bf-e7-94-a8-e8-b7-a8-e5-b9-b3-e5-8f-b0-e6-8a-80-e6-9c-afh5-e5-ae-9e-e7-8e-b0-e5-ba-94-e7-94-a8-e5-9b-be-e7-89-87-e6-9c-ac-e5-9c-b0-e7-bc-93-e5-ad-98/" data-id="ciqxk5qg3000d55wuofrzprig" class="article-share-link" data-share="baidu" data-title="使用跨平台技术h5+实现应用图片本地缓存">分享到</a>
+        <a data-url="http://localhost:4000/2015/11/19/e4-bd-bf-e7-94-a8-e8-b7-a8-e5-b9-b3-e5-8f-b0-e6-8a-80-e6-9c-afh5-e5-ae-9e-e7-8e-b0-e5-ba-94-e7-94-a8-e5-9b-be-e7-89-87-e6-9c-ac-e5-9c-b0-e7-bc-93-e5-ad-98/" data-id="cir5qosva000kykwukp1y27b2" class="article-share-link" data-share="baidu" data-title="使用跨平台技术h5+实现应用图片本地缓存">分享到</a>
       
 
       
@@ -398,897 +733,6 @@ $ echo &quot;[ -f ~/.bashrc_docker ] &amp;amp;&amp;amp; . ~/.bashrc_docker&quot;
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/h5plus/">h5plus</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html5/">html5</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/图片缓存/">图片缓存</a></li></ul>
 
-    </footer>
-  </div>
-
-
-
-  
-</article>
-
-
-
-  
-    <article id="post-daily-build-playframework-with-bamboo" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/05/26/daily-build-playframework-with-bamboo/" class="article-date">
-  <time datetime="2015-05-26T05:51:15.000Z" itemprop="datePublished">2015-05-26</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/工作记录/">工作记录</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/05/26/daily-build-playframework-with-bamboo/">使用bamboo构建play工程</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <div><br><div>首先登录bamboo</div><br></div><br><div>一、创建一个代码源，说简单点就是让bamboo知道你的项目在gitlab或者hg上的地址。</div><br><div></div><br><div><img src="http://www.heartarea.net/wp-content/uploads/2015/05/wpid-d5839a4929bd8b9451f6e8d296991f59_00c9929f-132c-4e09-93b6-ac8b0cc2982b.jpg" alt=""></div><br><div></div><br><div>页面往下翻，<span style="font-size: 10.5pt; line-height: 1.5;">点击</span><a href="http://10.20.0.108:8085/admin/addGlobalRepository.action?returnUrl=%2Fadmin%2FconfigureGlobalRepositories%21default.action" target="_blank" rel="external">Add repository</a><span style="font-size: 10.5pt; line-height: 1.5;">按钮。</span></div><br><div><span style="font-size: 10.5pt; line-height: 1.5;"> </span></div><br><div><img src="http://www.heartarea.net/wp-content/uploads/2015/05/wpid-d5839a4929bd8b9451f6e8d296991f59_1ffb522c-5a0e-4105-bf9a-245dd8e388683.png" alt=""><span style="font-size: 10.5pt; line-height: 1.5;"><br></span></div><br><div></div><br><div>把这个页面填好，有问题请google翻译，点击“SAVE REPOSITORY”。</div><br><div></div><br><div><span style="font-size: 10.5pt; line-height: 1.5;">二、创建一个构建计划</span></div><br><div><span style="font-size: 10.5pt; line-height: 1.5;">点击首页中间的大大的“CREATE”按钮</span></div><br><div><img src="http://www.heartarea.net/wp-content/uploads/2015/05/wpid-d5839a4929bd8b9451f6e8d296991f59_2b092372-d5b8-4cc7-912b-e4cc67f3a7393.png" alt=""><span style="font-size: 10.5pt; line-height: 1.5;"><br></span></div><br><div></div><br><div>填好点击“Configure Plan”。</div><br><div></div><br><div>三、编写构建任务</div><br><div>在首页列表中找到你刚建的plan</div><br><div></div><br><div><img src="http://www.heartarea.net/wp-content/uploads/2015/05/wpid-d5839a4929bd8b9451f6e8d296991f59_af0fd59d-1648-4ed3-98ed-1a00836f18ff3.png" alt=""></div><br><div>然后点击铅笔编辑来到下面这个页</div><br><div>Default Job里面已经有一个拉取代码任务。</div><br><div></div><br><div><span style="font-size: 10.5pt; line-height: 1.5;">接下来大家要根据自己的实际情况编写构建计划，</span>下面我写个例子。</div><br><div></div><br><div>1.新建一个Script Task用来编译脚本，编译语句自己写，可以写成text，也可写成脚本文件。</div><br><div><img src="http://www.heartarea.net/wp-content/uploads/2015/05/wpid-d5839a4929bd8b9451f6e8d296991f59_7f7d7857-a6d2-49a8-8f70-ba80fa6f340c3.png" alt=""></div><br><div></div><br><div>2.新建Script Task将编译完的文件拷贝到目标服务器</div><br><div>本来应该用Scp Task，但是死活不好使，所以就用<span style="font-size: 10.5pt; line-height: 1.5;">Script Task</span><span style="font-size: 10.5pt; line-height: 1.5;">了，但是使用</span><span style="font-size: 10.5pt; line-height: 1.5;">Script Task远程拷贝需要服务器做免密登录。</span></div><br><div><span style="font-size: 10.5pt; line-height: 1.5;">什么？不知道免密登录？自行google！</span></div><br><div><img src="http://www.heartarea.net/wp-content/uploads/2015/05/wpid-d5839a4929bd8b9451f6e8d296991f59_e31c25ba-57d4-4ba2-ae80-54f3b30586993.png" alt=""><span style="font-size: 10.5pt; line-height: 1.5;"><br></span></div><br><div></div><br><div>3.新建一个SSH Task登录目标服务器执行部署操作，下面这只是例子。</div><br><div><img src="http://www.heartarea.net/wp-content/uploads/2015/05/wpid-d5839a4929bd8b9451f6e8d296991f59_e0e840cf-c669-419e-b124-06e03ce2484a3.png" alt=""></div><br><div></div><br><div></div><br><div>具体的脚本还得看实际情况，比如修改配置文件和拷贝静态文件等操作，那么如果你是play framework，还可以参考《<span style="font-size: 10pt; font-family: 微软雅黑; background-color: #ffffff; line-height: 1.2; widows: 1;">为play工程写一个状态管理的脚本并且随机启动</span><span style="font-size: 10.5pt; line-height: 1.5;">》<a href="http://www.heartarea.net/?p=118" target="_blank" rel="external">http://www.heartarea.net/?p=118</a></span></div><br><div>以上正文。</div>
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://localhost:4000/2015/05/26/daily-build-playframework-with-bamboo/" data-id="ciqxk5qfw000855wuaa6ydqrp" class="article-share-link" data-share="baidu" data-title="使用bamboo构建play工程">分享到</a>
-      
-
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bamboo/">bamboo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/playframwork/">playframwork</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日构建/">日构建</a></li></ul>
-
-    </footer>
-  </div>
-
-
-
-  
-</article>
-
-
-
-  
-    <article id="post-e4-b8-baplay-e5-b7-a5-e7-a8-8b-e5-86-99-e4-b8-80-e4-b8-aa-e7-8a-b6-e6-80-81-e7-ae-a1-e7-90-86-e7-9a-84-e8-84-9a-e6-9c-ac-e5-b9-b6-e4-b8-94-e9-9a-8f-e6-9c-ba-e5-90-af-e5-8a-a8-2" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/05/22/e4-b8-baplay-e5-b7-a5-e7-a8-8b-e5-86-99-e4-b8-80-e4-b8-aa-e7-8a-b6-e6-80-81-e7-ae-a1-e7-90-86-e7-9a-84-e8-84-9a-e6-9c-ac-e5-b9-b6-e4-b8-94-e9-9a-8f-e6-9c-ba-e5-90-af-e5-8a-a8-2/" class="article-date">
-  <time datetime="2015-05-22T01:54:53.000Z" itemprop="datePublished">2015-05-22</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/工作记录/">工作记录</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/05/22/e4-b8-baplay-e5-b7-a5-e7-a8-8b-e5-86-99-e4-b8-80-e4-b8-aa-e7-8a-b6-e6-80-81-e7-ae-a1-e7-90-86-e7-9a-84-e8-84-9a-e6-9c-ac-e5-b9-b6-e4-b8-94-e9-9a-8f-e6-9c-ba-e5-90-af-e5-8a-a8-2/">为play工程写一个状态管理的脚本并且随机启动</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <div><div>step1.先写脚本啦，废话不说，代码如下：<br><div><pre class="prettyprint linenums prettyprinted"><div class="linenums" style="color: rgb(30, 52, 123); margin-top: 0px; margin-bottom: 0px; padding-left: 0px;"><div class="L0" style="color: rgb(190, 190, 197); line-height: 18px; padding-left: 0px; list-style-type: none;"><font color="#93a1a1">#!/bin/bash<br>### BEGIN INIT INFO<br># Provides:          Frank Ting<br># Required-Start:    $network $local_fs $remote_fs<br># Required-Stop::    $network $local_fs $remote_fs<br># Should-Start:      $all<br># Should-Stop:       $all<br># Default-Start:     2 3 4 5<br># Default-Stop:      0 1 6<br># Short-Description: Baccy-router<br># Description:       Baccy-router<br>### END INIT INFO<br></font><font color="#000000" style="background-color: rgb(0, 255, 0);">PID=”$(cat /var/lib/projects/baccy-router-1.0-SNAPSHOT/RUNNING_PID)” </font><font color="#93a1a1"><br><span style="background-color: rgb(0, 255, 0);">export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64</span><br>start(){<br>    if [ -z $PID ]<br>    then<br>      <span style="background-color: rgb(0, 255, 0);">/var/lib/projects/baccy-router-1.0-SNAPSHOT/bin/baccy-router -Dhttp.port=9090&amp;</span><br>      echo “<span style="background-color: rgb(0, 255, 0);">baccy-router</span> is starting”<br>      return 0<br>    else<br>      echo “<span style="background-color: rgb(0, 255, 0);">baccy-router</span> already started “<br>      return 1<br>    fi<br>}<br><br>stop(){<br>    kill $PID<br>    echo “<span style="background-color: rgb(0, 255, 0);">baccy-router</span> is stopping”<br>    PID=””<br>}<br><br>status(){<br>    if [ -z $PID ]<br>    then<br>     echo “<span style="background-color: rgb(0, 255, 0);">baccy-router</span> is  not running”<br>    else<br>     echo “<span style="background-color: rgb(0, 255, 0);">baccy-router</span> is running”<br>    fi<br>}<br>case “$1” in<br>   start)<br>start<br>;;<br><br>   stop)<br>stop<br>;;<br>   restart)<br>stop<br>start<br>;;<br>   status)<br>status<br>;;<br>   *)<br>echo “Usage: {start|stop|restart|status}”<br>exit 1<br>esac<br><br>exit 0</font><br></div></div></pre></div>step2.移动到/etc/init.d目录下，名字我改成baccy-router，然后增加执行权限<div><div><pre class="prettyprint linenums prettyprinted"><div class="linenums" style="color: rgb(30, 52, 123); margin-top: 0px; margin-bottom: 0px; padding-left: 0px;"><div class="L0" style="color: rgb(190, 190, 197); line-height: 18px; padding-left: 0px; list-style-type: none;"><code>&lt;span class=&quot;pln&quot;&gt;chmod &lt;/span&gt;&lt;span class=&quot;lit&quot;&gt;755&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt; baccy&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;router&lt;/span&gt;</code></div><div class="L1" style="color: rgb(190, 190, 197); line-height: 18px; padding-left: 0px; list-style-type: none;"><code>&lt;span class=&quot;pln&quot;&gt;mv baccy&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;router  &lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;etc&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;d&lt;/span&gt;</code></div><div class="L1" style="color: rgb(190, 190, 197); line-height: 18px; padding-left: 0px; list-style-type: none;"><code>&lt;span class=&quot;pln&quot;&gt;/etc/init.d/baccy-router start&lt;/span&gt;</code></div><div class="L1" style="color: rgb(190, 190, 197); line-height: 18px; padding-left: 0px; list-style-type: none;"><code>&lt;span class=&quot;pln&quot;&gt;/etc/init.d/baccy-router status
-&lt;/span&gt;</code></div><div class="L1" style="color: rgb(190, 190, 197); line-height: 18px; padding-left: 0px; list-style-type: none;"><code>&lt;span class=&quot;pln&quot;&gt;/etc/init.d/baccy-router restart
-&lt;/span&gt;</code></div></div></pre></div><div>step3.加入到linux服务中，就可以随机启动啦</div></div><div><pre class="prettyprint linenums prettyprinted"><div class="linenums" style="color: rgb(30, 52, 123); margin-top: 0px; margin-bottom: 0px; padding-left: 0px;"><div class="L0" style="color: rgb(190, 190, 197); line-height: 18px; padding-left: 0px; list-style-type: none;"><code>&lt;span class=&quot;pln&quot;&gt;insserv &lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;etc&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;baccy&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;router&lt;/span&gt;</code></div><div class="L1" style="color: rgb(190, 190, 197); line-height: 18px; padding-left: 0px; list-style-type: none;"><code>&lt;span class=&quot;pln&quot;&gt;reboot&lt;/span&gt;</code></div></div></pre></div>PS:也可以往linux计划（crontab ）里添加进程检查策略，详情请咨询google。<br></div></div>
-
-<div><a href="http://www.wiz.cn/i/f9706a63" title="来自为知笔记(Wiz)" target="_blank" rel="external">来自为知笔记(Wiz)</a></div>
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://localhost:4000/2015/05/22/e4-b8-baplay-e5-b7-a5-e7-a8-8b-e5-86-99-e4-b8-80-e4-b8-aa-e7-8a-b6-e6-80-81-e7-ae-a1-e7-90-86-e7-9a-84-e8-84-9a-e6-9c-ac-e5-b9-b6-e4-b8-94-e9-9a-8f-e6-9c-ba-e5-90-af-e5-8a-a8-2/" data-id="ciqxk5qg0000b55wu84s4g9di" class="article-share-link" data-share="baidu" data-title="为play工程写一个状态管理的脚本并且随机启动">分享到</a>
-      
-
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/playframework/">playframework</a></li></ul>
-
-    </footer>
-  </div>
-
-
-
-  
-</article>
-
-
-
-  
-    <article id="post-playframework-exchange-db-pool-c3p0" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/05/21/playframework-exchange-db-pool-c3p0/" class="article-date">
-  <time datetime="2015-05-21T05:33:52.000Z" itemprop="datePublished">2015-05-21</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/工作记录/">工作记录</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/05/21/playframework-exchange-db-pool-c3p0/">playframework切换连接池c3p0（转载并整理）</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>众所周知，playframework使用的连接池是boneCP，但是确实十分坑爹，因为连接池中对象不能正常释放，导致连接池疯狂向数据库创建连接，最后导致应用获取不到可用连接而报错。当然不是我一个人遇到这个问题，stackoverflow的老外也被坑了一大片。</p>
-<div>那么优秀程序员的品质得到体现，github上的hadashi写了一个插件解决了我们的问题。</div><br><div><br><div><br><br>1.  <code>&lt;span class=&quot;typ&quot;&gt;This&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt; plugin provides an alternative to &lt;/span&gt;&lt;span class=&quot;typ&quot;&gt;BoneCP&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt; as the connection pool manager &lt;/span&gt;&lt;span class=&quot;kwd&quot;&gt;in&lt;/span&gt;&lt;span class=&quot;typ&quot;&gt;Play&lt;/span&gt;&lt;span class=&quot;lit&quot;&gt;2.1&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;typ&quot;&gt;The&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt; main reason &lt;/span&gt;&lt;span class=&quot;kwd&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt; doing this is that I have seen issues with connections not being released properly by &lt;/span&gt;&lt;span class=&quot;typ&quot;&gt;BoneCP&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt; when there are low max connections available&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;</code><br></div><br><div></div><br><div>地址：<a href="https://github.com/hadashi/play2-c3p0-plugin" target="_blank" rel="external">https://github.com/hadashi/play2-c3p0-plugin</a></div><br></div><br><div>当然貌似有人盗版，不知道是谁抄谁，无所谓嘛，不要在乎那些细节，我参考的是如下地址：</div><br><div><a href="https://github.com/Furyu/play-c3p0-plugin" target="_blank" rel="external">https://github.com/Furyu/play-c3p0-plugin</a></div><br><div>其实按照他的步骤一步步执行就好了。</div><br><div>第一、在<span style="background-color: rgba(0, 0, 0, 0.0392157); color: #333333; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6000003814697px; line-height: 21.7600002288818px; widows: 1;">build.sbt里面引用插件源</span></div><br><div><br><div><br><br>1.  <code>&lt;span class=&quot;pln&quot;&gt;libraryDependencies &lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;++=&lt;/span&gt;&lt;span class=&quot;typ&quot;&gt;Seq&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;(&lt;/span&gt;</code><br>2.  <code>&lt;span class=&quot;str&quot;&gt;&quot;jp.furyu&quot;&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;%%&lt;/span&gt;&lt;span class=&quot;str&quot;&gt;&quot;play-c3p0-plugin&quot;&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;str&quot;&gt;&quot;0.2.1&quot;&lt;/span&gt;</code><br>3.  <code>&lt;span class=&quot;pun&quot;&gt;)&lt;/span&gt;</code><br></div><br><div>第二、创建<span style="background-color: rgba(0, 0, 0, 0.0392157); color: #333333; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6000003814697px; line-height: 21.7600002288818px; widows: 1;">conf/play.plugins文件，录入如下内容</span></div><br></div><br><div><br><div><br><br>1.  <code>&lt;span class=&quot;lit&quot;&gt;5000&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;jp&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;furyu&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;play&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;c3p0&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;C3p0Plugin&lt;/span&gt;</code><br></div><br><div>第三、让原有的db插件失效，修改application.conf</div><br></div><br><div><br><div><br><br>1.  <code>&lt;span class=&quot;pln&quot;&gt;dbplugin&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;disabled&lt;/span&gt;</code><br></div><br><div></div><br></div><br><div>第四、配置数据源</div><br><div><br><div><br><br>1.  <code>&lt;span class=&quot;pln&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;pointshub&lt;/span&gt;</code><br>2.  <code>&lt;span class=&quot;pln&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;pointshub&lt;/span&gt;</code><br>3.  <code>&lt;span class=&quot;pln&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;str&quot;&gt;&quot;postgres://pointshub:pointshub@10.20.0.156:5432/pointshub&quot;&lt;/span&gt;</code><br>4.  <code>&lt;span class=&quot;pln&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;driver&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;org&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;postgresql&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;typ&quot;&gt;Driver&lt;/span&gt;</code><br>5.  <code>&lt;span class=&quot;pln&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;maxPoolSize&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;lit&quot;&gt;200&lt;/span&gt;</code><br>6.  <code>&lt;span class=&quot;pln&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;minPoolSize&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;lit&quot;&gt;20&lt;/span&gt;</code><br>7.  <code>&lt;span class=&quot;pln&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;initialPoolSize&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;lit&quot;&gt;40&lt;/span&gt;</code><br>8.  <code>&lt;span class=&quot;pln&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;acquireIncrement&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;lit&quot;&gt;5&lt;/span&gt;</code><br>9.  <code>&lt;span class=&quot;pln&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;maxIdleTime&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;lit&quot;&gt;10m&lt;/span&gt;</code><br>10.  <code>&lt;span class=&quot;pln&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;maxConnectionAge&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;lit&quot;&gt;1h&lt;/span&gt;</code><br>11.  <code>&lt;span class=&quot;pln&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;idleConnectionTestPeriod&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;lit&quot;&gt;10m&lt;/span&gt;</code><br>12.  <code>&lt;span class=&quot;pln&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;preferredTestQuery&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;str&quot;&gt;&quot;select 1;&quot;&lt;/span&gt;</code><br>13.  <code>&lt;span class=&quot;pln&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;checkoutTimeout&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;lit&quot;&gt;3s&lt;/span&gt;</code><br></div><br><div>以上为转载整理，请参阅。</div><br></div><br><div>PS:之前写东西上来就“废话不说，直接上码”，今天废话几句就是想弘扬一下像<a href="https://github.com/hadashi/play2-c3p0-plugin" target="_blank" rel="external">hadashi</a>这样的<span style="font-size: 10.5pt; line-height: 1.5;">优秀程序员的品质。</span></div><br><div><a href="http://www.wiz.cn/i/f9706a63" title="来自为知笔记(Wiz)" target="_blank" rel="external">来自为知笔记(Wiz)</a></div>
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://localhost:4000/2015/05/21/playframework-exchange-db-pool-c3p0/" data-id="ciqxk5qhb001h55wu2qp2tmor" class="article-share-link" data-share="baidu" data-title="playframework切换连接池c3p0（转载并整理）">分享到</a>
-      
-
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c3po/">c3po</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dbcp/">dbcp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/playframework/">playframework</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/连接池/">连接池</a></li></ul>
-
-    </footer>
-  </div>
-
-
-
-  
-</article>
-
-
-
-  
-    <article id="post-apache2-linux-e5-ae-89-e8-a3-85-e9-85-8d-e7-bd-ae" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/05/21/apache2-linux-e5-ae-89-e8-a3-85-e9-85-8d-e7-bd-ae/" class="article-date">
-  <time datetime="2015-05-21T02:01:18.000Z" itemprop="datePublished">2015-05-21</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/工作记录/">工作记录</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/05/21/apache2-linux-e5-ae-89-e8-a3-85-e9-85-8d-e7-bd-ae/">apache2 linux安装 配置</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <div><br><br>1.  <code>&lt;span class=&quot;pln&quot;&gt;安装&lt;/span&gt;</code><br>2.  <code>&lt;span class=&quot;pln&quot;&gt;apt&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;get install apache2&lt;/span&gt;</code><br>3.  <code>&lt;span class=&quot;pln&quot;&gt;cd &lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;etc&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;apache2&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;/&lt;/span&gt;</code><br>4.  <code>&lt;span class=&quot;pln&quot;&gt;vi apache2&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;conf &lt;/span&gt;</code><br>5.6.  <code>&lt;span class=&quot;pln&quot;&gt;cd &lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;etc&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;apache2&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;sites&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;available&lt;/span&gt;</code><br>7.  <code>&lt;span class=&quot;pln&quot;&gt;vi default&lt;/span&gt;</code><br></div><br><div></div><br><div>修改配置<span style="font-size: 10.5pt; line-height: 1.5; font-family: 'Microsoft YaHei UI';">    </span><span style="font-size: 10.5pt; line-height: 1.5; font-family: 'Microsoft YaHei UI';">    </span></div><br><div><br><div><br><br>1.  <code>&lt;span class=&quot;pln&quot;&gt;&lt;span style=&quot;font-family: Consolas;&quot;&gt;    &lt;/span&gt;&lt;span style=&quot;font-family: Consolas;&quot;&gt;    &lt;/span&gt;DocumentRoot /home/ftp&lt;/span&gt;</code><br>2.  <code>&lt;span class=&quot;tag&quot;&gt;&amp;lt;Directory&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;/&amp;gt;&lt;/span&gt;</code><br>3.  <code>&lt;span class=&quot;pln&quot;&gt; Options FollowSymLinks&lt;/span&gt;</code><br>4.  <code>&lt;span class=&quot;pln&quot;&gt; AllowOverride None&lt;/span&gt;</code><br>5.  <code>&lt;span class=&quot;tag&quot;&gt;&amp;lt;/Directory&amp;gt;&lt;/span&gt;</code><br>6.  <code>&lt;span class=&quot;tag&quot;&gt;&amp;lt;Directory&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;atn&quot;&gt;home&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;atn&quot;&gt;ftp&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;/&amp;gt;&lt;/span&gt;</code><br>7.  <code>&lt;span class=&quot;pln&quot;&gt; Options Indexes FollowSymLinks MultiViews&lt;/span&gt;</code><br>8.  <code>&lt;span class=&quot;pln&quot;&gt; AllowOverride None&lt;/span&gt;</code><br>9.  <code>&lt;span class=&quot;pln&quot;&gt; Order allow,deny&lt;/span&gt;</code><br>10.  <code>&lt;span class=&quot;pln&quot;&gt; allow from all&lt;/span&gt;</code><br>11.  <code>&lt;span class=&quot;tag&quot;&gt;&amp;lt;/Directory&amp;gt;&lt;/span&gt;</code><br></div><br></div><br><div></div><br><div>重启</div><br><div><br><div><br><br>1.  <code>&lt;span class=&quot;pun&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;etc&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;apache2 restart&lt;/span&gt;</code><br></div><br><div></div><br></div><br><div></div><br><div><a href="http://www.wiz.cn/i/f9706a63" title="来自为知笔记(Wiz)" target="_blank" rel="external">来自为知笔记(Wiz)</a></div>
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://localhost:4000/2015/05/21/apache2-linux-e5-ae-89-e8-a3-85-e9-85-8d-e7-bd-ae/" data-id="ciqxk5qfn000355wuyw8iorkx" class="article-share-link" data-share="baidu" data-title="apache2 linux安装 配置">分享到</a>
-      
-
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/apache/">apache</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/debian/">debian</a></li></ul>
-
-    </footer>
-  </div>
-
-
-
-  
-</article>
-
-
-
-  
-    <article id="post-psql-e5-b8-b8-e7-94-a8-e5-91-bd-e4-bb-a4-e5-a4-a7-e5-85-a8" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/05/20/psql-e5-b8-b8-e7-94-a8-e5-91-bd-e4-bb-a4-e5-a4-a7-e5-85-a8/" class="article-date">
-  <time datetime="2015-05-20T09:48:37.000Z" itemprop="datePublished">2015-05-20</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/工作记录/">工作记录</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/05/20/psql-e5-b8-b8-e7-94-a8-e5-91-bd-e4-bb-a4-e5-a4-a7-e5-85-a8/">psql常用命令大全</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong><span lang="EN-US" style="font-size:18.0pt">psql</span>**</strong><span style="font-size:18.0pt;font-family:
-宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">常用命令大全</span><strong>**<span lang="EN-US" style="font-size:18.0pt"><o:p></o:p></span></strong></p>
-<p><span lang="EN-US" style="font-size:12.0pt;color:blue">\d [<br>table ] <o:p></o:p></span></p>
-<p><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">列出数据库中的表，或（如果声明了）表</span><span lang="EN-US" style="font-size:
-12.0pt"> table </span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">的列</span><span lang="EN-US" style="font-size:12.0pt">/</span><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">字段．如果表名是用统配符</span><span style="font-size:12.0pt"> </span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">（</span><span lang="EN-US" style="font-size:12.0pt">“*”</span><span style="font-size:12.0pt;font-family:
-宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">）声明的，列出所有表和表的列</span><span lang="EN-US" style="font-size:12.0pt">/</span><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">字段信息．</span><span lang="EN-US" style="font-size:12.0pt"> <o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt;color:blue">\da <o:p></o:p></span></p>
-<p><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">列出所有可用聚集．</span><span lang="EN-US" style="font-size:12.0pt"> <o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt;color:blue">\dd<br>object <o:p></o:p></span></p>
-<p><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">列出</span><span lang="EN-US" style="font-size:12.0pt"><br>pg_description </span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">里对声明的对象的描述，对象可以是一个表，表中的列</span><span lang="EN-US" style="font-size:12.0pt">/</span><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">字段，类型，操作符或聚集．</span><span lang="EN-US" style="font-size:12.0pt">&nbsp; <o:p></o:p></span></p>
-<p><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">小技巧：并非所有对象在</span><span lang="EN-US" style="font-size:12.0pt"><br>pg_description </span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">里有描述．此后期命令在快速获取</span><span lang="EN-US" style="font-size:12.0pt"> Postgres </span><span style="font-size:
-12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">内部特性时很有用．</span><span lang="EN-US" style="font-size:12.0pt"><o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt;color:blue">\df <o:p></o:p></span></p>
-<p><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">列出函数．</span><span lang="EN-US" style="font-size:12.0pt"> <o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt;color:blue">\di <o:p></o:p></span></p>
-<p><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">只列出索引．</span><span lang="EN-US" style="font-size:12.0pt"> <o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt;color:blue">\do <o:p></o:p></span></p>
-<p><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">只列出操作符．</span><span lang="EN-US" style="font-size:12.0pt"> <o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt;color:blue">\ds <o:p></o:p></span></p>
-<p><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">只列出序列．</span><span lang="EN-US" style="font-size:12.0pt"> <o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt;color:blue">\dS <o:p></o:p></span></p>
-<p><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">列出系统表和索引．</span><span lang="EN-US" style="font-size:12.0pt"> <o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt;color:blue">\dt <o:p></o:p></span></p>
-<p><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">只列出非系统表．</span><span lang="EN-US" style="font-size:12.0pt"> <o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt;color:blue">\dT <o:p></o:p></span></p>
-<p><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">列出类型．</span><span lang="EN-US" style="font-size:12.0pt"> <o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt;color:blue">\e [<br>filename ] <o:p></o:p></span></p>
-<p><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">编辑当前查询缓冲或文件</span><span lang="EN-US" style="font-size:12.0pt"><br>filename </span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">的内容．</span><span lang="EN-US" style="font-size:12.0pt"> <o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt;color:blue">\E [<br>filename ] <o:p></o:p></span></p>
-<p><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">编辑当前查询缓冲或文件</span><span lang="EN-US" style="font-size:12.0pt"><br>filename </span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">的内容并且在编辑结束后执行之．</span><span lang="EN-US" style="font-size:12.0pt"> <o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt;color:blue">\f [<br>separator ] <o:p></o:p></span></p>
-<p><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">设置域分隔符．缺省是单个空白．</span><span lang="EN-US" style="font-size:
-12.0pt"> <o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt;color:blue">\g [ {<br>filename | |command } ] <o:p></o:p></span></p>
-<p><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">将当前查询输入缓冲送给后端并且（可选的）将输出放到</span><span lang="EN-US" style="font-size:12.0pt"> filename </span><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">或通过管道将输出送给一个分离的</span><span lang="EN-US" style="font-size:
-12.0pt">Unix shell </span><span style="font-size:12.0pt;font-family:宋体;
-mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">用以执行</span><span lang="EN-US" style="font-size:12.0pt"> command</span><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">．</span><span lang="EN-US" style="font-size:12.0pt"> <o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt;color:blue">\h [<br>command ] <o:p></o:p></span></p>
-<p><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">给出声明的</span><span lang="EN-US" style="font-size:12.0pt"> SQL </span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">命令的语法帮助．如果</span><span lang="EN-US" style="font-size:12.0pt"> command </span><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">不是一个定义的</span><span lang="EN-US" style="font-size:12.0pt"> SQL<br></span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">命令（或在</span><span lang="EN-US" style="font-size:12.0pt"> psql </span><span style="font-size:12.0pt;font-family:
-宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">里没有文档），或没有声明</span><span lang="EN-US" style="font-size:12.0pt"> command </span><span style="font-size:
-12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">，这时</span><span lang="EN-US" style="font-size:12.0pt"> psql</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">将列出可获得帮助的所有命令的列表．如果命令</span><span lang="EN-US" style="font-size:12.0pt"> command </span><span style="font-size:
-12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">是一个通配符（</span><span lang="EN-US" style="font-size:12.0pt">“*”</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">），则给出所有</span><span lang="EN-US" style="font-size:12.0pt"> SQL </span><span style="font-size:12.0pt;font-family:
-宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">命令的语法帮助．</span><span lang="EN-US" style="font-size:12.0pt"> <o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt;color:blue">\H <o:p></o:p></span></p>
-<p><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">切换</span><span lang="EN-US" style="font-size:12.0pt"> HTML3 </span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">输出．等效于</span><span lang="EN-US" style="font-size:12.0pt"> -H </span><span style="font-size:12.0pt;font-family:
-宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">命令行选项．</span><span lang="EN-US" style="font-size:12.0pt"> <o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt;color:blue">\i<br>filename <o:p></o:p></span></p>
-<p><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">从文件</span><span lang="EN-US" style="font-size:12.0pt"><br>filename </span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">中读取查询到输入缓冲．</span><span lang="EN-US" style="font-size:12.0pt"> <o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt;color:blue">\l &nbsp;&nbsp;<o:p></o:p></span></p>
-<p><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">列出服务器上所有数据库．</span><span lang="EN-US" style="font-size:12.0pt"></span></p>
-<p><o:p></o:p></p>
-<p><span lang="EN-US" style="font-size:12.0pt;color:blue">\m <o:p></o:p></span></p>
-<p><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">切换老式监视器样的表输出，这时表周围有边界字符包围着．这是标准</span><span lang="EN-US" style="font-size:12.0pt"> SQL </span><span style="font-size:12.0pt;font-family:
-宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">输出．缺省时，</span><span lang="EN-US" style="font-size:12.0pt">psql </span><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">只包括列</span><span lang="EN-US" style="font-size:12.0pt">/</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">字段间的分隔符．</span><span lang="EN-US" style="font-size:12.0pt"> <o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt;color:blue">\o [ {<br>filename | |command } ] <o:p></o:p></span></p>
-<p><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">将后面的查询结果输出到文件</span><span lang="EN-US" style="font-size:12.0pt"><br>filename </span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">或通过管道将后面结果输出到一个独立的</span><span lang="EN-US" style="font-size:12.0pt">Unix shell </span><span style="font-size:
-12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">里执行</span><span lang="EN-US" style="font-size:12.0pt"> command</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">．如果没有声明参数，将查询结果输出到</span><span lang="EN-US" style="font-size:12.0pt"> stdout</span><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">．</span><span lang="EN-US" style="font-size:12.0pt"> <o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt;color:blue">\p <o:p></o:p></span></p>
-<p><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">打印当前查询缓冲区．</span><span lang="EN-US" style="font-size:12.0pt"> <o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt;color:blue">\q <o:p></o:p></span></p>
-<p><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">退出</span><span lang="EN-US" style="font-size:12.0pt"> psql </span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">程序．</span><span lang="EN-US" style="font-size:12.0pt"> <o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt;color:blue">\r <o:p></o:p></span></p>
-<p><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">重置（清空）查询缓冲区．</span><span lang="EN-US" style="font-size:12.0pt"></span></p>
-<p><o:p></o:p></p>
-<p><span lang="EN-US" style="font-size:12.0pt;color:blue">\s [<br>filename ] <o:p></o:p></span></p>
-<p><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">将命令行历史打印出或是存放到</span><span lang="EN-US" style="font-size:12.0pt"><br>filename</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">．如果省略</span><span lang="EN-US" style="font-size:12.0pt"> filename </span><span style="font-size:
-12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">，将不会把后继的命令存放到历史文件中．此选项只有在</span><span lang="EN-US" style="font-size:12.0pt"> psql </span><span style="font-size:12.0pt;font-family:
-宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">配置成使用输入行时才有效．</span><span lang="EN-US" style="font-size:12.0pt"> <o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt;color:blue">\t <o:p></o:p></span></p>
-<p><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">切换输出的列</span><span lang="EN-US" style="font-size:12.0pt">/</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">字段名的信息头和行记数脚注（缺省是开）．</span><span lang="EN-US" style="font-size:12.0pt"> <o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt;color:blue">\T<br>table_options <o:p></o:p></span></p>
-<p><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">允许你在使用</span><span lang="EN-US" style="font-size:12.0pt">HTML<br>3.0 </span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">格式输出时声明放在表</span><span lang="EN-US" style="font-size:12.0pt"> table … </span><span style="font-size:
-12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">中的标记选项．例如，</span><span lang="EN-US" style="font-size:12.0pt">border<br></span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">将给你的表以边框．这必须和</span><span lang="EN-US" style="font-size:12.0pt"> \H </span><span style="font-size:12.0pt;font-family:
-宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">后期命令一起使用．</span><span lang="EN-US" style="font-size:12.0pt"> <o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt;color:blue">\x <o:p></o:p></span></p>
-<p><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">切换扩展行格式．当打开时，每一行将在左边打印列</span><span lang="EN-US" style="font-size:12.0pt">/</span><span style="font-size:12.0pt;font-family:
-宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">字段名而在右边打印列</span><span lang="EN-US" style="font-size:12.0pt">/</span><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">字段值．这对于那些不能在一行输出的超长行是很有用的．</span><span lang="EN-US" style="font-size:12.0pt">HTML </span><span style="font-size:12.0pt;font-family:
-宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">行输出模式也支持这个标记．</span><span lang="EN-US" style="font-size:12.0pt"> <o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt;color:blue">\w<br>filename <o:p></o:p></span></p>
-<p><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">将当前查询缓冲区输出到文件</span><span lang="EN-US" style="font-size:12.0pt"><br>filename</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">．</span><span lang="EN-US" style="font-size:12.0pt"> <o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt;color:blue">\z <o:p></o:p></span></p>
-<p><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">生成一个带有正确</span><span lang="EN-US" style="font-size:12.0pt"><br>ACL</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">（赋予</span><span lang="EN-US" style="font-size:12.0pt">/</span><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">禁止</span><span style="font-size:12.0pt"> </span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">权限）的数据库中所有表的输出列表．</span><span lang="EN-US" style="font-size:12.0pt"> <o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt;color:blue">! [<br>command ] <o:p></o:p></span></p>
-<p><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">回到一个独立的</span><span lang="EN-US" style="font-size:12.0pt">Unix<br>shell</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">或执行一个</span><span lang="EN-US" style="font-size:12.0pt">Unix </span><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">命令</span><span lang="EN-US" style="font-size:12.0pt"> command</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">．</span><span lang="EN-US" style="font-size:12.0pt"> <o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt;color:blue">\? <o:p></o:p></span></p>
-<p><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">获得关于反斜杠</span><span lang="EN-US" style="font-size:12.0pt"> (“\”)<br></span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">命令的帮助．</span><span lang="EN-US" style="font-size:12.0pt"><o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
-<p><strong><span style="font-size:14.0pt;font-family:宋体;mso-ascii-font-family:
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">一般选项</span>**</strong><span lang="EN-US" style="font-size:14.0pt"><o:p></o:p></span>**</p>
-<p><span lang="EN-US" style="font-size:12.0pt;color:blue">\c[onnect]<br>[</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;;color:blue">数据库名</span><span lang="EN-US" style="font-size:12.0pt;color:blue">|- [</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;;color:blue">用户名称</span><span lang="EN-US" style="font-size:12.0pt;color:blue">]]<o:p></o:p></span></p>
-<p><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">联接到新的数据库</span><span lang="EN-US" style="font-size:12.0pt"> (</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">当前为</span><span lang="EN-US" style="font-size:12.0pt"> “test”)<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt;color:blue">\cd [</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;;color:blue">目录名</span><span lang="EN-US" style="font-size:12.0pt;color:blue">]&nbsp;&nbsp; </span><span lang="EN-US" style="font-size:12.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;</span><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">改变当前的工作目录</span><span lang="EN-US" style="font-size:12.0pt"><o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt;color:blue">\copyright&nbsp;&nbsp; </span><span lang="EN-US" style="font-size:
-12.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;</span><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">显示</span><span lang="EN-US" style="font-size:12.0pt"><br>PostgreSQL </span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">用法和发布信息</span><span lang="EN-US" style="font-size:12.0pt"><o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt;color:blue">\encoding<br>[</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;;color:blue">编码</span><span lang="EN-US" style="font-size:12.0pt;color:blue">] </span><span lang="EN-US" style="font-size:12.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; </span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">显示或设置客户端编码</span><span lang="EN-US" style="font-size:12.0pt"><o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt;color:blue">\h [</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;;color:blue">名字</span><span lang="EN-US" style="font-size:12.0pt;color:blue">]&nbsp;&nbsp;&nbsp;&nbsp;<br></span><span lang="EN-US" style="font-size:12.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SQL<br></span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">命令的语法帮助</span><span lang="EN-US" style="font-size:12.0pt">, </span><span style="font-size:12.0pt;font-family:
-宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">用</span><span lang="EN-US" style="font-size:12.0pt"> * </span><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">可以看所有命令的帮助</span><span lang="EN-US" style="font-size:12.0pt"><o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt;color:blue">\q&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang="EN-US" style="font-size:
-12.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">退出</span><span lang="EN-US" style="font-size:12.0pt"> psql<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt;color:blue">\set [</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;;color:blue">名字</span><span lang="EN-US" style="font-size:12.0pt;color:blue"> [</span><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;;color:blue">值</span><span lang="EN-US" style="font-size:12.0pt;
-color:blue">]]</span><span lang="EN-US" style="font-size:12.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">设置内部变量</span><span lang="EN-US" style="font-size:12.0pt">, </span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">如果没有参数就列出所有</span><span lang="EN-US" style="font-size:12.0pt"><o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt;color:blue">\timing&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang="EN-US" style="font-size:
-12.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">查询计时开关切换</span><span lang="EN-US" style="font-size:12.0pt"> (</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">目前是</span><span style="font-size:12.0pt"><br></span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">关闭</span><span lang="EN-US" style="font-size:12.0pt">)<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt;color:blue">\unset </span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;;color:blue">名字</span><span lang="EN-US" style="font-size:12.0pt;color:blue">&nbsp;&nbsp; </span><span lang="EN-US" style="font-size:12.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">取消</span><span lang="EN-US" style="font-size:12.0pt">(</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">删除</span><span lang="EN-US" style="font-size:12.0pt">)</span><span style="font-size:12.0pt;font-family:
-宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">内部变量</span><span lang="EN-US" style="font-size:12.0pt"><o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt;color:blue">! [</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;;color:blue">命令</span><span lang="EN-US" style="font-size:12.0pt;color:blue">]&nbsp;&nbsp; </span><span lang="EN-US" style="font-size:12.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">在</span><span lang="EN-US" style="font-size:12.0pt"> shell </span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">里执行命令或者开始一个交互的</span><span lang="EN-US" style="font-size:12.0pt"> shell<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
-<p><strong><span style="font-size:14.0pt;font-family:宋体;mso-ascii-font-family:
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">信息选项</span>**</strong><span lang="EN-US" style="font-size:14.0pt"><o:p></o:p></span>**</p>
-<p><span lang="EN-US" style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt;color:blue">\d [</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;;color:blue">名字</span><span lang="EN-US" style="font-size:12.0pt;color:blue">]&nbsp;&nbsp; </span><span lang="EN-US" style="font-size:12.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">描述表</span><span lang="EN-US" style="font-size:12.0pt">, </span><span style="font-size:12.0pt;font-family:
-宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">索引</span><span lang="EN-US" style="font-size:12.0pt">, </span><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">序列</span><span lang="EN-US" style="font-size:12.0pt">, </span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">或者视图</span><span lang="EN-US" style="font-size:12.0pt"><o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt;color:blue">\d{t|i|s|v|S}<br>[</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;;color:blue">模式</span><span lang="EN-US" style="font-size:12.0pt;color:blue">] (</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;;color:blue">加</span><span lang="EN-US" style="font-size:12.0pt;color:blue"> “+” </span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;;color:blue">获取更多信息</span><span lang="EN-US" style="font-size:12.0pt;color:blue">)<o:p></o:p></span></p>
-<p><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">列出表</span><span lang="EN-US" style="font-size:12.0pt">/</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">索引</span><span lang="EN-US" style="font-size:12.0pt">/</span><span style="font-size:12.0pt;font-family:
-宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">序列</span><span lang="EN-US" style="font-size:12.0pt">/</span><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">视图</span><span lang="EN-US" style="font-size:12.0pt">/</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">系统表</span><span lang="EN-US" style="font-size:12.0pt"><o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt;color:blue">\da [</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;;color:blue">模式</span><span lang="EN-US" style="font-size:12.0pt;color:blue">]&nbsp; </span><span lang="EN-US" style="font-size:12.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">列出聚集函数</span><span lang="EN-US" style="font-size:12.0pt"><o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt;color:blue">\db [</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;;color:blue">模式</span><span lang="EN-US" style="font-size:12.0pt;color:blue">]&nbsp; </span><span lang="EN-US" style="font-size:12.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">列出表空间</span><span lang="EN-US" style="font-size:12.0pt"> (</span><span style="font-size:12.0pt;font-family:
-宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">加</span><span lang="EN-US" style="font-size:12.0pt"> “+” </span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">获取更多的信息</span><span lang="EN-US" style="font-size:12.0pt">)<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt;color:blue">\dc [</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;;color:blue">模式</span><span lang="EN-US" style="font-size:12.0pt;color:blue">]&nbsp; </span><span lang="EN-US" style="font-size:12.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">列出编码转换</span><span lang="EN-US" style="font-size:12.0pt"><o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt;color:blue">\dC&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang="EN-US" style="font-size:
-12.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">列出类型转换</span><span lang="EN-US" style="font-size:12.0pt"><o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt;color:blue">\dd [</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;;color:blue">模式</span><span lang="EN-US" style="font-size:12.0pt;color:blue">]&nbsp; </span><span lang="EN-US" style="font-size:12.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">显示目标的注释</span><span lang="EN-US" style="font-size:12.0pt"><o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt;color:blue">\dD [</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;;color:blue">模式</span><span lang="EN-US" style="font-size:12.0pt;color:blue">] </span><span lang="EN-US" style="font-size:
-12.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">列出域</span><span lang="EN-US" style="font-size:12.0pt"><o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt;color:blue">\df [</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;;color:blue">模式</span><span lang="EN-US" style="font-size:12.0pt;color:blue">]&nbsp; </span><span lang="EN-US" style="font-size:12.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">列出函数</span><span lang="EN-US" style="font-size:12.0pt"> (</span><span style="font-size:12.0pt;font-family:
-宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">加</span><span lang="EN-US" style="font-size:12.0pt"> “+” </span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">获取更多的信息</span><span lang="EN-US" style="font-size:12.0pt">)<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt;color:blue">\dg [</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;;color:blue">模式</span><span lang="EN-US" style="font-size:12.0pt;color:blue">] </span><span lang="EN-US" style="font-size:
-12.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">列出组</span><span lang="EN-US" style="font-size:12.0pt"><o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt;color:blue">\dn [</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;;color:blue">模式</span><span lang="EN-US" style="font-size:12.0pt;color:blue">] </span><span lang="EN-US" style="font-size:
-12.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">列出模式</span><span lang="EN-US" style="font-size:12.0pt"> (</span><span style="font-size:12.0pt;font-family:
-宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">加</span><span lang="EN-US" style="font-size:12.0pt"> “+” </span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">获取更多的信息</span><span lang="EN-US" style="font-size:12.0pt">)<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt;color:blue">\do [</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;;color:blue">名字</span><span lang="EN-US" style="font-size:12.0pt;color:blue">] </span><span lang="EN-US" style="font-size:
-12.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">列出操作符</span><span lang="EN-US" style="font-size:12.0pt"><o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt;color:blue">\dl&nbsp; </span><span lang="EN-US" style="font-size:
-12.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">列出大对象</span><span lang="EN-US" style="font-size:12.0pt">, </span><span style="font-size:12.0pt;font-family:
-宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">和</span><span lang="EN-US" style="font-size:12.0pt"> \lo_list </span><span style="font-size:
-12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">一样</span><span lang="EN-US" style="font-size:12.0pt"><o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt;color:blue">\dp [</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;;color:blue">模式</span><span lang="EN-US" style="font-size:12.0pt;color:blue">]</span><span lang="EN-US" style="font-size:
-12.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">列出表</span><span lang="EN-US" style="font-size:12.0pt">, </span><span style="font-size:12.0pt;font-family:
-宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">视图</span><span lang="EN-US" style="font-size:12.0pt">, </span><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">序列的访问权限</span><span lang="EN-US" style="font-size:12.0pt"><o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt;color:blue">\dT [</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;;color:blue">模式</span><span lang="EN-US" style="font-size:12.0pt;color:blue">] </span><span lang="EN-US" style="font-size:
-12.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">列出数据类型</span><span lang="EN-US" style="font-size:12.0pt"> (</span><span style="font-size:12.0pt;font-family:
-宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">加</span><span lang="EN-US" style="font-size:12.0pt"> “+” </span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">获取更多的信息</span><span lang="EN-US" style="font-size:12.0pt">)<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt;color:blue">\du [</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;;color:blue">模式</span><span lang="EN-US" style="font-size:12.0pt;color:blue">]&nbsp; </span><span lang="EN-US" style="font-size:12.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">列出用户</span><span lang="EN-US" style="font-size:12.0pt"><o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt;color:blue">\l&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang="EN-US" style="font-size:
-12.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">列出所有数据库</span><span lang="EN-US" style="font-size:12.0pt"> (</span><span style="font-size:12.0pt;font-family:
-宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">加</span><span lang="EN-US" style="font-size:12.0pt"> “+” </span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">获取更多的信息</span><span lang="EN-US" style="font-size:12.0pt">)<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt;color:blue">\z [</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;;color:blue">模式</span><span lang="EN-US" style="font-size:12.0pt;color:blue">]&nbsp; </span><span lang="EN-US" style="font-size:12.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">列出表</span><span lang="EN-US" style="font-size:12.0pt">, </span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">视图</span><span lang="EN-US" style="font-size:12.0pt">, </span><span style="font-size:12.0pt;font-family:
-宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">序列的访问权限</span><span lang="EN-US" style="font-size:12.0pt"> (</span><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">和</span><span lang="EN-US" style="font-size:12.0pt"> \dp </span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">一样</span><span lang="EN-US" style="font-size:12.0pt">)<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt;color:blue"><o:p>&nbsp;</o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt;color:blue"><o:p>&nbsp;</o:p></span></p>
-<p><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;;color:blue">命令</span><span lang="EN-US" style="font-size:12.0pt;color:blue">: ABORT<o:p></o:p></span></p>
-<p><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">描述</span><span lang="EN-US" style="font-size:12.0pt">:&nbsp;&nbsp;&nbsp;&nbsp;<br></span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">终止当前事务</span><span lang="EN-US" style="font-size:12.0pt"><o:p></o:p></span></p>
-<p><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">语法</span><span lang="EN-US" style="font-size:12.0pt">:<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">ABORT [ WORK | TRANSACTION ]<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
-<p><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;;color:blue">命令</span><span lang="EN-US" style="font-size:12.0pt;color:blue">: ALTER DATABASE<o:p></o:p></span></p>
-<p><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">描述</span><span lang="EN-US" style="font-size:12.0pt">:&nbsp;&nbsp;&nbsp;&nbsp;<br></span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">改变一个数据库</span><span lang="EN-US" style="font-size:12.0pt"><o:p></o:p></span></p>
-<p><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">语法</span><span lang="EN-US" style="font-size:12.0pt">:<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">ALTER DATABASE </span><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">名字</span><span lang="EN-US" style="font-size:12.0pt"> SET </span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">参数</span><span lang="EN-US" style="font-size:12.0pt"> { TO | = } { </span><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">值</span><span lang="EN-US" style="font-size:12.0pt"> | DEFAULT<br>}<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">ALTER DATABASE </span><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">名字</span><span lang="EN-US" style="font-size:12.0pt"> RESET </span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">参数</span><span lang="EN-US" style="font-size:12.0pt"><o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">ALTER DATABASE </span><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">名字</span><span lang="EN-US" style="font-size:12.0pt"> RENAME<br>TO </span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">新名字</span><span lang="EN-US" style="font-size:12.0pt"><o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">ALTER DATABASE </span><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">名字</span><span lang="EN-US" style="font-size:12.0pt"> OWNER TO<br></span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">新属主</span><span lang="EN-US" style="font-size:12.0pt"><o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
-<p><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;;color:blue">命令</span><span lang="EN-US" style="font-size:12.0pt;color:blue">: ALTER GROUP<o:p></o:p></span></p>
-<p><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">描述</span><span lang="EN-US" style="font-size:12.0pt">:&nbsp;&nbsp;&nbsp;&nbsp;<br></span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">改变一个用户组</span><span lang="EN-US" style="font-size:12.0pt"><o:p></o:p></span></p>
-<p><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">语法</span><span lang="EN-US" style="font-size:12.0pt">:<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">ALTER GROUP </span><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">组名称</span><span lang="EN-US" style="font-size:12.0pt"> ADD<br>USER </span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">用户名称</span><span lang="EN-US" style="font-size:12.0pt"> [, … ]<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">ALTER GROUP </span><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">组名称</span><span lang="EN-US" style="font-size:12.0pt"> DROP USER<br></span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">用户名称</span><span lang="EN-US" style="font-size:12.0pt"> [, … ]<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">ALTER GROUP </span><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">组名称</span><span lang="EN-US" style="font-size:12.0pt"> RENAME<br>TO </span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">新名称</span><span lang="EN-US" style="font-size:12.0pt"><o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
-<p><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;;color:blue">命令</span><span lang="EN-US" style="font-size:12.0pt;color:blue">: ALTER INDEX<o:p></o:p></span></p>
-<p><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">描述</span><span lang="EN-US" style="font-size:12.0pt">:&nbsp;&nbsp;&nbsp;&nbsp;<br></span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">改变一个索引的定义</span><span lang="EN-US" style="font-size:12.0pt"><o:p></o:p></span></p>
-<p><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">语法</span><span lang="EN-US" style="font-size:12.0pt">:<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">ALTER INDEX </span><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">索引名称</span><span lang="EN-US" style="font-size:12.0pt"><o:p></o:p></span></p>
-<p><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">动作</span><span lang="EN-US" style="font-size:12.0pt"> [, … ]<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">ALTER INDEX </span><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">索引旧名称</span><span lang="EN-US" style="font-size:12.0pt"><o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">RENAME TO </span><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">索引新名称</span><span lang="EN-US" style="font-size:12.0pt"><o:p></o:p></span></p>
-<p><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">动作为以下之一</span><span lang="EN-US" style="font-size:12.0pt">:<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">OWNER TO </span><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">新属主</span><span lang="EN-US" style="font-size:12.0pt"><o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">SET TABLESPACE indexspace_name<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
-<p><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;;color:blue">命令</span><span lang="EN-US" style="font-size:12.0pt;color:blue">: &nbsp;ALTER SEQUENCE<o:p></o:p></span></p>
-<p><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">描述</span><span lang="EN-US" style="font-size:12.0pt">:&nbsp;&nbsp;&nbsp;&nbsp;<br></span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">改变一个序列生成器的定义</span><span lang="EN-US" style="font-size:12.0pt"><o:p></o:p></span></p>
-<p><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">语法</span><span lang="EN-US" style="font-size:12.0pt">:<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">ALTER SEQUENCE </span><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">名字</span><span lang="EN-US" style="font-size:12.0pt"> [<br>INCREMENT [ BY ] </span><span style="font-size:12.0pt;font-family:宋体;
-mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">递增</span><span lang="EN-US" style="font-size:12.0pt"> ]<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">[MINVALUE </span><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">最小值</span><span lang="EN-US" style="font-size:12.0pt"> | NO<br>MINVALUE ] [ MAXVALUE </span><span style="font-size:12.0pt;font-family:宋体;
-mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">最大值</span><span lang="EN-US" style="font-size:12.0pt"> | NO MAXVALUE ]<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">[ RESTART [ WITH ] </span><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">开始</span><span lang="EN-US" style="font-size:12.0pt"> ] [<br>CACHE </span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">缓存</span><span lang="EN-US" style="font-size:12.0pt"> ] [ [ NO ] CYCLE ]<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt"><br></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt"><div>&nbsp;SELECT&nbsp;setval(‘“anti”.”anti_menu_menuid_seq”‘,&nbsp;180,&nbsp;true);<br></div></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
-<p><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;;color:blue">命令</span><span lang="EN-US" style="font-size:12.0pt;color:blue">: ALTER TABLE<o:p></o:p></span></p>
-<p><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">描述</span><span lang="EN-US" style="font-size:12.0pt">:&nbsp;&nbsp;&nbsp;&nbsp;<br></span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">改变一个表的定义</span><span lang="EN-US" style="font-size:12.0pt"><o:p></o:p></span></p>
-<p><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">语法</span><span lang="EN-US" style="font-size:12.0pt">:<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">ALTER TABLE [ ONLY ] </span><span style="font-size:
-12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">表名</span><span lang="EN-US" style="font-size:12.0pt"> [ * ]<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">action [, … ]<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">ALTER TABLE [ ONLY ] </span><span style="font-size:
-12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">表名</span><span lang="EN-US" style="font-size:12.0pt"> [ * ]<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">RENAME [ COLUMN ] </span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">字段名</span><span lang="EN-US" style="font-size:12.0pt"> TO </span><span style="font-size:12.0pt;font-family:
-宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">新字段名</span><span lang="EN-US" style="font-size:12.0pt"><o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">ALTER TABLE </span><span style="font-size:
-12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">表名</span><span lang="EN-US" style="font-size:12.0pt"><o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">RENAME TO </span><span style="font-size:
-12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">新表名</span><span lang="EN-US" style="font-size:12.0pt"><o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">action </span><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">为下面的一种</span><span lang="EN-US" style="font-size:12.0pt">:<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">ADD [ COLUMN ] </span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">字段名</span><span style="font-size:12.0pt"><br></span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">类型</span><span lang="EN-US" style="font-size:12.0pt"> [ </span><span style="font-size:12.0pt;font-family:
-宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">字段约束</span><span lang="EN-US" style="font-size:12.0pt"> [ … ] ]<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">DROP [ COLUMN ] </span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">字段名</span><span lang="EN-US" style="font-size:12.0pt"> [ RESTRICT | CASCADE ]<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">ALTER [ COLUMN ] </span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">字段名</span><span lang="EN-US" style="font-size:12.0pt"> TYPE </span><span style="font-size:12.0pt;font-family:
-宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">类型</span><span lang="EN-US" style="font-size:12.0pt"> [ USING </span><span style="font-size:
-12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">表达式</span><span lang="EN-US" style="font-size:12.0pt"> ]<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">ALTER [ COLUMN ] </span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">字段名</span><span lang="EN-US" style="font-size:12.0pt"> SET DEFAULT </span><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">表达式</span><span lang="EN-US" style="font-size:12.0pt"><o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">ALTER [ COLUMN ] </span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">字段名</span><span lang="EN-US" style="font-size:12.0pt"> DROP DEFAULT<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">ALTER [ COLUMN ] </span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">字段名</span><span lang="EN-US" style="font-size:12.0pt"> { SET | DROP } NOT NULL<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">ALTER [ COLUMN ] </span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">字段名</span><span lang="EN-US" style="font-size:12.0pt"> SET STATISTICS integer<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">ALTER [ COLUMN ] </span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">字段名</span><span lang="EN-US" style="font-size:12.0pt"> SET STORAGE { PLAIN | EXTERNAL | EXTENDED | MAIN }<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">ADD </span><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">表约束</span><span lang="EN-US" style="font-size:12.0pt"><o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">DROP CONSTRAINT </span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">约束名字</span><span lang="EN-US" style="font-size:12.0pt"> [ RESTRICT | CASCADE ]<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">CLUSTER ON </span><span style="font-size:
-12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">索引名称</span><span lang="EN-US" style="font-size:12.0pt"><o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">SET WITHOUT CLUSTER<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">SET WITHOUT OIDS<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">OWNER TO </span><span style="font-size:
-12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">新属主</span><span lang="EN-US" style="font-size:12.0pt"><o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">SET TABLESPACE </span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">表空间名字</span><span lang="EN-US" style="font-size:12.0pt"><o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
-<p><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;;color:blue">命令</span><span lang="EN-US" style="font-size:12.0pt;color:blue">: ALTER TRIGGER<o:p></o:p></span></p>
-<p><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">描述</span><span lang="EN-US" style="font-size:12.0pt">:&nbsp;&nbsp;&nbsp;&nbsp;<br></span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">改变一个触发器的定义</span><span lang="EN-US" style="font-size:12.0pt"><o:p></o:p></span></p>
-<p><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">语法</span><span lang="EN-US" style="font-size:12.0pt">:<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">ALTER TRIGGER </span><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">名字</span><span lang="EN-US" style="font-size:12.0pt"> ON </span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">表</span><span lang="EN-US" style="font-size:12.0pt"> RENAME TO </span><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">新名字</span><span lang="EN-US" style="font-size:12.0pt"><o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
-<p><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;;color:blue">命令</span><span lang="EN-US" style="font-size:12.0pt;color:blue">: ALTER USER<o:p></o:p></span></p>
-<p><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">描述</span><span lang="EN-US" style="font-size:12.0pt">:&nbsp;&nbsp;&nbsp;&nbsp;<br></span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">改变一个数据库用户</span><span lang="EN-US" style="font-size:12.0pt"><o:p></o:p></span></p>
-<p><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">语法</span><span lang="EN-US" style="font-size:12.0pt">:<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">ALTER USER name [ [ WITH ] option [ … ] ]<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">where option can be:<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">CREATEDB | NOCREATEDB<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">| CREATEUSER | NOCREATEUSER<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">| [ ENCRYPTED | UNENCRYPTED ] PASSWORD ‘password’<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">| VALID UNTIL ‘abstime’<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">ALTER USER name RENAME TO newname<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">ALTER USER name SET parameter { TO | = } { value |<br>DEFAULT }<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
-<p><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;;color:blue">命令</span><span lang="EN-US" style="font-size:12.0pt;color:blue">: COPY<o:p></o:p></span></p>
-<p><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">描述</span><span lang="EN-US" style="font-size:12.0pt">:&nbsp;&nbsp;&nbsp;&nbsp;<br></span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">在一个文件和一个表之间拷贝数据</span><span lang="EN-US" style="font-size:12.0pt"><o:p></o:p></span></p>
-<p><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">语法</span><span lang="EN-US" style="font-size:12.0pt">:<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">COPY </span><span style="font-size:12.0pt;font-family:
-宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">表名</span><span lang="EN-US" style="font-size:12.0pt"> [ ( </span><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">字段</span><span lang="EN-US" style="font-size:12.0pt"> [, …]<br>) ]<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">FROM { ‘</span><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">文件名</span><span lang="EN-US" style="font-size:12.0pt">‘ |<br>STDIN }<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">[ [ WITH ]<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">[ BINARY ]<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">[ OIDS ]<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">[ DELIMITER [ AS ] ‘delimiter’ ]<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">[ NULL [ AS ] ‘null string’ ]<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">[ CSV [ QUOTE [ AS ] ‘quote’ ]<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">[ ESCAPE [ AS ] ‘escape’ ]<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">[ FORCE NOT NULL column [, …] ]<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">COPY </span><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">表名</span><span lang="EN-US" style="font-size:12.0pt"> [ ( </span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
-mso-hansi-font-family:&quot;Times New Roman&quot;">字段</span><span lang="EN-US" style="font-size:12.0pt"> [, …] ) ]<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">TO { ‘</span><span style="font-size:12.0pt;
-font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
-&quot;Times New Roman&quot;">文件名</span><span lang="EN-US" style="font-size:12.0pt">‘ |<br>STDOUT }<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">[ [ WITH ]<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">[ BINARY ]<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">[ OIDS ]<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">[ DELIMITER [ AS ] ‘delimiter’ ]<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">[ NULL [ AS ] ‘null string’ ]<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">[ CSV [ QUOTE [ AS ] ‘quote’ ]<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">[ ESCAPE [ AS ] ‘escape’ ]<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">[ FORCE QUOTE column [, …] ]<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
-<p><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;;color:blue">命令</span><span lang="EN-US" style="font-size:12.0pt;color:blue">: CREATE TABLE<o:p></o:p></span></p>
-<p><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">描述</span><span lang="EN-US" style="font-size:12.0pt">:&nbsp;&nbsp;&nbsp;&nbsp;<br></span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">定义一个新的表</span><span lang="EN-US" style="font-size:12.0pt"><o:p></o:p></span></p>
-<p><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
-&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">语法</span><span lang="EN-US" style="font-size:12.0pt">:<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">CREATE [ [ GLOBAL | LOCAL ] { TEMPORARY |<br>TEMP } ] TABLE table_name (<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">{ column_name data_type [ DEFAULT<br>default_expr ] [ column_constraint [ … ] ]<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">| table_constraint<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">| LIKE parent_table [ { INCLUDING |<br>EXCLUDING } DEFAULTS ] } [, … ]<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">)<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">[ INHERITS ( parent_table [, … ] ) ]<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">[ WITH OIDS | WITHOUT OIDS ]<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">[ ON COMMIT { PRESERVE ROWS | DELETE ROWS |<br>DROP } ]<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">[ TABLESPACE tablespace ]<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">where column_constraint is:<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">[ CONSTRAINT constraint_name ]<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">{ NOT NULL |<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">NULL |<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">UNIQUE [ USING INDEX TABLESPACE tablespace<br>] |<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">PRIMARY KEY [ USING INDEX TABLESPACE<br>tablespace ] |<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">CHECK (expression) |<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">REFERENCES reftable [ ( refcolumn ) ] [<br>MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ]<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">[ ON DELETE action ] [ ON UPDATE action ] }<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">[ DEFERRABLE | NOT DEFERRABLE ] [ INITIALLY<br>DEFERRED | INITIALLY IMMEDIATE ]<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">and<br>table_constraint is:<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt"><o:p>&nbsp;</o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">[ CONSTRAINT constraint_name ]<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">{ UNIQUE ( column_name [, … ] ) [ USING<br>INDEX TABLESPACE tablespace ] |<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">PRIMARY KEY ( column_name [, … ] ) [<br>USING INDEX TABLESPACE tablespace ] |<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">CHECK ( expression ) |<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">FOREIGN KEY ( column_name [, … ] )<br>REFERENCES reftable [ ( refcolumn [, … ] ) ]<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">[ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE<br>] [ ON DELETE action ] [ ON UPDATE action ] }<o:p></o:p></span></p>
-<p><span lang="EN-US" style="font-size:12.0pt">[ DEFERRABLE | NOT DEFERRABLE ] [ INITIALLY DEFERRED |<br>INITIALLY IMMEDIATE ]<o:p></o:p></span></p>
-<div><a href="http://www.wiz.cn/i/f9706a63" title="来自为知笔记(Wiz)" target="_blank" rel="external">来自为知笔记(Wiz)</a></div>
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://localhost:4000/2015/05/20/psql-e5-b8-b8-e7-94-a8-e5-91-bd-e4-bb-a4-e5-a4-a7-e5-85-a8/" data-id="ciqxk5qiw003f55wusf4ffl8h" class="article-share-link" data-share="baidu" data-title="psql常用命令大全">分享到</a>
-      
-
-      
-
-      
     </footer>
   </div>
 
@@ -1322,7 +766,7 @@ font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-f
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Extjs/">Extjs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mybatis/">Mybatis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pool/">Pool</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RESTful/">RESTful</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/analyzing/">analyzing</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apache/">apache</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bamboo/">bamboo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c3po/">c3po</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dbcp/">dbcp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debian/">debian</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/enter/">enter</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gitlab/">gitlab</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/h5plus/">h5plus</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5/">html5</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ioc/">ioc</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jconsole/">jconsole</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jmx/">jmx</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kafka/">kafka</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven/">maven</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/openstack/">openstack</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/playframework/">playframework</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/playframwork/">playframwork</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sonar/">sonar</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/">spring</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/upload/">upload</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图片缓存/">图片缓存</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/大小控制/">大小控制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日构建/">日构建</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/格式限制/">格式限制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/连接池/">连接池</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Extjs/">Extjs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mybatis/">Mybatis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OSX/">OSX</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pool/">Pool</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RESTful/">RESTful</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XQuartz/">XQuartz</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/analyzing/">analyzing</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apache/">apache</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/architecture/">architecture</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bamboo/">bamboo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c3po/">c3po</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dbcp/">dbcp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debian/">debian</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/enter/">enter</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gitlab/">gitlab</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/h5plus/">h5plus</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5/">html5</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ioc/">ioc</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jconsole/">jconsole</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jmx/">jmx</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kafka/">kafka</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven/">maven</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/openstack/">openstack</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/playframework/">playframework</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/playframwork/">playframwork</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rabbitmq/">rabbitmq</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sonar/">sonar</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/">spring</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/upload/">upload</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图片缓存/">图片缓存</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/大小控制/">大小控制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日构建/">日构建</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/格式限制/">格式限制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/连接池/">连接池</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -1331,7 +775,7 @@ font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-f
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">十一月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">八月 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">七月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">六月 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">五月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">四月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">三月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/02/">二月 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01/">一月 2013</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">十一月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">八月 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">七月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">六月 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">五月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">四月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">三月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/02/">二月 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01/">一月 2013</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -1343,23 +787,23 @@ font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-f
       <ul>
         
           <li>
-            <a href="/2016/07/19/linux-timezone-time-update/">linux 修改时区并更新时间</a>
+            <a href="/2016/07/28/OSX使用XQuartz远程连接Linux主机/">OSX使用XQuartz远程连接Linux主机</a>
           </li>
         
           <li>
-            <a href="/2016/03/17/maven-sonar-analyzing/">maven集成sonar代码分析</a>
+            <a href="/2016/07/25/web-develop-architecture/">web-develop-architecture</a>
           </li>
         
           <li>
-            <a href="/2015/11/19/extjs-e6-96-87-e4-bb-b6-e4-b8-8a-e4-bc-a0-e6-a0-bc-e5-bc-8f-e5-a4-a7-e5-b0-8f-e9-99-90-e5-88-b6-2/">Extjs文件上传格式大小限制</a>
+            <a href="/2016/07/25/kafka-vs-rabbitmq/">kafka-vs-rabbitmq</a>
           </li>
         
           <li>
-            <a href="/2015/11/19/docker-enter-backend-container/">docker-enter进入后台容器</a>
+            <a href="/2016/07/25/rabitmq-manual/">rabitmq-manual</a>
           </li>
         
           <li>
-            <a href="/2015/11/19/e4-bd-bf-e7-94-a8-e8-b7-a8-e5-b9-b3-e5-8f-b0-e6-8a-80-e6-9c-afh5-e5-ae-9e-e7-8e-b0-e5-ba-94-e7-94-a8-e5-9b-be-e7-89-87-e6-9c-ac-e5-9c-b0-e7-bc-93-e5-ad-98/">使用跨平台技术h5+实现应用图片本地缓存</a>
+            <a href="/2016/07/25/java-interview/">java-interview</a>
           </li>
         
       </ul>

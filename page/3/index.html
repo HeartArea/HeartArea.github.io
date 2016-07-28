@@ -70,6 +70,380 @@
     <div class="outer">
       <section id="main">
   
+    <article id="post-jconsole-e8-bf-9c-e7-a8-8b-e8-bf-9e-e6-8e-a5-e8-bf-90-e8-a1-8c-e5-9c-a8linux-e4-b8-8a-e7-9a-84jmx-e6-9c-8d-e5-8a-a1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/07/02/jconsole-e8-bf-9c-e7-a8-8b-e8-bf-9e-e6-8e-a5-e8-bf-90-e8-a1-8c-e5-9c-a8linux-e4-b8-8a-e7-9a-84jmx-e6-9c-8d-e5-8a-a1/" class="article-date">
+  <time datetime="2014-07-02T15:36:27.000Z" itemprop="datePublished">2014-07-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/工作记录/">工作记录</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/07/02/jconsole-e8-bf-9c-e7-a8-8b-e8-bf-9e-e6-8e-a5-e8-bf-90-e8-a1-8c-e5-9c-a8linux-e4-b8-8a-e7-9a-84jmx-e6-9c-8d-e5-8a-a1/">Jconsole远程连接运行在linux上的JMX服务</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>JMX的bug尼玛 坑死我了<div>linux下 命令hostname -i查看获取当前服务器在网络上的标识。</div><div><br></div><div>vi /etc/hosts&nbsp;</div><div>192.168.1.4 &nbsp; localhost</div><div>127.0.0.1 &nbsp; &nbsp; &nbsp; localhost</div><div>真实IP一定要卸载前面</div><div><br></div><div><br></div><div></div></p>
+<div><!--WizRtf2Html Charset=0  --><span style="font-size:14pt;color:WindowText;font-family:'Consolas';">MBeanServer&nbsp;mBeanServer&nbsp;=&nbsp;ManagementFactory.<span style="font-style:italic;">getPlatformMBeanServer</span>();</span></div><br><div><span style="font-size:14pt;color:WindowText;font-family:'Consolas';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#3f7f5f;">//&nbsp;包名加&nbsp;类名&nbsp;创建一个ObjectName</span></span></div><br><div><span style="font-size:14pt;color:WindowText;font-family:'Consolas';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ObjectName&nbsp;engineName&nbsp;=&nbsp;<span style="font-weight:bold;color:#7f0055;">new</span>&nbsp;ObjectName(<span style="color:#2a00ff;">“cn.com.eightspace.mbp.jmx:type=DeviceIO”</span>);</span></div><br><div><span style="font-size:14pt;color:WindowText;font-family:'Consolas';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#3f7f5f;">//&nbsp;创建一个Engine实例</span></span></div><br><div><span style="font-size:14pt;color:WindowText;font-family:'Consolas';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DeviceIO&nbsp;engineMbean&nbsp;=&nbsp;<span style="font-weight:bold;color:#7f0055;">new</span>&nbsp;DeviceIO();</span></div><br><div><span style="font-size:14pt;color:WindowText;font-family:'Consolas';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.<span style="font-style:italic;color:#0000c0;">out</span>.println(<span style="color:#2a00ff;">“注册对象：”</span>&nbsp;+&nbsp;engineMbean);</span></div><br><div><span style="font-size:14pt;color:WindowText;font-family:'Consolas';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#3f7f5f;">//&nbsp;在MBean&nbsp;server上注册MBean</span></span></div><br><div><span style="font-size:14pt;color:WindowText;font-family:'Consolas';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mBeanServer.registerMBean(engineMbean,&nbsp;engineName);</span></div><br><div></div><br><div><span style="font-size:14pt;color:WindowText;font-family:'Consolas';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ObjectName&nbsp;adaptorName&nbsp;=&nbsp;<span style="font-weight:bold;color:#7f0055;">new</span>&nbsp;ObjectName(<span style="font-style:italic;color:#0000c0;">htmlname</span>);</span></div><br><div></div><br><div><span style="font-size:14pt;color:WindowText;font-family:'Consolas';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#3f7f5f;">//&nbsp;使用<span style="text-decoration:underline;">html</span>适配器，支持网页访问</span></span></div><br><div><span style="font-size:14pt;color:WindowText;font-family:'Consolas';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HtmlAdaptorServer&nbsp;adaptor&nbsp;=&nbsp;<span style="font-weight:bold;color:#7f0055;">new</span>&nbsp;HtmlAdaptorServer();</span></div><br><div><span style="font-size:14pt;color:WindowText;font-family:'Consolas';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mBeanServer.registerMBean(adaptor,&nbsp;adaptorName);</span></div><br><div><span style="font-size:14pt;color:WindowText;font-family:'Consolas';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;adaptor.setPort(<span style="font-style:italic;color:#0000c0;">port</span>);</span></div><br><span style="font-size:14pt;color:WindowText;font-family:'Consolas';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;adaptor.start();</span>&nbsp;<div><br></div><div><br></div><div><br></div><div><br></div><div>参数设置： &nbsp; -Dcom.sun.management.jmxremote.port=8888 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false&nbsp;<br></div>
+
+<div><a href="http://www.wiz.cn/i/f9706a63" title="来自为知笔记(Wiz)" target="_blank" rel="external">来自为知笔记(Wiz)</a></div>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://localhost:4000/2014/07/02/jconsole-e8-bf-9c-e7-a8-8b-e8-bf-9e-e6-8e-a5-e8-bf-90-e8-a1-8c-e5-9c-a8linux-e4-b8-8a-e7-9a-84jmx-e6-9c-8d-e5-8a-a1/" data-id="cir5qosw10018ykwuarghoztv" class="article-share-link" data-share="baidu" data-title="Jconsole远程连接运行在linux上的JMX服务">分享到</a>
+      
+
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jconsole/">jconsole</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jmx/">jmx</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+
+    </footer>
+  </div>
+
+
+
+  
+</article>
+
+
+
+  
+    <article id="post-e7-a7-a6-e5-b2-ad-e6-97-a0-e9-a2-86-e5-a4-84" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/06/19/e7-a7-a6-e5-b2-ad-e6-97-a0-e9-a2-86-e5-a4-84/" class="article-date">
+  <time datetime="2014-06-19T09:14:58.000Z" itemprop="datePublished">2014-06-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/生活点滴/">生活点滴</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/06/19/e7-a7-a6-e5-b2-ad-e6-97-a0-e9-a2-86-e5-a4-84/">秦岭无岭处</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>如果你是秦岭之巅的一滴雨，落到北边，就会流入黄河，经由东营入渤海；落到南边，就会流入长江，经由上海入东海。</p>
+<p>此次出差，从徽县出发，达到仇池古国——西和县，再辗转天水，最后回到徽县。沿途在秦岭西端山区穿梭，虽然没有巍峨的大山，但是区区几十公里的行程让你分分钟感觉南方和北方的差异，黄河流域和长江流域的不同。</p>
+<p>尤其是从天水回徽县的路上，八盘山隧道的北边，车子逆着水流方向行驶，从渭河到不知名的小溪，两边的小秃山明显的黄土地貌，让我不禁想起老家的千沟万壑。过了八盘山隧道，公路沿河而下，山上绿到发黑的的树林把地表裹得严严实实，偶尔有滑坡形成的流沙像一道道伤口。</p>
+<p>如果你是秦岭之巅的一滴雨，落到北边，就会流入黄河，经由东营入渤海；落到南边，就会流入长江，经由上海入东海。不同的命运，决定不同的生命历程。汇入黄河将见证北方的干旱，贫瘠；汇如长江将见证富饶、湿润。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://localhost:4000/2014/06/19/e7-a7-a6-e5-b2-ad-e6-97-a0-e9-a2-86-e5-a4-84/" data-id="cir5qosvg000qykwu1h5b833o" class="article-share-link" data-share="baidu" data-title="秦岭无岭处">分享到</a>
+      
+
+      
+
+      
+    </footer>
+  </div>
+
+
+
+  
+</article>
+
+
+
+  
+    <article id="post-e6-88-91-e4-bc-9a-e9-87-87-e6-9b-b4-e5-a4-9a-e7-9a-84-e9-9b-8f-e8-8f-8a" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/06/16/e6-88-91-e4-bc-9a-e9-87-87-e6-9b-b4-e5-a4-9a-e7-9a-84-e9-9b-8f-e8-8f-8a/" class="article-date">
+  <time datetime="2014-06-16T08:58:29.000Z" itemprop="datePublished">2014-06-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/生活点滴/">生活点滴</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/06/16/e6-88-91-e4-bc-9a-e9-87-87-e6-9b-b4-e5-a4-9a-e7-9a-84-e9-9b-8f-e8-8f-8a/">我会采更多的雏菊（转）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>如果我能够从头活过，</p>
+<p>我会试着犯更多的错。</p>
+<p>我会放松一点，</p>
+<p>我会灵活一点。</p>
+<p>我会比这一趟过得傻。</p>
+<p>很少有什么事能让我当真。</p>
+<p>我会疯狂一点。</p>
+<p>我会很少讲究卫生，</p>
+<p>我会冒更多的险。</p>
+<p>我会更经常地旅游，</p>
+<p>我会爬更多的山，</p>
+<p>游更多的河，</p>
+<p>看更多的日落。</p>
+<p>我会吃更多冰淇淋，少吃豆子。</p>
+<p>我会惹更多麻烦，</p>
+<p>可是不在想象中担忧。</p>
+<p>你看，我小心翼翼地稳健地理智地活着，</p>
+<p>一个又一个小时，一天又一天。</p>
+<p>噢，我有过难忘的时刻，</p>
+<p>如果我能够重来一次，</p>
+<p>我会要更多这样的时刻。</p>
+<p>事实上，我不需要别的什么。</p>
+<p>仅仅是时刻，一个接着一个，</p>
+<p>而不是每天都操心着往后的漫长日子。</p>
+<p>我曾经不论到哪里去都不会忘记带上</p>
+<p>温度计、热水壶、漱口杯，雨衣和降落伞。</p>
+<p>如果我能够重来一次，</p>
+<p>我会到处走走，</p>
+<p>什么都试试，并且轻装上路。</p>
+<p>如果我能够从头活过，</p>
+<p>我会延长打赤脚的时光，</p>
+<p>从尽早的春天到尽晚的秋天。</p>
+<p>我会更经常地逃学，</p>
+<p>我不会考那么高的分数，</p>
+<p>除非是一不小心。</p>
+<p>我会多骑些旋转木马。</p>
+<p>我会采更多的雏菊。</p>
+<p>——纳丁·斯待尔，时年87岁</p>
+<p>最近再看《你的生命有什么可能》，中间关于生活、兴趣和价值观谈的非常有见地，特摘抄附诗以记之。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://localhost:4000/2014/06/16/e6-88-91-e4-bc-9a-e9-87-87-e6-9b-b4-e5-a4-9a-e7-9a-84-e9-9b-8f-e8-8f-8a/" data-id="cir5qosv6000hykwuvegmumuk" class="article-share-link" data-share="baidu" data-title="我会采更多的雏菊（转）">分享到</a>
+      
+
+      
+
+      
+    </footer>
+  </div>
+
+
+
+  
+</article>
+
+
+
+  
+    <article id="post-spring-e5-92-8cplay-framework-e6-95-b4-e5-90-88" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/05/14/spring-e5-92-8cplay-framework-e6-95-b4-e5-90-88/" class="article-date">
+  <time datetime="2014-05-14T13:50:58.000Z" itemprop="datePublished">2014-05-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/工作记录/">工作记录</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/05/14/spring-e5-92-8cplay-framework-e6-95-b4-e5-90-88/">Spring和play framework整合</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>play framework打破了web开发中容器的概念，默认支持RESTful，快速开发、部署，感觉不错。缺憾的是IOC得依靠其他框架支持，spring当之无愧啊，废话不说，上手操作。</p>
+<p>背景介绍：window平台，play2.2.3，Spring3.1，java语言</p>
+<p><strong>一、引入Spring容器</strong></p>
+<p>play快速入门请移步<a href="http://www.playframework.com/documentation/2.3.x/JavaTodoList" target="_blank" rel="external">http://www.playframework.com/documentation/2.3.x/JavaTodoList</a></p>
+<p>原始的play项目结构如下：</p>
+<p><div><img src="file:///C:\Users\Frank\AppData\Roaming\Tencent\Users\986737506\QQ\WinTemp\RichOle\%OH@{SGAT8DJ`FCU[SNPHBL.jpg" alt=""></div></p>
+<p><div><img src="file:///C:\Users\Frank\AppData\Roaming\Tencent\Users\986737506\QQ\WinTemp\RichOle\%OH@{SGAT8DJ`FCU[SNPHBL.jpg" alt=""></div></p>
+<p><div><img src="file:///C:\Users\Frank\AppData\Roaming\Tencent\Users\986737506\QQ\WinTemp\RichOle\%OH@{SGAT8DJ`FCU[SNPHBL.jpg" alt=""><a href="http://www.heartarea.net/wp-content/uploads/2014/05/QQ图片20140514205658.jpg" target="_blank" rel="external"><img src="http://www.heartarea.net/wp-content/uploads/2014/05/QQ图片20140514205658-262x300.jpg" alt="QQ图片20140514205658"></a></div></p>
+<p><div></div><br><br><br>创建Global类作为Spring容器的bootstrap，</p>
+<p>PS：类型必须是Global，且只能放到default package下，攻破技能尚未修炼。</p>
+<p>代码如下：</p>
+<p>import org.springframework.context.ApplicationContext;<br>import org.springframework.context.support.ClassPathXmlApplicationContext;</p>
+<p>import play.Application;<br>import play.GlobalSettings;</p>
+<p>public class Global extends GlobalSettings {<br>/**</p>
+<ul>
+<li>Spring容器<br>*/<br>private ApplicationContext context;</li>
+</ul>
+<p>@Override<br>public void onStart(Application arg0) {<br>//初始化Spring容器<br>context = new ClassPathXmlApplicationContext(“applicationContext.xml”);<br>}</p>
+<p>@Override<br>public &lt;A&gt; A getControllerInstance(Class&lt;A&gt; clazz) throws Exception {<br>//根据类型获取控制器<br>return context.getBean(clazz);<br>}</p>
+<p>}</p>
+<p><strong>二、Spring容器配置</strong></p>
+<p>我用的是注解配置，简单不述，代码如下：</p>
+<p><strong><em>Controller层：</em></strong></p>
+<p>package controllers.user;</p>
+<p>import javax.annotation.Resource;</p>
+<p>import play.Logger;<br>import play.data.DynamicForm;<br>import play.data.Form;<br>import play.libs.Json;<br>import play.mvc.Controller;<br>import play.mvc.Result;<br>import services.user.UserService;</p>
+<p>import com.fasterxml.jackson.databind.node.ObjectNode;</p>
+<p>@org.springframework.stereotype.Controller<br>public class UserController extends Controller {<br>@Resource(name = “userServiceImpl”)<br>private UserService userService;</p>
+<p>/**</p>
+<ul>
+<li>登陆&lt;p&gt;</li>
+<li>用户名和密码正确则跳转到index.html，否则返回给客户端json形式的结果。</li>
+<li>@return<br>*/<br>public Result login() {<br>try {<br>DynamicForm requestData = Form.form().bindFromRequest();<br>String username = requestData.get(“username”);<br>String password = requestData.get(“password”);<br>if (userService.check(username, password)) {<br>return redirect(“/index.html”);<br>} else {<br>ObjectNode result = Json.newObject();<br>result.put(“status”, “KO”);<br>result.put(“message”, “用户名或者密码错误”);<br>return ok(result);<br>}<br>} catch (Exception e) {<br>Logger.error(“登录失败”, e);<br>return badRequest();<br>}<br>}<br>}</li>
+</ul>
+<p><em><strong>Service层：</strong></em></p>
+<p>package services.user.impl;</p>
+<p>import org.springframework.stereotype.Service;</p>
+<p>import services.user.UserService;</p>
+<p>@Service(“userServiceImpl”)<br>public class UserServiceImpl implements UserService {<br>@Override<br>public boolean check(String username, String password) throws Exception {<br>return “admin”.equals(username) &amp;&amp; “111111”.equals(password);<br>}<br>}</p>
+<p><em><strong>routes配置：</strong></em></p>
+<h1 id="Home-page"><a href="#Home-page" class="headerlink" title="Home page"></a>Home page</h1><p>GET              /                                      @controllers.Application.index<br>POST           /user/login                       @controllers.user.UserController.login</p>
+<h1 id="Map-static-resources-from-the-public-folder-to-the-assets-URL-path"><a href="#Map-static-resources-from-the-public-folder-to-the-assets-URL-path" class="headerlink" title="Map static resources from the /public folder to the /assets URL path"></a>Map static resources from the /public folder to the /assets URL path</h1><p>GET             /*file                                 controllers.Assets.at(path=”/public”, file)</p>
+<p>三、访问请求</p>
+<p>登陆页面：</p>
+<p>&lt;html&gt;<br>&lt;head&gt;<br>&lt;meta http-equiv=”Content-Type” content=”text/html; charset=UTF-8”&gt;<br>&lt;title&gt;登陆页面&lt;/title&gt;<br>&lt;/head&gt;<br>&lt;body&gt;<br>&lt;div&gt;<br>&lt;form action=”/user/login” method=”post”&gt;<br>用户名：&lt;input type=”text” name=”username” /&gt;&lt;br/&gt;<br>密 码：&lt;input type=”password” name=”password” /&gt;&lt;br/&gt;<br>&lt;input type=”submit” name=”登录” /&gt;<br>&lt;/form&gt;<br>&lt;/div&gt;<br>&lt;/body&gt;<br>&lt;/html&gt;</p>
+<p>最后看下目录结构吧</p>
+<p><a href="http://www.heartarea.net/wp-content/uploads/2014/05/1.jpg" target="_blank" rel="external"><img src="http://www.heartarea.net/wp-content/uploads/2014/05/1-156x300.jpg" alt="1"></a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://localhost:4000/2014/05/14/spring-e5-92-8cplay-framework-e6-95-b4-e5-90-88/" data-id="cir5qoswr0024ykwuuywxvrr0" class="article-share-link" data-share="baidu" data-title="Spring和play framework整合">分享到</a>
+      
+
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RESTful/">RESTful</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ioc/">ioc</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/playframework/">playframework</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spring/">spring</a></li></ul>
+
+    </footer>
+  </div>
+
+
+
+  
+</article>
+
+
+
+  
+    <article id="post-e4-bd-bf-e7-94-a8ant-e6-89-93-e5-8c-85-e5-ae-9e-e7-8e-b0-e7-89-88-e6-9c-ac-e6-8c-81-e7-bb-ad-e6-9b-b4-e6-96-b0" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/04/04/e4-bd-bf-e7-94-a8ant-e6-89-93-e5-8c-85-e5-ae-9e-e7-8e-b0-e7-89-88-e6-9c-ac-e6-8c-81-e7-bb-ad-e6-9b-b4-e6-96-b0/" class="article-date">
+  <time datetime="2014-04-04T08:48:35.000Z" itemprop="datePublished">2014-04-04</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/工作记录/">工作记录</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/04/04/e4-bd-bf-e7-94-a8ant-e6-89-93-e5-8c-85-e5-ae-9e-e7-8e-b0-e7-89-88-e6-9c-ac-e6-8c-81-e7-bb-ad-e6-9b-b4-e6-96-b0/">使用ant打包实现版本持续更新</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>背景介绍：代码仓库是小乌龟mercurial，因为目前开发的项目迭代频率要求较高，因此需要定时自动打包发布程序。</p>
+<p>一、在dynamic web project中添加ant build.xml，内容如下：</p>
+<p>&lt;?xml version=”1.0”?&gt;<br>&lt;project name=”round_server” default=”war” basedir=”.”&gt;<br>&lt;!– 申明常用变量 –&gt;<br>&lt;property name=”classes” value=”build/classes”/&gt;<br>&lt;property name=”build” value=”build”/&gt;<br>&lt;property name=”lib” value=”WebContent/WEB-INF/lib/“/&gt;<br>&lt;!– 定义编译时依赖包搜索路径 –&gt;<br>&lt;path id=”rlib”&gt;<br>&lt;fileset dir=”${lib}”&gt;<br>&lt;include name=”*.jar”/&gt;<br>&lt;/fileset&gt;<br>&lt;/path&gt;<br>&lt;!– 删除build路径–&gt;<br>&lt;target name=”clean”&gt;<br>&lt;delete dir=”build”/&gt;<br>&lt;/target&gt;</p>
+<p>&lt;!– 建立build/classes目录，并将java文件到build/classes路径下，注意指定编码格式，否则编译信息会乱码–&gt;<br>&lt;target name=”compile” depends=”clean”&gt;<br>&lt;mkdir dir=”${classes}”/&gt;<br>&lt;javac srcdir=”src” destdir=”${classes}” encoding=”UTF-8”&gt;<br>&lt;classpath refid=”rlib”&gt;&lt;/classpath&gt;<br>&lt;/javac&gt;<br>&lt;/target&gt;</p>
+<p>&lt;!– 拷贝配置文件，如log4j.properties,config.properties和db.properties等 –&gt;<br>&lt;target name=”copy” depends=”compile”&gt;<br>&lt;copy todir=”${classes}”&gt;<br>&lt;fileset dir=”resource”/&gt;<br>&lt;/copy&gt;<br>&lt;/target&gt;</p>
+<p>&lt;!– 打成war包–&gt;<br>&lt;target name=”war” depends=”copy”&gt;<br>&lt;war destfile=”${build}/round_server.war” webxml=”WebContent/WEB-INF/web.xml”&gt;<br>&lt;!– 拷贝WebContent下除了WEB-INF和META-INF的两个文件夹–&gt;<br>&lt;fileset dir=”WebContent” includes=”<em>*/</em>.jsp”/&gt;<br>&lt;!– 拷贝lib目录下的jar包–&gt;<br>&lt;lib dir=”${lib}”/&gt;<br>&lt;!– 拷贝build/classes下的class文件–&gt;<br>&lt;classes dir=”${classes}”/&gt;<br>&lt;/war&gt;<br>&lt;/target&gt;<br>&lt;/project&gt;</p>
+<p>备注：将所有第三方的jar统统放到WebConten/WEB_INFO/lib文件下，包括servlet-apI.jar</p>
+<p>二、下载并安装ant和hg</p>
+<p>服务器为debian，安装操作如下：</p>
+<p>安装ant</p>
+<p>apt-get install ant</p>
+<p>安装hg</p>
+<p>apt-get install mercurial</p>
+<p>三、克隆代码并使用ant编译打包</p>
+<p>cd /home/hg/repos</p>
+<p>hg clone <a href="http://ip:port//repos/round_server" target="_blank" rel="external">http://ip:port//repos/round_server</a></p>
+<p>cd round_server</p>
+<p>ant -f build.xml</p>
+<p>至此文件打包完成，根据第一步骤的配置，war文件被生成到build目录下，接下来将文件拷贝到tomcat下，重启服务器，一次打包成功完成。</p>
+<p>四、定时任务配置</p>
+<p>将上述命令变成脚本：</p>
+<p>vi deploy-round.sh</p>
+<p>cd /home/hg/repos/round_server</p>
+<p>hg update</p>
+<p>ant -f build.xml</p>
+<p>cp build/round_server.war /var/lib/tomcat/webapps/</p>
+<p>/etc/init.d/tomcat restart</p>
+<p>完成编辑，将文件编辑成可执行文件</p>
+<p>chmod 755 deploy-round.sh</p>
+<p>加入linux定时计划</p>
+<p>crontab -e</p>
+<p>键入 0 1 <em> </em> <em> </em> ?  /home/deploy-round.sh &gt; /dev/null</p>
+<p>保存退出</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://localhost:4000/2014/04/04/e4-bd-bf-e7-94-a8ant-e6-89-93-e5-8c-85-e5-ae-9e-e7-8e-b0-e7-89-88-e6-9c-ac-e6-8c-81-e7-bb-ad-e6-9b-b4-e6-96-b0/" data-id="cir5qosvj000uykwu8ekc3knz" class="article-share-link" data-share="baidu" data-title="使用ant打包实现版本持续更新">分享到</a>
+      
+
+      
+
+      
+    </footer>
+  </div>
+
+
+
+  
+</article>
+
+
+
+  
     <article id="post-e4-b8-aa-e4-ba-ba-e5-8d-9a-e5-ae-a2-e4-b8-8a-e7-ba-bf" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2014/03/29/e4-b8-aa-e4-ba-ba-e5-8d-9a-e5-ae-a2-e4-b8-8a-e7-ba-bf/" class="article-date">
@@ -103,7 +477,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://localhost:4000/2014/03/29/e4-b8-aa-e4-ba-ba-e5-8d-9a-e5-ae-a2-e4-b8-8a-e7-ba-bf/" data-id="ciqxk5qft000655wu625glqjy" class="article-share-link" data-share="baidu" data-title="个人博客上线">分享到</a>
+        <a data-url="http://localhost:4000/2014/03/29/e4-b8-aa-e4-ba-ba-e5-8d-9a-e5-ae-a2-e4-b8-8a-e7-ba-bf/" data-id="cir5qosuk0007ykwuqmuvaaua" class="article-share-link" data-share="baidu" data-title="个人博客上线">分享到</a>
       
 
       
@@ -172,7 +546,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://localhost:4000/2013/02/22/postgres-e5-b8-b8-e7-94-a8-e5-87-bd-e6-95-b0/" data-id="ciqxk5qhc001k55wujx2sx1fg" class="article-share-link" data-share="baidu" data-title="Postgres常用函数">分享到</a>
+        <a data-url="http://localhost:4000/2013/02/22/postgres-e5-b8-b8-e7-94-a8-e5-87-bd-e6-95-b0/" data-id="cir5qoswh001pykwuegsdjklt" class="article-share-link" data-share="baidu" data-title="Postgres常用函数">分享到</a>
       
 
       
@@ -343,7 +717,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://localhost:4000/2013/01/08/mybatis-e9-85-8d-e7-bd-ae-e7-ac-ac-e4-b8-89-e6-96-b9-e8-bf-9e-e6-8e-a5-e6-b1-a0/" data-id="ciqxk5qh7001e55wugfl8bhz5" class="article-share-link" data-share="baidu" data-title="mybatis配置第三方连接池">分享到</a>
+        <a data-url="http://localhost:4000/2013/01/08/mybatis-e9-85-8d-e7-bd-ae-e7-ac-ac-e4-b8-89-e6-96-b9-e8-bf-9e-e6-8e-a5-e6-b1-a0/" data-id="cir5qoswc001kykwudheormk2" class="article-share-link" data-share="baidu" data-title="mybatis配置第三方连接池">分享到</a>
       
 
       
@@ -384,7 +758,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Extjs/">Extjs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mybatis/">Mybatis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pool/">Pool</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RESTful/">RESTful</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/analyzing/">analyzing</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apache/">apache</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bamboo/">bamboo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c3po/">c3po</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dbcp/">dbcp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debian/">debian</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/enter/">enter</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gitlab/">gitlab</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/h5plus/">h5plus</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5/">html5</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ioc/">ioc</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jconsole/">jconsole</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jmx/">jmx</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kafka/">kafka</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven/">maven</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/openstack/">openstack</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/playframework/">playframework</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/playframwork/">playframwork</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sonar/">sonar</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/">spring</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/upload/">upload</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图片缓存/">图片缓存</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/大小控制/">大小控制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日构建/">日构建</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/格式限制/">格式限制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/连接池/">连接池</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Extjs/">Extjs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mybatis/">Mybatis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OSX/">OSX</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pool/">Pool</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RESTful/">RESTful</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XQuartz/">XQuartz</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/analyzing/">analyzing</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apache/">apache</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/architecture/">architecture</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bamboo/">bamboo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c3po/">c3po</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dbcp/">dbcp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debian/">debian</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/enter/">enter</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gitlab/">gitlab</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/h5plus/">h5plus</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5/">html5</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ioc/">ioc</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jconsole/">jconsole</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jmx/">jmx</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kafka/">kafka</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven/">maven</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/openstack/">openstack</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/playframework/">playframework</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/playframwork/">playframwork</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rabbitmq/">rabbitmq</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sonar/">sonar</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/">spring</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/upload/">upload</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图片缓存/">图片缓存</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/大小控制/">大小控制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日构建/">日构建</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/格式限制/">格式限制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/连接池/">连接池</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -393,7 +767,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">十一月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">八月 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">七月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">六月 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">五月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">四月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">三月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/02/">二月 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01/">一月 2013</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">十一月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">八月 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">七月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">六月 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">五月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">四月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">三月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/02/">二月 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01/">一月 2013</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -405,23 +779,23 @@
       <ul>
         
           <li>
-            <a href="/2016/07/19/linux-timezone-time-update/">linux 修改时区并更新时间</a>
+            <a href="/2016/07/28/OSX使用XQuartz远程连接Linux主机/">OSX使用XQuartz远程连接Linux主机</a>
           </li>
         
           <li>
-            <a href="/2016/03/17/maven-sonar-analyzing/">maven集成sonar代码分析</a>
+            <a href="/2016/07/25/web-develop-architecture/">web-develop-architecture</a>
           </li>
         
           <li>
-            <a href="/2015/11/19/extjs-e6-96-87-e4-bb-b6-e4-b8-8a-e4-bc-a0-e6-a0-bc-e5-bc-8f-e5-a4-a7-e5-b0-8f-e9-99-90-e5-88-b6-2/">Extjs文件上传格式大小限制</a>
+            <a href="/2016/07/25/kafka-vs-rabbitmq/">kafka-vs-rabbitmq</a>
           </li>
         
           <li>
-            <a href="/2015/11/19/docker-enter-backend-container/">docker-enter进入后台容器</a>
+            <a href="/2016/07/25/rabitmq-manual/">rabitmq-manual</a>
           </li>
         
           <li>
-            <a href="/2015/11/19/e4-bd-bf-e7-94-a8-e8-b7-a8-e5-b9-b3-e5-8f-b0-e6-8a-80-e6-9c-afh5-e5-ae-9e-e7-8e-b0-e5-ba-94-e7-94-a8-e5-9b-be-e7-89-87-e6-9c-ac-e5-9c-b0-e7-bc-93-e5-ad-98/">使用跨平台技术h5+实现应用图片本地缓存</a>
+            <a href="/2016/07/25/java-interview/">java-interview</a>
           </li>
         
       </ul>
