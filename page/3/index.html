@@ -70,6 +70,56 @@
     <div class="outer">
       <section id="main">
   
+    <article id="post-vsftpd-e7-9a-84-e5-ae-89-e8-a3-85-e5-92-8c-e9-85-8d-e7-bd-ae" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/08/14/vsftpd-e7-9a-84-e5-ae-89-e8-a3-85-e5-92-8c-e9-85-8d-e7-bd-ae/" class="article-date">
+  <time datetime="2014-08-14T07:07:00.000Z" itemprop="datePublished">2014-08-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/工作记录/">工作记录</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/08/14/vsftpd-e7-9a-84-e5-ae-89-e8-a3-85-e5-92-8c-e9-85-8d-e7-bd-ae/">vsftpd的安装和配置</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>apt-get install  vsftpd</p>
+<div></div><br><div>配置文件在  /etc/vsftpd.conf</div><br><div>默认是只开启匿名用户的，只能读不能写。</div><br><div>放开 它   local_enable=YES</div><br><div></div><br><div>cd /home</div><br><div>mkdir ftp</div><br><div>useradd -d /home/ftp ftpuser</div><br><div>passwd ftpuser  设置上密码</div><br><div>chown ftpuser:ftpuser ftp</div><br><div>chmod 755 ftp</div><br><div></div><br><div>如果是debian，如上应该可以了。</div><br><div>使用cmd  ftp 192.168.1.X</div><br><div>输入用户名密码</div><br><div>put someth.txt</div><br><div></div><br><div>如果是ubuntu的话</div><br><div></div><br><div>cd /etc</div><br><div>echo “ftpuser”  &gt;&gt; vsftpd.chroot_list</div><br><div></div><br><div><br><div>设置匿名账户的访问目录</div><br><div>anon_root=/home/ftp</div><br></div><br><div>然后/et<span style="font-family: 'Microsoft YaHei UI';">c/init.d/vsftpd restart</span></div>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://localhost:4000/2014/08/14/vsftpd-e7-9a-84-e5-ae-89-e8-a3-85-e5-92-8c-e9-85-8d-e7-bd-ae/" data-id="cirmxdldh0022dtwub5ny5x05" class="article-share-link" data-share="baidu" data-title="vsftpd的安装和配置">分享到</a>
+      
+
+      
+
+      
+    </footer>
+  </div>
+
+
+
+  
+</article>
+
+
+
+  
     <article id="post-jconsole-e8-bf-9c-e7-a8-8b-e8-bf-9e-e6-8e-a5-e8-bf-90-e8-a1-8c-e5-9c-a8linux-e4-b8-8a-e7-9a-84jmx-e6-9c-8d-e5-8a-a1" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2014/07/02/jconsole-e8-bf-9c-e7-a8-8b-e8-bf-9e-e6-8e-a5-e8-bf-90-e8-a1-8c-e5-9c-a8linux-e4-b8-8a-e7-9a-84jmx-e6-9c-8d-e5-8a-a1/" class="article-date">
@@ -105,7 +155,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://localhost:4000/2014/07/02/jconsole-e8-bf-9c-e7-a8-8b-e8-bf-9e-e6-8e-a5-e8-bf-90-e8-a1-8c-e5-9c-a8linux-e4-b8-8a-e7-9a-84jmx-e6-9c-8d-e5-8a-a1/" data-id="cir5qosw10018ykwuarghoztv" class="article-share-link" data-share="baidu" data-title="Jconsole远程连接运行在linux上的JMX服务">分享到</a>
+        <a data-url="http://localhost:4000/2014/07/02/jconsole-e8-bf-9c-e7-a8-8b-e8-bf-9e-e6-8e-a5-e8-bf-90-e8-a1-8c-e5-9c-a8linux-e4-b8-8a-e7-9a-84jmx-e6-9c-8d-e5-8a-a1/" data-id="cirmxdlcx001ddtwuwecifmg6" class="article-share-link" data-share="baidu" data-title="Jconsole远程连接运行在linux上的JMX服务">分享到</a>
       
 
       
@@ -159,7 +209,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://localhost:4000/2014/06/19/e7-a7-a6-e5-b2-ad-e6-97-a0-e9-a2-86-e5-a4-84/" data-id="cir5qosvg000qykwu1h5b833o" class="article-share-link" data-share="baidu" data-title="秦岭无岭处">分享到</a>
+        <a data-url="http://localhost:4000/2014/06/19/e7-a7-a6-e5-b2-ad-e6-97-a0-e9-a2-86-e5-a4-84/" data-id="cirmxdlc2000gdtwu1rkc0i6b" class="article-share-link" data-share="baidu" data-title="秦岭无岭处">分享到</a>
       
 
       
@@ -246,7 +296,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://localhost:4000/2014/06/16/e6-88-91-e4-bc-9a-e9-87-87-e6-9b-b4-e5-a4-9a-e7-9a-84-e9-9b-8f-e8-8f-8a/" data-id="cir5qosv6000hykwuvegmumuk" class="article-share-link" data-share="baidu" data-title="我会采更多的雏菊（转）">分享到</a>
+        <a data-url="http://localhost:4000/2014/06/16/e6-88-91-e4-bc-9a-e9-87-87-e6-9b-b4-e5-a4-9a-e7-9a-84-e9-9b-8f-e8-8f-8a/" data-id="cirmxdlca000pdtwuooc1h4my" class="article-share-link" data-share="baidu" data-title="我会采更多的雏菊（转）">分享到</a>
       
 
       
@@ -344,7 +394,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://localhost:4000/2014/05/14/spring-e5-92-8cplay-framework-e6-95-b4-e5-90-88/" data-id="cir5qoswr0024ykwuuywxvrr0" class="article-share-link" data-share="baidu" data-title="Spring和play framework整合">分享到</a>
+        <a data-url="http://localhost:4000/2014/05/14/spring-e5-92-8cplay-framework-e6-95-b4-e5-90-88/" data-id="cirmxdldb001tdtwuzganffw3" class="article-share-link" data-share="baidu" data-title="Spring和play framework整合">分享到</a>
       
 
       
@@ -427,7 +477,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://localhost:4000/2014/04/04/e4-bd-bf-e7-94-a8ant-e6-89-93-e5-8c-85-e5-ae-9e-e7-8e-b0-e7-89-88-e6-9c-ac-e6-8c-81-e7-bb-ad-e6-9b-b4-e6-96-b0/" data-id="cir5qosvj000uykwu8ekc3knz" class="article-share-link" data-share="baidu" data-title="使用ant打包实现版本持续更新">分享到</a>
+        <a data-url="http://localhost:4000/2014/04/04/e4-bd-bf-e7-94-a8ant-e6-89-93-e5-8c-85-e5-ae-9e-e7-8e-b0-e7-89-88-e6-9c-ac-e6-8c-81-e7-bb-ad-e6-9b-b4-e6-96-b0/" data-id="cirmxdlc5000kdtwuf70re05b" class="article-share-link" data-share="baidu" data-title="使用ant打包实现版本持续更新">分享到</a>
       
 
       
@@ -477,7 +527,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://localhost:4000/2014/03/29/e4-b8-aa-e4-ba-ba-e5-8d-9a-e5-ae-a2-e4-b8-8a-e7-ba-bf/" data-id="cir5qosuk0007ykwuqmuvaaua" class="article-share-link" data-share="baidu" data-title="个人博客上线">分享到</a>
+        <a data-url="http://localhost:4000/2014/03/29/e4-b8-aa-e4-ba-ba-e5-8d-9a-e5-ae-a2-e4-b8-8a-e7-ba-bf/" data-id="cirmxdlbu0009dtwulsfhmw54" class="article-share-link" data-share="baidu" data-title="个人博客上线">分享到</a>
       
 
       
@@ -546,7 +596,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://localhost:4000/2013/02/22/postgres-e5-b8-b8-e7-94-a8-e5-87-bd-e6-95-b0/" data-id="cir5qoswh001pykwuegsdjklt" class="article-share-link" data-share="baidu" data-title="Postgres常用函数">分享到</a>
+        <a data-url="http://localhost:4000/2013/02/22/postgres-e5-b8-b8-e7-94-a8-e5-87-bd-e6-95-b0/" data-id="cirmxdld8001qdtwus0fxuk2k" class="article-share-link" data-share="baidu" data-title="Postgres常用函数">分享到</a>
       
 
       
@@ -717,7 +767,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://localhost:4000/2013/01/08/mybatis-e9-85-8d-e7-bd-ae-e7-ac-ac-e4-b8-89-e6-96-b9-e8-bf-9e-e6-8e-a5-e6-b1-a0/" data-id="cir5qoswc001kykwudheormk2" class="article-share-link" data-share="baidu" data-title="mybatis配置第三方连接池">分享到</a>
+        <a data-url="http://localhost:4000/2013/01/08/mybatis-e9-85-8d-e7-bd-ae-e7-ac-ac-e4-b8-89-e6-96-b9-e8-bf-9e-e6-8e-a5-e6-b1-a0/" data-id="cirmxdld4001gdtwuxh9kj0rd" class="article-share-link" data-share="baidu" data-title="mybatis配置第三方连接池">分享到</a>
       
 
       
@@ -767,7 +817,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">十一月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">八月 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">七月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">六月 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">五月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">四月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">三月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/02/">二月 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01/">一月 2013</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">十一月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">八月 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">七月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">六月 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">五月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">四月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">三月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/02/">二月 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01/">一月 2013</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -777,6 +827,10 @@
     <h3 class="widget-title">近期文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/08/09/baccy-client-install-manual/">baccy-client-install-manual</a>
+          </li>
         
           <li>
             <a href="/2016/07/28/OSX使用XQuartz远程连接Linux主机/">OSX使用XQuartz远程连接Linux主机</a>
@@ -792,10 +846,6 @@
         
           <li>
             <a href="/2016/07/25/rabitmq-manual/">rabitmq-manual</a>
-          </li>
-        
-          <li>
-            <a href="/2016/07/25/java-interview/">java-interview</a>
           </li>
         
       </ul>

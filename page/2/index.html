@@ -70,6 +70,57 @@
     <div class="outer">
       <section id="main">
   
+    <article id="post-e4-bd-bf-e7-94-a8-e8-b7-a8-e5-b9-b3-e5-8f-b0-e6-8a-80-e6-9c-afh5-e5-ae-9e-e7-8e-b0-e5-ba-94-e7-94-a8-e5-9b-be-e7-89-87-e6-9c-ac-e5-9c-b0-e7-bc-93-e5-ad-98" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/11/19/e4-bd-bf-e7-94-a8-e8-b7-a8-e5-b9-b3-e5-8f-b0-e6-8a-80-e6-9c-afh5-e5-ae-9e-e7-8e-b0-e5-ba-94-e7-94-a8-e5-9b-be-e7-89-87-e6-9c-ac-e5-9c-b0-e7-bc-93-e5-ad-98/" class="article-date">
+  <time datetime="2015-11-19T06:12:24.000Z" itemprop="datePublished">2015-11-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/未分类/">未分类</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/11/19/e4-bd-bf-e7-94-a8-e8-b7-a8-e5-b9-b3-e5-8f-b0-e6-8a-80-e6-9c-afh5-e5-ae-9e-e7-8e-b0-e5-ba-94-e7-94-a8-e5-9b-be-e7-89-87-e6-9c-ac-e5-9c-b0-e7-bc-93-e5-ad-98/">使用跨平台技术h5+实现应用图片本地缓存</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在大哥王（andy）神一样的带领下，我们牛逼闪闪的走上了使用h5plus技术实现跨平台技术开发的道路，一路高歌！！！</p>
+<div>下面我要分享的内容是如何实现图片本地缓存。</div><br><div></div><br><div>废话不说，直接看代码：</div><br><div><br><div><br><br>1.  <code>&lt;span class=&quot;pun&quot;&gt;/**&lt;/span&gt;</code><br>2.  <code>&lt;span class=&quot;pun&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;声明获取图片的方法&lt;/span&gt;</code><br>3.  <code>&lt;span class=&quot;pun&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;lit&quot;&gt;@param&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;typ&quot;&gt;Object&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt; picUrl &lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;图片的网络地址&lt;/span&gt;</code><br>4.  <code>&lt;span class=&quot;pun&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;lit&quot;&gt;@param&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;typ&quot;&gt;Object&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt; defaultPic &lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;默认图片&lt;/span&gt;</code><br>5.  <code>&lt;span class=&quot;pun&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;lit&quot;&gt;@param&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;typ&quot;&gt;Object&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt; element &lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;图片源元素&lt;/span&gt;</code><br>6.  <code>&lt;span class=&quot;pun&quot;&gt;*/&lt;/span&gt;</code><br>7.  <code>&lt;span class=&quot;kwd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt; fetchImage&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;picUrl&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt; defaultPic&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt; element&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;{&lt;/span&gt;</code><br>8.  <code>&lt;span class=&quot;pun&quot;&gt;//将图片网络地址进行&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;md5&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;摘要。&lt;/span&gt;</code><br>9.  <code>&lt;span class=&quot;pln&quot;&gt; var filename &lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt; hex_md5&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;picUrl&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;);&lt;/span&gt;</code><br>10.  <code>&lt;span class=&quot;pln&quot;&gt; element&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;setAttribute&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;str&quot;&gt;&quot;src&quot;&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt; defaultPic&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;);&lt;/span&gt;</code><br>11.  <code>&lt;span class=&quot;pun&quot;&gt;//尝试加载本地图片&lt;/span&gt;</code><br>12.  <code>&lt;span class=&quot;pln&quot;&gt; plus&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;io&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;resolveLocalFileSystemURL&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;str&quot;&gt;&quot;_downloads/&quot;&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt; filename&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;kwd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;entry&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;{&lt;/span&gt;</code><br>13.  <code>&lt;span class=&quot;pun&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;加载本地图片成功&lt;/span&gt;</code><br>14.  <code>&lt;span class=&quot;pln&quot;&gt; entry&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;file&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kwd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;file&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;){&lt;/span&gt;</code><br>15.  <code>&lt;span class=&quot;kwd&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;file&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;lit&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;){&lt;/span&gt;</code><br>16.  <code>&lt;span class=&quot;pun&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;str&quot;&gt;&quot;2.1图片为空显示默认&quot;&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;);&lt;/span&gt;</code><br>17.  <code>&lt;span class=&quot;pln&quot;&gt; element&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;setAttribute&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;str&quot;&gt;&quot;src&quot;&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt; defaultPic&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;);&lt;/span&gt;</code><br>18.  <code>&lt;span class=&quot;pun&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;kwd&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;{&lt;/span&gt;</code><br>19.  <code>&lt;span class=&quot;pln&quot;&gt; var path &lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt; plus&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;io&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;convertLocalFileSystemURL&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;str&quot;&gt;&quot;_downloads/&quot;&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt; filename&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;);&lt;/span&gt;</code><br>20.  <code>&lt;span class=&quot;pun&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;str&quot;&gt;&quot;2.1加载本地图片&quot;&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;);&lt;/span&gt;</code><br>21.  <code>&lt;span class=&quot;pln&quot;&gt; element&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;setAttribute&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;str&quot;&gt;&quot;src&quot;&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt; path&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;);&lt;/span&gt;</code><br>22.  <code>&lt;span class=&quot;pun&quot;&gt;}&lt;/span&gt;</code><br>23.  <code>&lt;span class=&quot;pun&quot;&gt;});&lt;/span&gt;</code><br>24.  <code>&lt;span class=&quot;pun&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;kwd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;{&lt;/span&gt;</code><br>25.  <code>&lt;span class=&quot;pun&quot;&gt;//加载本地图片失败，本地没有该图片，尝试从网络下载图片并保存本地，保存文件名为&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;摘要&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;md5&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;值&lt;/span&gt;</code><br>26.  <code>&lt;span class=&quot;pln&quot;&gt; var dtask &lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt; plus&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;downloader&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;createDownload&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;picUrl&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;kwd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt; status&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;{&lt;/span&gt;</code><br>27.  <code>&lt;span class=&quot;pun&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;下载完成&lt;/span&gt;</code><br>28.  <code>&lt;span class=&quot;kwd&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;status &lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;lit&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;{&lt;/span&gt;</code><br>29.  <code>&lt;span class=&quot;kwd&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;downloadedSize&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;lit&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;){&lt;/span&gt;</code><br>30.  <code>&lt;span class=&quot;pun&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;str&quot;&gt;&quot;2.2图片为空显示默认&quot;&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;);&lt;/span&gt;</code><br>31.  <code>&lt;span class=&quot;pln&quot;&gt; element&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;setAttribute&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;str&quot;&gt;&quot;src&quot;&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt; defaultPic&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;);&lt;/span&gt;</code><br>32.  <code>&lt;span class=&quot;pun&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;kwd&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;{&lt;/span&gt;</code><br>33.  <code>&lt;span class=&quot;pun&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;str&quot;&gt;&quot;2.2下载网络文件成功&quot;&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;);&lt;/span&gt;</code><br>34.  <code>&lt;span class=&quot;pln&quot;&gt; element&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;setAttribute&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;str&quot;&gt;&quot;src&quot;&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt; d&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;);&lt;/span&gt;</code><br>35.  <code>&lt;span class=&quot;pun&quot;&gt;}&lt;/span&gt;</code><br>36.  <code>&lt;span class=&quot;pun&quot;&gt;}&lt;/span&gt;</code><br>37.  <code>&lt;span class=&quot;pun&quot;&gt;});&lt;/span&gt;</code><br>38.  <code>&lt;span class=&quot;pln&quot;&gt; dtask&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;pln&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;();&lt;/span&gt;</code><br>39.  <code>&lt;span class=&quot;pun&quot;&gt;});&lt;/span&gt;</code><br>40.  <code>&lt;span class=&quot;pun&quot;&gt;}&lt;/span&gt;</code><br></div><br><div><br><div>以上主要用到h5plus的两个重要的api</div><br><div>1.<span style="background-color: #f6f4f2; color: #474747; font-family: Verdana, Arial, Helvetica, 'Microsoft YaHei', sans-serif; line-height: 30px; widows: 1; font-size: 10.5pt;">Downloader模块管理网络文件下载任务，用于从服务器下载各种文件，并支持跨域访问操作。</span></div><br><div>详见官方：<a href="http://www.html5plus.org/doc/zh_cn/downloader.html" target="_blank" rel="external">http://www.html5plus.org/doc/zh_cn/downloader.html</a></div><br><div>2.<span style="background-color: #f6f4f2; color: #474747; font-family: Verdana, Arial, Helvetica, 'Microsoft YaHei', sans-serif; line-height: 30px; widows: 1; font-size: 10.5pt;">IO模块管理本地文件系统，用于对文件系统的目录浏览、文件的读取、文件的写入等操作。通过plus.io可获取文件系统管理对象。</span></div><br><div><span style="background-color: #f6f4f2; color: #474747; font-family: Verdana, Arial, Helvetica, 'Microsoft YaHei', sans-serif; line-height: 30px; widows: 1; font-size: 10.5pt;">详见官方：</span></div><br><div><span style="background-color: #f6f4f2; widows: 1;"><span style="color: #474747; font-family: Verdana, Arial, Helvetica, 'Microsoft YaHei', sans-serif;"><span style="line-height: 30px;"><a href="http://www.html5plus.org/doc/zh_cn/io.html" target="_blank" rel="external">http://www.html5plus.org/doc/zh_cn/io.html</a> </span></span></span></div><br></div><br></div><br><div style="widows: 1;"><label class="wiz-todo-label wiz-todo-label-unchecked"><img src="http://www.heartarea.net/wp-content/uploads/2015/11/wpid-81c80ecd0b3454e8dd5313dba8fc5163_unchecked.png" alt=""><br></label>刚开始做的时候准备使用html5的indexedDB存储图片来的，但是后来发现在移动设备上不好用。参考<a href="https://hacks.mozilla.org/2012/02/storing-images-and-files-in-indexeddb/" target="_blank" rel="external">https://hacks.mozilla.org/2012/02/storing-images-and-files-in-indexeddb/</a></div><br><div></div><br><div><span style="background-color: #f6f4f2; widows: 1;"><span style="color: #474747; font-family: Verdana, Arial, Helvetica, 'Microsoft YaHei', sans-serif;"> </span></span></div><br><div><a href="http://www.wiz.cn/i/f9706a63" title="来自为知笔记(Wiz)" target="_blank" rel="external">来自为知笔记(Wiz)</a></div>
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://localhost:4000/2015/11/19/e4-bd-bf-e7-94-a8-e8-b7-a8-e5-b9-b3-e5-8f-b0-e6-8a-80-e6-9c-afh5-e5-ae-9e-e7-8e-b0-e5-ba-94-e7-94-a8-e5-9b-be-e7-89-87-e6-9c-ac-e5-9c-b0-e7-bc-93-e5-ad-98/" data-id="cirmxdlbz000cdtwukjxp6fsk" class="article-share-link" data-share="baidu" data-title="使用跨平台技术h5+实现应用图片本地缓存">分享到</a>
+      
+
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/h5plus/">h5plus</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html5/">html5</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/图片缓存/">图片缓存</a></li></ul>
+
+    </footer>
+  </div>
+
+
+
+  
+</article>
+
+
+
+  
     <article id="post-daily-build-playframework-with-bamboo" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/05/26/daily-build-playframework-with-bamboo/" class="article-date">
@@ -101,7 +152,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://localhost:4000/2015/05/26/daily-build-playframework-with-bamboo/" data-id="cir5qosv2000eykwud2briqjl" class="article-share-link" data-share="baidu" data-title="使用bamboo构建play工程">分享到</a>
+        <a data-url="http://localhost:4000/2015/05/26/daily-build-playframework-with-bamboo/" data-id="cirmxdlbm0005dtwu4ym6ytoc" class="article-share-link" data-share="baidu" data-title="使用bamboo构建play工程">分享到</a>
       
 
       
@@ -155,7 +206,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://localhost:4000/2015/05/22/e4-b8-baplay-e5-b7-a5-e7-a8-8b-e5-86-99-e4-b8-80-e4-b8-aa-e7-8a-b6-e6-80-81-e7-ae-a1-e7-90-86-e7-9a-84-e8-84-9a-e6-9c-ac-e5-b9-b6-e4-b8-94-e9-9a-8f-e6-9c-ba-e5-90-af-e5-8a-a8-2/" data-id="cir5qosuv000aykwutp1ttk5x" class="article-share-link" data-share="baidu" data-title="为play工程写一个状态管理的脚本并且随机启动">分享到</a>
+        <a data-url="http://localhost:4000/2015/05/22/e4-b8-baplay-e5-b7-a5-e7-a8-8b-e5-86-99-e4-b8-80-e4-b8-aa-e7-8a-b6-e6-80-81-e7-ae-a1-e7-90-86-e7-9a-84-e8-84-9a-e6-9c-ac-e5-b9-b6-e4-b8-94-e9-9a-8f-e6-9c-ba-e5-90-af-e5-8a-a8-2/" data-id="cirmxdlbw000adtwuef4uuips" class="article-share-link" data-share="baidu" data-title="为play工程写一个状态管理的脚本并且随机启动">分享到</a>
       
 
       
@@ -206,7 +257,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://localhost:4000/2015/05/21/playframework-exchange-db-pool-c3p0/" data-id="cir5qoswl001rykwumpujie3o" class="article-share-link" data-share="baidu" data-title="playframework切换连接池c3p0（转载并整理）">分享到</a>
+        <a data-url="http://localhost:4000/2015/05/21/playframework-exchange-db-pool-c3p0/" data-id="cirmxdld7001ndtwui2p64el5" class="article-share-link" data-share="baidu" data-title="playframework切换连接池c3p0（转载并整理）">分享到</a>
       
 
       
@@ -256,7 +307,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://localhost:4000/2015/05/21/apache2-linux-e5-ae-89-e8-a3-85-e9-85-8d-e7-bd-ae/" data-id="cir5qosuh0003ykwuswiwwusa" class="article-share-link" data-share="baidu" data-title="apache2 linux安装 配置">分享到</a>
+        <a data-url="http://localhost:4000/2015/05/21/apache2-linux-e5-ae-89-e8-a3-85-e9-85-8d-e7-bd-ae/" data-id="cirmxdlbf0003dtwupfuh6bls" class="article-share-link" data-share="baidu" data-title="apache2 linux安装 配置">分享到</a>
       
 
       
@@ -944,7 +995,7 @@ font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-f
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://localhost:4000/2015/05/20/psql-e5-b8-b8-e7-94-a8-e5-91-bd-e4-bb-a4-e5-a4-a7-e5-85-a8/" data-id="cir5qosxr0040ykwu8mb5z75r" class="article-share-link" data-share="baidu" data-title="psql常用命令大全">分享到</a>
+        <a data-url="http://localhost:4000/2015/05/20/psql-e5-b8-b8-e7-94-a8-e5-91-bd-e4-bb-a4-e5-a4-a7-e5-85-a8/" data-id="cirmxdlec0041dtwumcxm8d8z" class="article-share-link" data-share="baidu" data-title="psql常用命令大全">分享到</a>
       
 
       
@@ -1008,7 +1059,7 @@ font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-f
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://localhost:4000/2015/05/20/openstack-e7-8e-af-e5-a2-83-e4-b8-8a-e5-ae-89-e8-a3-85kafka/" data-id="cir5qoswe001mykwu13te587m" class="article-share-link" data-share="baidu" data-title="openstack环境上安装kafka">分享到</a>
+        <a data-url="http://localhost:4000/2015/05/20/openstack-e7-8e-af-e5-a2-83-e4-b8-8a-e5-ae-89-e8-a3-85kafka/" data-id="cirmxdld6001kdtwum0nsanwf" class="article-share-link" data-share="baidu" data-title="openstack环境上安装kafka">分享到</a>
       
 
       
@@ -1059,7 +1110,7 @@ font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-f
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://localhost:4000/2015/04/23/e6-9c-ac-e5-9c-b0-e4-bb-a3-e7-a0-81-e6-8e-a8-e9-80-81-e5-88-b0gitlab-e4-b8-8a/" data-id="cir5qosvd000nykwu58qoeit8" class="article-share-link" data-share="baidu" data-title="本地代码推送到gitlab上">分享到</a>
+        <a data-url="http://localhost:4000/2015/04/23/e6-9c-ac-e5-9c-b0-e4-bb-a3-e7-a0-81-e6-8e-a8-e9-80-81-e5-88-b0gitlab-e4-b8-8a/" data-id="cirmxdlc7000ndtwuu3hp9r9t" class="article-share-link" data-share="baidu" data-title="本地代码推送到gitlab上">分享到</a>
       
 
       
@@ -1111,7 +1162,7 @@ font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-f
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://localhost:4000/2014/11/19/java-lang-verifyerror-e8-a7-a3-e5-86-b3-e5-8a-9e-e6-b3-95/" data-id="cir5qosw7001eykwugyzjcv8o" class="article-share-link" data-share="baidu" data-title="java.lang.VerifyError解决办法">分享到</a>
+        <a data-url="http://localhost:4000/2014/11/19/java-lang-verifyerror-e8-a7-a3-e5-86-b3-e5-8a-9e-e6-b3-95/" data-id="cirmxdlcm0015dtwuguf1ub79" class="article-share-link" data-share="baidu" data-title="java.lang.VerifyError解决办法">分享到</a>
       
 
       
@@ -1165,57 +1216,7 @@ font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-f
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://localhost:4000/2014/08/22/e8-ae-b0-e4-b8-80-e6-ac-a1-e9-a1-b9-e7-9b-ae-e7-ae-a1-e7-90-86-e5-9f-b9-e8-ae-ad/" data-id="cir5qosvy0013ykwuew5a0mhb" class="article-share-link" data-share="baidu" data-title="记一次项目管理培训">分享到</a>
-      
-
-      
-
-      
-    </footer>
-  </div>
-
-
-
-  
-</article>
-
-
-
-  
-    <article id="post-vsftpd-e7-9a-84-e5-ae-89-e8-a3-85-e5-92-8c-e9-85-8d-e7-bd-ae" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/08/14/vsftpd-e7-9a-84-e5-ae-89-e8-a3-85-e5-92-8c-e9-85-8d-e7-bd-ae/" class="article-date">
-  <time datetime="2014-08-14T07:07:00.000Z" itemprop="datePublished">2014-08-14</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/工作记录/">工作记录</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/08/14/vsftpd-e7-9a-84-e5-ae-89-e8-a3-85-e5-92-8c-e9-85-8d-e7-bd-ae/">vsftpd的安装和配置</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>apt-get install  vsftpd</p>
-<div></div><br><div>配置文件在  /etc/vsftpd.conf</div><br><div>默认是只开启匿名用户的，只能读不能写。</div><br><div>放开 它   local_enable=YES</div><br><div></div><br><div>cd /home</div><br><div>mkdir ftp</div><br><div>useradd -d /home/ftp ftpuser</div><br><div>passwd ftpuser  设置上密码</div><br><div>chown ftpuser:ftpuser ftp</div><br><div>chmod 755 ftp</div><br><div></div><br><div>如果是debian，如上应该可以了。</div><br><div>使用cmd  ftp 192.168.1.X</div><br><div>输入用户名密码</div><br><div>put someth.txt</div><br><div></div><br><div>如果是ubuntu的话</div><br><div></div><br><div>cd /etc</div><br><div>echo “ftpuser”  &gt;&gt; vsftpd.chroot_list</div><br><div></div><br><div><br><div>设置匿名账户的访问目录</div><br><div>anon_root=/home/ftp</div><br></div><br><div>然后/et<span style="font-family: 'Microsoft YaHei UI';">c/init.d/vsftpd restart</span></div>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://localhost:4000/2014/08/14/vsftpd-e7-9a-84-e5-ae-89-e8-a3-85-e5-92-8c-e9-85-8d-e7-bd-ae/" data-id="cir5qoswn001xykwu98ukvx2z" class="article-share-link" data-share="baidu" data-title="vsftpd的安装和配置">分享到</a>
+        <a data-url="http://localhost:4000/2014/08/22/e8-ae-b0-e4-b8-80-e6-ac-a1-e9-a1-b9-e7-9b-ae-e7-ae-a1-e7-90-86-e5-9f-b9-e8-ae-ad/" data-id="cirmxdlcc000sdtwu3r5dzyr4" class="article-share-link" data-share="baidu" data-title="记一次项目管理培训">分享到</a>
       
 
       
@@ -1263,7 +1264,7 @@ font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-f
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">十一月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">八月 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">七月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">六月 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">五月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">四月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">三月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/02/">二月 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01/">一月 2013</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">十一月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">八月 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">七月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">六月 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">五月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">四月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">三月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/02/">二月 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01/">一月 2013</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -1273,6 +1274,10 @@ font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-f
     <h3 class="widget-title">近期文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/08/09/baccy-client-install-manual/">baccy-client-install-manual</a>
+          </li>
         
           <li>
             <a href="/2016/07/28/OSX使用XQuartz远程连接Linux主机/">OSX使用XQuartz远程连接Linux主机</a>
@@ -1288,10 +1293,6 @@ font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-f
         
           <li>
             <a href="/2016/07/25/rabitmq-manual/">rabitmq-manual</a>
-          </li>
-        
-          <li>
-            <a href="/2016/07/25/java-interview/">java-interview</a>
           </li>
         
       </ul>
